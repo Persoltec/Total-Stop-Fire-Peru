@@ -6,19 +6,46 @@ media_folder: static/img
 public_folder: /img
 
 collections:
-  - name: "blog"
-    label: "Blog"
-    folder: "src/pages/blog"
+  - name: "producto"
+    label: "Producto"
+    folder: "src/pages/producto"
     create: true
-    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    slug: "{{slug}}"
     fields:
       - {label: "Template Key", name: "templateKey", widget: "hidden", default: "blog-post"}
-      - {label: "Title", name: "title", widget: "string"}
-      - {label: "Publish Date", name: "date", widget: "datetime"}
-      - {label: "Description", name: "description", widget: "text"}
-      - {label: "Body", name: "body", widget: "markdown"}
-      - {label: "Tags", name: "tags", widget: "list"}
-
+      - {label: "Titulo", name: "titulo", widget: "string"}
+      - {label: "Foto", name: "foto", widget: image}      
+      - {label: "Código", name: "codigo", widget: "string"}
+      - label: "Categoría"
+        name: "categoria"
+        widget: "select"
+        options:
+        - { label: "Papas", value: "papas" }
+        - { label: "Papas Veggies", value: "papas/papas-veggies" }
+        - { label: "Sandwiches", value: "sandwiches" }
+        - { label: "Piqueos", value: "piqueos" }
+        - { label: "Postres", value: "postres" }
+        - { label: "Bebidas", value: "bebidas" }
+        - { label: "Jugos Refrescantes", value: "bebidas/jugos-refrescantes" }
+        - { label: "Jugos Energéticos", value: "bebidas/jugos-energeticos" }
+        - { label: "Tea – Café", value: "bebidas/tea-cafe" }
+        - { label: "Gaseosas", value: "bebidas/gaseosas" }
+        - { label: "Cervezas", value: "bebidas/cervezas" }
+        - { label: "Aguas", value: "bebidas/aguas" }      
+      - label: "Precios"
+        name: "precios"
+        widget: "list"
+        fields:
+          - {label: "Atributo", name: "atributo", widget: "string"}
+          - label: "Precio"
+            name: "precio"
+            widget: "number"
+            default: 0
+            valueType: "float"
+            min: 0
+            max: 100
+      - {label: "Descripción", name: "descripcion", widget: "markdown"}            
+      - {label: "Seo", name: "seo", widget: "text"}        
   - name: "pages"
     label: "Pages"
     files:
