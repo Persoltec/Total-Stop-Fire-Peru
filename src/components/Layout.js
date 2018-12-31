@@ -1,7 +1,7 @@
 import React from 'react'
 // import Helmet from 'react-helmet'
 // import { StaticQuery, graphql } from "gatsby"
-import { enquireScreen } from 'enquire-js';
+
 import Home from '../components/Home/index'
 import './all.less'
  
