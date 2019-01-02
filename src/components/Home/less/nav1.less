@@ -1,11 +1,14 @@
 @header: header1;
+@header-height: 80px;
 .@{header} {
-  background: @template-nav-bg-color;
+   position: fixed;
+  z-index: 999;
+  background: rgba(0, 0, 0, 0.25);
+  border-bottom: 1px solid transparent;
+  transition: border .5s cubic-bezier(0.455, 0.03, 0.515, 0.955), background .5s cubic-bezier(0.455, 0.03, 0.515, 0.955);
+   
+  padding: 0 48px;
   width: 100%;
-  z-index: 1;
-  box-shadow: 0 5px 8px fade(#000, 15);
-  position: relative;
-  top: 0;
   .home-page {
     padding: 0 24px;
   }
@@ -13,7 +16,8 @@
     display: inline-block;
     position: relative;
     width: 150px;
-    line-height: 64px;
+    line-height: @header-height;
+    height: @header-height;
     & img {
       vertical-align: middle;
       display: inline-block;
@@ -25,10 +29,14 @@
   &-menu {
     float: right;
     >.ant-menu {
-      line-height: 62px;
+
+      font-size: 12px;
+      font-weight: 500;
+      text-transform: uppercase;
+      line-height: @header-height;
       background: transparent;
       color: @template-text-color-light;
-      height: 64px;
+      height: @header-height;
       border-bottom-color: transparent;
       position: relative;
       a {
@@ -37,33 +45,20 @@
           color: @primary-color;
         }
       }
-    }
-    .help {
-      border-left: 1px solid fade(@line-color, 5) !important;
-      .anticon {
-        font-size: 16px;
-        vertical-align: middle;
-      }
-      span {
-        display: inline-block;
-        font-size: 12px;
+      .ant-menu-item{
+      border:none;
+      top: 0px;
+      margin-top: 0px;
       }
     }
-    .user {
-      font-size: 14px;
-      border-left: 1px solid fade(@line-color, 5) !important;
-      .img {
-        margin-left: 0;
-        width: 30px;
-        height: 30px;
-        display: inline-block;
-        img {
-          vertical-align: middle;
+    .escribenos {
+       .ant-divider {
+          height: 100%;
+          background: fade(@line-color, 5);
+          margin-right: 30px;
+          margin-left: 20px;
         }
-      }
-      span {
-        margin-left: 10px;
-      }
+       
     }
   }
   .ant-menu-item-selected a {
@@ -93,8 +88,8 @@
       height: 14px;
       cursor: pointer;
       position: absolute;
-      top: 24px;
-      right: 24px;
+      top: 35px;
+      right: 20px;
       z-index: 100;
       em {
         display: block;

@@ -6,7 +6,9 @@ module.exports = {
   plugins: [
   {
       resolve: 'gatsby-plugin-less',
+
       options: {
+        modifyVars: require(`./src/theme.js`),
         javascriptEnabled: true,
       },
     },

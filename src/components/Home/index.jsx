@@ -45,7 +45,7 @@ enquireScreen((b) => {
   isMobile = b;
 });
 
-
+ 
 //const { location } = window;
 
 export default class Home extends React.Component {
@@ -53,6 +53,7 @@ export default class Home extends React.Component {
     super(props);
     this.state = {
       isMobile,
+      isFirstScreen: true,
       //show: !location.port, // 如果不是 dva 2.0 请删除
     };
   }
@@ -75,6 +76,12 @@ export default class Home extends React.Component {
     /* 如果不是 dva 2.0 请删除 end */
   }
 
+  onEnterChange = (mode) => {
+    this.setState({
+      isFirstScreen: mode === 'enter',
+    });
+  }
+
   render() {
     const children = [
       <Nav1
@@ -82,11 +89,19 @@ export default class Home extends React.Component {
         key="Nav1_0"
         dataSource={Nav10DataSource}
         isMobile={this.state.isMobile}
+        isFirstScreen={this.state.isFirstScreen}
       />,
       <Banner1
         id="Banner1_0"
         key="Banner1_0"
         dataSource={Banner10DataSource}
+        isMobile={this.state.isMobile}
+        onEnterChange={this.onEnterChange}
+      />,
+      <Content3
+        id="Content3_0"
+        key="Content3_0"
+        dataSource={Content30DataSource}
         isMobile={this.state.isMobile}
       />,
       <Footer1

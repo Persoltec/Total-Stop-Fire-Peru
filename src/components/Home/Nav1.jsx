@@ -1,7 +1,9 @@
 import React from 'react';
 import { findDOMNode } from 'react-dom';
 import TweenOne from 'rc-tween-one';
-import { Menu, Icon } from 'antd';
+import classNames from 'classnames';
+import { Divider ,Button ,Menu, Icon } from 'antd';
+import logo from '../../img/logo.svg'
 
 const { Item, SubMenu } = Menu;
 
@@ -25,9 +27,10 @@ class Header extends React.Component {
 
   render() {
     const { ...props } = this.props;
-    const { dataSource, isMobile } = props;
+    const { dataSource, isMobile , isFirstScreen } = props;
     delete props.dataSource;
     delete props.isMobile;
+    delete props.isFirstScreen;
     const { menuHeight, phoneOpen } = this.state;
     const navData = dataSource.Menu.children;
     const navChildren = Object.keys(navData).map((key, i) => (
@@ -42,33 +45,23 @@ class Header extends React.Component {
       </Item>
     ));
 
-    // user 涉及到数据，请自行替换。
-    const userTitle = (
-      <div {...dataSource.user}>
-        <span className="img" {...dataSource.user.img}>
-          <img
-            src="https://zos.alipayobjects.com/rmsportal/iXsgowFDTJtGpZM.png"
-            width="100%"
-            height="100%"
-            alt="img"
-          />
-        </span>
-        <span>用户名</span>
-      </div>
-    );
+    const headerClassName = classNames({
+      clearfix: true,
+      'home-nav-white': !isFirstScreen,
+    });
+
     navChildren.push(
-      <Item {...dataSource.help} key="help">
-        <Icon type="question-circle-o" />
-        <span>{dataSource.help.children}</span>
-      </Item>,
-      <SubMenu className="user" title={userTitle} key="user">
-        <Item key="a">用户中心</Item>
-        <Item key="b">修改密码</Item>
-        <Item key="c">登出</Item>
-      </SubMenu>
+      <span className="escribenos">
+        <Divider type="vertical" />
+
+        <Button type="primary" icon="phone" >Contáctenos</Button>
+      </span>
+       
+       
     );
     return (
       <TweenOne
+      
         component="header"
         animation={{ opacity: 0, type: 'from' }}
         {...dataSource.wrapper}
@@ -77,6 +70,7 @@ class Header extends React.Component {
         <div
           {...dataSource.page}
           className={`${dataSource.page.className}${phoneOpen ? ' open' : ''}`}
+          className={headerClassName}
         >
           <TweenOne
             animation={{
@@ -87,7 +81,8 @@ class Header extends React.Component {
             }}
             {...dataSource.logo}
           >
-            <img width="100%" src={dataSource.logo.children} alt="img" />
+            <img width="160px
+            " src={logo} alt="img" />
           </TweenOne>
           {isMobile && (
             <div
