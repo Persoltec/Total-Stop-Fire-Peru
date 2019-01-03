@@ -4,8 +4,24 @@ backend:
 
 media_folder: static/img
 public_folder: /img
+logo_url: https://your-site.com/images/logo.svg
 
 collections:
+- name: "empresa"
+    label: "Empresa"
+    files:
+      - file: "src/empresa/horario.md"
+        label: "Horario"
+        name: "horario"
+        fields:
+          - {label: "Titulo", name: "titulo", widget: "string"}
+          - {label: "Lunes", name: "lunes", widget: "string"}
+          - {label: "Martes", name: "martes", widget: "string"}
+          - {label: "Miércoles", name: "miercoles", widget: "string"}
+          - {label: "Jueves", name: "jueves", widget: "string"}
+          - {label: "Viernes", name: "viernes", widget: "string"}
+          - {label: "Sabado", name: "sabado", widget: "string"}
+          - {label: "Domingo", name: "domingo", widget: "string"}
   - name: "blog"
     label: "Blog"
     folder: "src/pages/blog"
