@@ -8,6 +8,7 @@ public_folder: /img
 collections:
   - name: "empresa"
     label: "Empresa"
+    preview: false
     files:
       - file: "src/empresa/horario.md"
         label: "Horario"
