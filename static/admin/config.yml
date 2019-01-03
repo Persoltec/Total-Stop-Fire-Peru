@@ -34,6 +34,22 @@ collections:
           - {label: "Teléfono", name: "telefono", widget: "string"}
           - {label: "Móvil", name: "movil", widget: "string"}
           - {label: "Correo electrónico", name: "correo", widget: "string"}         
+  - name: "slider"
+    label: "Portada"
+    files:
+      - file: "src/pages/slider/home.md"
+        label: "Inicio"
+        name: "slider-home"
+        preview: false
+        fields:
+          - {label: "SliderHome", name: "slider", widget: "hidden", default: "SliderHome"}
+          - label: "Pagina"
+            name: "pagina"
+            widget: "list"
+            fields:
+              - {label: "Titulo", name: "titulo", widget: "string"}
+              - {label: "Descripción", name: "descripcion", widget: "text"}
+              - {label: Imagen, name: image, widget: image}
   - name: "blog"
     label: "Blog"
     folder: "src/pages/blog"

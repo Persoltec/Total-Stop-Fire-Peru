@@ -14,6 +14,7 @@ class Footer extends React.Component {
     className: 'footer1',
   };
  
+
   render() {
     const { ...props } = this.props;
     const {isMobile   } = props;
