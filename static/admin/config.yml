@@ -14,6 +14,7 @@ collections:
         name: "horario"
         preview: false
         fields:
+          - {label: "BusinessHours", name: "widgets", widget: "hidden", default: "BusinessHours"}
           - {label: "Titulo", name: "titulo", widget: "string"}
           - {label: "Lunes", name: "lunes", widget: "string"}
           - {label: "Martes", name: "martes", widget: "string"}
