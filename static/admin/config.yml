@@ -8,11 +8,11 @@ public_folder: /img
 collections:
   - name: "empresa"
     label: "Empresa"
-    preview: false
     files:
       - file: "src/empresa/horario.md"
         label: "Horario"
         name: "horario"
+        preview: false
         fields:
           - {label: "Titulo", name: "titulo", widget: "string"}
           - {label: "Lunes", name: "lunes", widget: "string"}
