@@ -7,7 +7,7 @@ import Nav1 from './Nav1';
 import Banner1 from './Banner1';
 import Footer1 from './Footer1';
 
-import './less/antMotionStyle.less';
+import '../../styles/antMotionStyle.less';
 
 let isMobile;
 enquireScreen((b) => {

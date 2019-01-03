@@ -2,9 +2,10 @@ import React from 'react';
 import TweenOne from 'rc-tween-one';
 import OverPack from 'rc-scroll-anim/lib/ScrollOverPack';
 import QueueAnim from 'rc-queue-anim';
-import { Row, Col,List,Avatar,Icon   } from 'antd';
+import { Row, Col,List,Avatar   } from 'antd';
 import MapInfo from '../../img/MapInfo.png'
 import Personal from '../../img/personal.png'
+import BusinessHours from '../widgets/BusinessHours/BusinessHours'
 
 
 const info = [
@@ -30,47 +31,8 @@ const info = [
   },
 ];
 
-const hour = [
-  {
-    title: 'Lunes',
-    info: '08:00 AM - 6:00 PM',
-  },
-  {
-    title: 'Martes',
-    info: '08:00 AM - 6:00 PM',
 
-  },
-  {
-    title: 'Miércoles',
-    info: '08:00 AM - 6:00 PM',
-  },
-  {
-    title: 'Jueves',
-    info: '08:00 AM - 6:00 PM',
-  },
-  {
-    title: 'Viernes',
-    info: '08:00 AM - 6:00 PM',
-  },
-  {
-    title: 'Sabado',
-    info: '08:00 AM - 6:00 PM',
-  },
-  {
-    title: 'Domingo',
-    info: 'Cerrado',
-  },
-];
 
-const data = [
-  '08:00 AM - 6:00 PM',
-  '08:00 AM - 6:00 PM',
-  '08:00 AM - 6:00 PM',
-  '08:00 AM - 6:00 PM',
-  '08:00 AM - 6:00 PM',
-  '08:00 AM - 6:00 PM',
-  'Cerrado',
-];
 
 
 class Footer extends React.Component {
@@ -82,7 +44,6 @@ class Footer extends React.Component {
   render() {
     const { ...props } = this.props;
     const {isMobile   } = props;
-
     delete props.isMobile;
     
     return (
@@ -125,21 +86,10 @@ class Footer extends React.Component {
 </Col>
 {!isMobile && (
 <Col xs={{span: 24}} md={{span: 8}}  key="block2" className= 'block' >
-    <List 
-    className="widget-business-hours"
-    itemLayout="horizontal"
-    dataSource={hour}
-    renderItem={item => (
-      <List.Item>
-        <List.Item.Meta
-          
-          title={item.title}
-           
-        />
-        <div class="hour">{item.info}</div>
-      </List.Item>
-    )}
-  />
+    
+
+<BusinessHours/>
+ 
 </Col>
 )}
     </QueueAnim>

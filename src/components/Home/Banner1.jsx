@@ -4,9 +4,7 @@ import { Button, Icon } from 'antd';
 import QueueAnim from 'rc-queue-anim';
 import TweenOne, { TweenOneGroup } from 'rc-tween-one';
 import BannerAnim, { Element } from 'rc-banner-anim';
-import ScrollElement from 'rc-scroll-anim/lib/ScrollElement';
-//import Texty from 'rc-texty';
-import ScrollAnim from 'rc-scroll-anim';
+ 
 
 
 

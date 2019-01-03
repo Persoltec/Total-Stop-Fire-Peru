@@ -9,7 +9,7 @@ collections:
   - name: "empresa"
     label: "Empresa"
     files:
-      - file: "src/empresa/horario.md"
+      - file: "src/pages/empresa/horario.md"
         label: "Horario"
         name: "horario"
         preview: false
