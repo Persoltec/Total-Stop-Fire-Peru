@@ -43,13 +43,7 @@ collections:
         preview: false
         fields:
           - {label: "SliderHome", name: "slider", widget: "hidden", default: "SliderHome"}
-          - label: "Pagina"
-            name: "pagina"
-            widget: "list"
-            fields:
-              - {label: "Titulo", name: "titulo", widget: "string"}
-              - {label: "Descripción", name: "descripcion", widget: "text"}
-              - {label: Imagen, name: image, widget: image}
+          - {label: "Pagina", name: "pagina", widget: "list" fields: [{label: "Titulo", name: "titulo", widget: "string"},{label: "Descripción", name: "descripcion", widget: "text"},{label: Imagen, name: image, widget: image} ]}
   - name: "blog"
     label: "Blog"
     folder: "src/pages/blog"
