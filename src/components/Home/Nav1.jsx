@@ -1,11 +1,11 @@
 import React from 'react';
 import { findDOMNode } from 'react-dom';
 import TweenOne from 'rc-tween-one';
-import classNames from 'classnames';
-import { Divider ,Button ,Menu, Icon } from 'antd';
+//import classNames from 'classnames';
+import { Divider ,Button ,Menu } from 'antd';
 import logo from '../../img/logo.svg'
-
-const { Item, SubMenu } = Menu;
+import { Link } from 'gatsby'
+const { Item } = Menu;
 
 class Header extends React.Component {
   constructor(props) {
@@ -27,50 +27,31 @@ class Header extends React.Component {
 
   render() {
     const { ...props } = this.props;
-    const { dataSource, isMobile , isFirstScreen } = props;
-    delete props.dataSource;
+    const {isMobile   } = props;
+
     delete props.isMobile;
     delete props.isFirstScreen;
     const { menuHeight, phoneOpen } = this.state;
-    const navData = dataSource.Menu.children;
-    const navChildren = Object.keys(navData).map((key, i) => (
-      <Item {...navData[key]} key={i.toString()}>
-        <a
-          {...navData[key].a}
-          href={navData[key].a.link}
-          target={navData[key].a.blank && '_blank'}
-        >
-          {navData[key].a.children}
-        </a>
-      </Item>
-    ));
+    
+ 
+    // const headerClassName = classNames({
+    //   clearfix: true,
+    //   'home-nav-white': !isFirstScreen,
+    // });
 
-    const headerClassName = classNames({
-      clearfix: true,
-      'home-nav-white': !isFirstScreen,
-    });
-
-    navChildren.push(
-      <span className="escribenos">
-        <Divider type="vertical" />
-
-        <Button type="primary" icon="phone" >Contáctenos</Button>
-      </span>
-       
-       
-    );
     return (
       <TweenOne
       
         component="header"
         animation={{ opacity: 0, type: 'from' }}
-        {...dataSource.wrapper}
-        {...props}
+        className= 'header1 home-page-wrapper'
+       
       >
+
         <div
-          {...dataSource.page}
-          className={`${dataSource.page.className}${phoneOpen ? ' open' : ''}`}
-          className={headerClassName}
+            
+          className={`${'home-page jqauf4uk7uk-editor_css'}${phoneOpen ? ' open' : ''}`}
+
         >
           <TweenOne
             animation={{
@@ -79,14 +60,14 @@ class Header extends React.Component {
               type: 'from',
               ease: 'easeOutQuad',
             }}
-            {...dataSource.logo}
+            className='header1-logo' 
           >
-            <img width="160px
-            " src={logo} alt="img" />
+            <img width="160px" src={logo} alt="img" />
           </TweenOne>
+
           {isMobile && (
             <div
-              {...dataSource.mobileMenu}
+               className= 'header1-mobile-menu'
               onClick={() => {
                 this.phoneClick();
               }}
@@ -97,19 +78,45 @@ class Header extends React.Component {
             </div>
           )}
           <TweenOne
-            {...dataSource.Menu}
+            className= 'header1-menu'
             animation={{ x: 30, type: 'from', ease: 'easeOutQuad' }}
             ref={(c) => {
               this.menu = c;
             }}
-            style={isMobile ? { height: menuHeight } : null}
+            style={isMobile ? { height: menuHeight  } : null}
           >
             <Menu
               mode={isMobile ? 'inline' : 'horizontal'}
               defaultSelectedKeys={['0']}
               theme={isMobile ? 'dark' : 'default'}
             >
-              {navChildren}
+              
+
+  <Item>
+        <Link to="/" >Inicio</Link>
+  </Item>
+
+ <Item>
+        <Link to="/" >Nosotros</Link>
+  </Item>
+
+ <Item>
+        <Link to="/" >Productos</Link> 
+  </Item>
+
+ <Item>
+        <Link to="/" >Servicios</Link>
+  </Item>
+ <Item>
+        <Link>Blog</Link>
+  </Item>
+
+ <span className="escribenos">
+        <Divider type="vertical" />
+
+        <Button type="primary" icon="phone" >Contáctenos</Button>
+      </span>
+
             </Menu>
           </TweenOne>
         </div>

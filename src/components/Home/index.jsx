@@ -5,39 +5,8 @@ import { enquireScreen } from 'enquire-js';
 
 import Nav1 from './Nav1';
 import Banner1 from './Banner1';
-import Content3 from './Content3';
-import Content7 from './Content7';
-import Content0 from './Content0';
-import Content8 from './Content8';
-import Content6 from './Content6';
-import Content1 from './Content1';
-import Content2 from './Content2';
-import Content4 from './Content4';
-import Content12 from './Content12';
-import Content5 from './Content5';
-import Content9 from './Content9';
-import Content10 from './Content10';
-import Content11 from './Content11';
 import Footer1 from './Footer1';
 
-import {
-  Nav10DataSource,
-  Banner10DataSource,
-  Content30DataSource,
-  Content71DataSource,
-  Content00DataSource,
-  Content80DataSource,
-  Content60DataSource,
-  Content10DataSource,
-  Content20DataSource,
-  Content40DataSource,
-  Content120DataSource,
-  Content50DataSource,
-  Content90DataSource,
-  Content100DataSource,
-  Content110DataSource,
-  Footer10DataSource,
-} from './data.source';
 import './less/antMotionStyle.less';
 
 let isMobile;
@@ -77,6 +46,7 @@ export default class Home extends React.Component {
   }
 
   onEnterChange = (mode) => {
+    alert("sdgsdgsd");
     this.setState({
       isFirstScreen: mode === 'enter',
     });
@@ -87,29 +57,20 @@ export default class Home extends React.Component {
       <Nav1
         id="Nav1_0"
         key="Nav1_0"
-        dataSource={Nav10DataSource}
         isMobile={this.state.isMobile}
         isFirstScreen={this.state.isFirstScreen}
       />,
-      <Banner1
+       <Banner1
         id="Banner1_0"
         key="Banner1_0"
-        dataSource={Banner10DataSource}
-        isMobile={this.state.isMobile}
-        onEnterChange={this.onEnterChange}
-      />,
-      <Content3
-        id="Content3_0"
-        key="Content3_0"
-        dataSource={Content30DataSource}
+    
         isMobile={this.state.isMobile}
       />,
       <Footer1
         id="Footer1_0"
         key="Footer1_0"
-        dataSource={Footer10DataSource}
         isMobile={this.state.isMobile}
-      />,
+      />,  
     ];
     return (
       <div
