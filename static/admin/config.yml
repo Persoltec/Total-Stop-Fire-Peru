@@ -4,10 +4,9 @@ backend:
 
 media_folder: static/img
 public_folder: /img
-logo_url: https://your-site.com/images/logo.svg
 
 collections:
-- name: "empresa"
+  - name: "empresa"
     label: "Empresa"
     files:
       - file: "src/empresa/horario.md"
