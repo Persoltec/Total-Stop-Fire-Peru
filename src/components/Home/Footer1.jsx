@@ -5,36 +5,10 @@ import QueueAnim from 'rc-queue-anim';
 import { Row, Col,List,Avatar   } from 'antd';
 import MapInfo from '../../img/MapInfo.png'
 import Personal from '../../img/personal.png'
-import BusinessHours from '../widgets/BusinessHours/BusinessHours.jsx'
+import OfficeHours from '../widgets/OfficeHours/OfficeHours.jsx'
+import ContactInfo from '../widgets/ContactInfo/ContactInfo.jsx'
 
  
-const info = [
-  {
-    title: 'Dirección',
-    info: 'C. Monte Abeto 995 Urb. Monterrico SurSantiago de surco - Lima Perú',
-        icon: 'pushpin',
-  },
-  {
-    title: 'Móvil',
-    info: '+51 920600227',
-        icon: 'mobile',
-  },
-  {
-    title: 'Correo electrónico:',
-    info: 'informes@totalstopfireperu.com:',
-        icon: 'mail',
-  },
-  {
-    title: 'Sitio Web',
-    info: 'www.totalstopfireperu.com',
-        icon: 'global',
-  },
-];
-
-
-
-
-
 class Footer extends React.Component {
   static defaultProps = {
     className: 'footer1',
@@ -68,27 +42,15 @@ class Footer extends React.Component {
  )}
 
 <Col xs={{span: 24}} md={{span: 8}} key="block1" className= 'block' >
-    <List 
-     style={{ backgroundImage: `url(${MapInfo})` }}
-    className="widget-contact-info"
-    itemLayout="horizontal"
-    dataSource={info}
-    renderItem={item => (
-      <List.Item>
-        <List.Item.Meta
-          avatar={  <Avatar shape="square" size="large" icon={item.icon} />}
-          title={item.title}
-          description={item.info}
-        />
-      </List.Item>
-    )}
-  />
+  <ContactInfo/>
+    
+
 </Col>
 {!isMobile && (
 <Col xs={{span: 24}} md={{span: 8}}  key="block2" className= 'block' >
     
 
-<BusinessHours/>
+<OfficeHours/>
  
 </Col>
 )}

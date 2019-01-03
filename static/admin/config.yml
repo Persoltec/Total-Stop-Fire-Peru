@@ -9,12 +9,12 @@ collections:
   - name: "empresa"
     label: "Empresa"
     files:
-      - file: "src/pages/empresa/horario.md"
-        label: "Horario"
-        name: "horario"
+      - file: "src/pages/empresa/office-hours.md"
+        label: "Horario de oficina"
+        name: "office-hours"
         preview: false
         fields:
-          - {label: "BusinessHours", name: "widgets", widget: "hidden", default: "BusinessHours"}
+          - {label: "OfficeHours", name: "widgets", widget: "hidden", default: "OfficeHours"}
           - {label: "Titulo", name: "titulo", widget: "string"}
           - {label: "Lunes", name: "lunes", widget: "string"}
           - {label: "Martes", name: "martes", widget: "string"}
@@ -23,6 +23,17 @@ collections:
           - {label: "Viernes", name: "viernes", widget: "string"}
           - {label: "Sabado", name: "sabado", widget: "string"}
           - {label: "Domingo", name: "domingo", widget: "string"}
+      - file: "src/pages/empresa/contact-info.md"
+        label: "Datos de contacto"
+        name: "contact-info"
+        preview: false
+        fields:
+          - {label: "ContactInfo", name: "widgets", widget: "hidden", default: "ContactInfo"}
+          - {label: "Titulo", name: "titulo", widget: "string"}
+          - {label: "Dirección", name: "direccion", widget: "string"}
+          - {label: "Teléfono", name: "telefono", widget: "string"}
+          - {label: "Móvil", name: "movil", widget: "string"}
+          - {label: "Correo electrónico", name: "correo", widget: "string"}         
   - name: "blog"
     label: "Blog"
     folder: "src/pages/blog"

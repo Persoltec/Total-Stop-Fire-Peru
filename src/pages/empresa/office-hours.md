@@ -1,5 +1,5 @@
 ---
-widgets: BusinessHours
+widgets: OfficeHours
 titulo: Horario de oficina
 lunes: '08:00 AM - 6:00 PM'
 martes: '08:00 AM - 6:00 PM'

@@ -2,7 +2,7 @@ import React from "react";
 import { StaticQuery, graphql } from "gatsby";
 import { List } from "antd";
 
-class BusinessHours extends React.Component {
+class OfficeHours extends React.Component {
   render() {
     // const { ...props } = this.props;
     // const {isMobile   } = props;
@@ -13,7 +13,7 @@ class BusinessHours extends React.Component {
         query={graphql`
           query {
             allMarkdownRemark(
-              filter: { frontmatter: { widgets: { eq: "BusinessHours" } } }
+              filter: { frontmatter: { widgets: { eq: "OfficeHours" } } }
             ) {
               edges {
                 node {
@@ -35,7 +35,7 @@ class BusinessHours extends React.Component {
         render={data => (
           <div>
             {data.allMarkdownRemark.edges.map((edge, index) => (
-              <List className="widget-business-hours" itemLayout="horizontal">
+              <List className="widget-office-hours" itemLayout="horizontal">
                 <List.Item>
                   <List.Item.Meta title="Lunes" />
                   <div class="hour">{edge.node.frontmatter.lunes}</div>
@@ -79,4 +79,4 @@ class BusinessHours extends React.Component {
   }
 }
 
-export default BusinessHours;
+export default OfficeHours;
