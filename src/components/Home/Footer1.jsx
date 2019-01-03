@@ -5,9 +5,9 @@ import QueueAnim from 'rc-queue-anim';
 import { Row, Col,List,Avatar   } from 'antd';
 import MapInfo from '../../img/MapInfo.png'
 import Personal from '../../img/personal.png'
-import BusinessHours from '../widgets/BusinessHours/BusinessHours'
+import BusinessHours from '../widgets/BusinessHours/BusinessHours.jsx'
 
-
+ 
 const info = [
   {
     title: 'Dirección',
