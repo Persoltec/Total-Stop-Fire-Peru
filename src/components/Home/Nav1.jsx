@@ -62,7 +62,9 @@ class Header extends React.Component {
             }}
             className='header1-logo' 
           >
+          <Link to ="/">
             <img width="160px" src={logo} alt="img" />
+            </Link >
           </TweenOne>
 
           {isMobile && (
@@ -101,7 +103,7 @@ class Header extends React.Component {
   </Item>
 
  <Item>
-        <Link to="/" >Productos</Link> 
+        <Link to="products" >Productos</Link> 
   </Item>
 
  <Item>

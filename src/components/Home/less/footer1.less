@@ -1,33 +1,48 @@
-
-.ant-list.contact-info-widget{
-    background-repeat: no-repeat;
-    background-size: contain;
-    background-position: left;
-
-
-.ant-avatar-icon{
-      font-size: 18px;
+@template-footer-text-color: fade (white, 80);
+.widget-business-hours {
+  .ant-list-item-meta-title {
+    color: @template-footer-text-color;
+  }
+  .hour {
+    color: @primary-color;
+    font-weight: 500;
+  }
+  .ant-list-item {
+    border-bottom: none;
+    padding: 8px 20px;
+    &:nth-child(odd) {
+      background: #222c42;
+    }
+    .ant-list-item-meta-title {
+      margin-bottom: 0px;
+      line-height: inherit;
+      font-weight: normal;
+    }
+  }
 }
-.ant-list-item{
-      border-bottom: none;
-      padding: 6px 0;
+.widget-contact-info {
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: left;
+  .ant-avatar-icon {
+    font-size: 18px;
+  }
+  .ant-list-item {
+    border-bottom: none;
+    padding: 6px 0;
+  }
+  .ant-avatar {
+    color: @template-footer-text-color;
+    background: transparent;
+    border: 1px solid fade(@primary-color, 60);
+  }
+  .ant-list-item-meta-title {
+    color: @primary-color;
+  }
+  .ant-list-item-meta-description {
+    color: @template-footer-text-color;
+  }
 }
-.ant-avatar{
-  color: @template-footer-text-color;
-  background:transparent;
-  border: 1px solid fade(@primary-color, 60);
-}
-.ant-list-item-meta-title {
-    color:  @primary-color;
-}
-.ant-list-item-meta-description{
-  color: @template-footer-text-color;
-}
-
-} 
-
-
-
 .footer1-wrapper {
   background: @template-bg-color;
   overflow: hidden;
@@ -36,7 +51,7 @@
   color: @template-footer-text-color;
   .footer1 {
     .home-page {
-      padding: 64px 24px 80px;
+      padding: 64px 24px 0px;
     }
     .block {
       padding: 0 32px;
@@ -70,17 +85,18 @@
       overflow: hidden;
     }
     .copyright {
-      height: 100px;
+      height: 80px;
       text-align: right;
       line-height: 80px;
       float: right;
     }
   }
 }
-
 @media screen and (max-width: 767px) {
   .footer1 {
-    height: 550px;
+    .copyright-wrapper {
+      margin-top: 30px;
+    }
     >ul {
       width: 90%;
       margin: 20px auto 0;

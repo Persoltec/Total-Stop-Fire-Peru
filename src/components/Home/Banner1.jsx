@@ -5,7 +5,7 @@ import QueueAnim from 'rc-queue-anim';
 import TweenOne, { TweenOneGroup } from 'rc-tween-one';
 import BannerAnim, { Element } from 'rc-banner-anim';
 import ScrollElement from 'rc-scroll-anim/lib/ScrollElement';
-
+//import Texty from 'rc-texty';
 import ScrollAnim from 'rc-scroll-anim';
 
 
@@ -29,8 +29,7 @@ BannerAnim= {
         bg: { className: 'bg bg0' },
         title: {
           className: 'banner1-title',
-          children:
-            'https://zos.alipayobjects.com/rmsportal/HqnZZjBjWRbjyMr.png',
+          children:'fsdfdsfdsfds',
         },
         content: {
           className: 'banner1-content',
@@ -46,7 +45,7 @@ BannerAnim= {
         title: {
           className: 'banner1-title',
           children:
-            'https://zos.alipayobjects.com/rmsportal/HqnZZjBjWRbjyMr.png',
+            'dffffffffffffffffffffffffffff',
         },
         content: {
           className: 'banner1-content',
