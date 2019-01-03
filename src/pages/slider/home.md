@@ -1,4 +1,5 @@
 ---
+slider: SliderHome
 pagina:
   - descripcion: Venta y recarga de extintores nacionales e importados.
     image: /img/slider-inicio-1.jpg
