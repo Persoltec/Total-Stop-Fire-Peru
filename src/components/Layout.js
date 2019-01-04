@@ -6,6 +6,8 @@ import { enquireScreen } from 'enquire-js';
 
 import Footer from './layout/Footer/Footer';
 import Header from './layout/Header/Header';
+import Slider from './slider/Slider';
+
 
 import '../style.less';
 
@@ -44,6 +46,7 @@ class Layout extends React.PureComponent {
         isMobile={this.state.isMobile}
 
         />
+        <Slider/>
        <BackTop />
        {children}
        <Footer

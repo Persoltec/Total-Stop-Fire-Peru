@@ -99,7 +99,7 @@ class Header extends React.Component {
   </Item>
 
  <Item>
-        <Link to="/" >Nosotros</Link>
+        <Link to="about" >Nosotros</Link>
   </Item>
 
  <Item>
