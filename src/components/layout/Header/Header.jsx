@@ -1,10 +1,10 @@
-import React from 'react';
-import { findDOMNode } from 'react-dom';
-import TweenOne from 'rc-tween-one';
+import React from "react";
+import { findDOMNode } from "react-dom";
+import TweenOne from "rc-tween-one";
 //import classNames from 'classnames';
-import { Divider ,Button ,Menu } from 'antd';
-import logo from '../../../img/logo.svg'
-import { Link } from 'gatsby'
+import { Divider, Button, Menu } from "antd";
+import logo from "../../../img/logo.svg";
+import { Link } from "gatsby";
 const { Item } = Menu;
 
 class Header extends React.Component {
@@ -12,7 +12,7 @@ class Header extends React.Component {
     super(props);
     this.state = {
       phoneOpen: false,
-      menuHeight: 0,
+      menuHeight: 0
     };
   }
 
@@ -21,19 +21,18 @@ class Header extends React.Component {
     const phoneOpen = !this.state.phoneOpen;
     this.setState({
       phoneOpen,
-      menuHeight: phoneOpen ? menu.scrollHeight : 0,
+      menuHeight: phoneOpen ? menu.scrollHeight : 0
     });
   };
 
   render() {
     const { ...props } = this.props;
-    const {isMobile   } = props;
+    const { isMobile } = props;
 
     delete props.isMobile;
     delete props.isFirstScreen;
     const { menuHeight, phoneOpen } = this.state;
-    
- 
+
     // const headerClassName = classNames({
     //   clearfix: true,
     //   'home-nav-white': !isFirstScreen,
@@ -41,35 +40,32 @@ class Header extends React.Component {
 
     return (
       <TweenOne
-      
         component="header"
-        animation={{ opacity: 0, type: 'from' }}
-        className= 'header1 home-page-wrapper'
-       
+        animation={{ opacity: 0, type: "from" }}
+        className="header1 home-page-wrapper"
       >
-
         <div
-            
-          className={`${'home-page jqauf4uk7uk-editor_css'}${phoneOpen ? ' open' : ''}`}
-
+          className={`${"home-page jqauf4uk7uk-editor_css"}${
+            phoneOpen ? " open" : ""
+          }`}
         >
           <TweenOne
             animation={{
               x: -30,
               delay: 100,
-              type: 'from',
-              ease: 'easeOutQuad',
+              type: "from",
+              ease: "easeOutQuad"
             }}
-            className='header1-logo' 
+            className="header1-logo"
           >
-          <Link to ="/">
-            <img width="160px" src={logo} alt="img" />
-            </Link >
+            <Link to="/">
+              <img width="160px" src={logo} alt="img" />
+            </Link>
           </TweenOne>
 
           {isMobile && (
             <div
-               className= 'header1-mobile-menu'
+              className="header1-mobile-menu"
               onClick={() => {
                 this.phoneClick();
               }}
@@ -80,47 +76,46 @@ class Header extends React.Component {
             </div>
           )}
           <TweenOne
-            className= 'header1-menu'
-            animation={{ x: 30, type: 'from', ease: 'easeOutQuad' }}
-            ref={(c) => {
+            className="header1-menu"
+            animation={{ x: 30, type: "from", ease: "easeOutQuad" }}
+            ref={c => {
               this.menu = c;
             }}
-            style={isMobile ? { height: menuHeight  } : null}
+            style={isMobile ? { height: menuHeight } : null}
           >
             <Menu
-              mode={isMobile ? 'inline' : 'horizontal'}
-              defaultSelectedKeys={['0']}
-              theme={isMobile ? 'dark' : 'default'}
+              mode={isMobile ? "inline" : "horizontal"}
+              defaultSelectedKeys={["0"]}
+              theme={isMobile ? "dark" : "default"}
             >
-              
+              <Item>
+                <Link to="/">Inicio</Link>
+              </Item>
 
-  <Item>
-        <Link to="/" >Inicio</Link>
-  </Item>
+              <Item>
+                <Link to="about">Nosotros</Link>
+              </Item>
 
- <Item>
-        <Link to="about" >Nosotros</Link>
-  </Item>
+              <Item>
+                <Link to="products">Productos</Link>
+              </Item>
 
- <Item>
-        <Link to="products" >Productos</Link> 
-  </Item>
+              <Item>
+                <Link to="/">Servicios</Link>
+              </Item>
+              <Item>
+                <Link>Blog</Link>
+              </Item>
+              {!isMobile && (
+                <span className="escribenos">
+                  <Divider type="vertical" />
 
- <Item>
-        <Link to="/" >Servicios</Link>
-  </Item>
- <Item>
-        <Link>Blog</Link>
-  </Item>
-
- <span className="escribenos">
-        <Divider type="vertical" />
-
-        <Button type="primary" icon="phone" >Contáctenos</Button>
-      </span>
-
+                  <Button type="primary" icon="phone">
+                    Contáctenos
+                  </Button>
+                </span>
+              )}
             </Menu>
-            
           </TweenOne>
         </div>
       </TweenOne>

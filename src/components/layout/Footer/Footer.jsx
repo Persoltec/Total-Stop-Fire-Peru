@@ -67,10 +67,12 @@ class Footer extends React.Component {
           >
             <div className="home-page">
               <div className="copyright">
+                {!isMobile && (
                 <span>
                   ©2019 <a href="https://totalstopfireperu.com">Total Stop</a>{" "}
                   Todos los derechos reservados{" "}
                 </span>
+                )}
                 <SocialLinks />
               </div>
             </div>
