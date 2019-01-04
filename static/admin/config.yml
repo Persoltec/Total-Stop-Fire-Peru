@@ -34,13 +34,13 @@ collections:
           - {label: "Teléfono", name: "telefono", widget: "string"}
           - {label: "Móvil", name: "movil", widget: "string"}
           - {label: "Correo electrónico", name: "correo", widget: "string"}         
-- file: "src/pages/empresa/social-links.md"
+      - file: "src/pages/empresa/social-links.md"
         label: "Datos de contacto"
         name: "social-links"
         preview: false
         fields:
           - {label: "SocialLinks", name: "social", widget: "hidden", default: "SocialLinks"}
-          - {label: "Red Social", name: "social", widget: "list", fields: [{label: "Tipo", name: "tipo", widget: "select", options: ["Facebook", "Google+", "Youtube","Instagram","Twitter"]},{label: "Dirreción", name: "direccion", widget: "string"}]}
+          - {label: "Red Social", name: "redsocial", widget: "list", fields: [{label: "Tipo", name: "tipo", widget: "select", options: ["Facebook", "Google+", "Youtube","Instagram","Twitter"]},{label: "Dirreción", name: "direccion", widget: "string"}]}          
   - name: "slider"
     label: "Portada"
     files:
