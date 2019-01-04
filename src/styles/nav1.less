@@ -1,13 +1,11 @@
 @header: header1;
 @header-height: 80px;
 .@{header} {
-   position: fixed;
+  position: fixed;
   z-index: 999;
   background: rgba(0, 0, 0, 0.25);
   border-bottom: 1px solid transparent;
   transition: border .5s cubic-bezier(0.455, 0.03, 0.515, 0.955), background .5s cubic-bezier(0.455, 0.03, 0.515, 0.955);
-   
-  padding: 0 48px;
   width: 100%;
   .home-page {
     padding: 0 24px;
@@ -29,7 +27,6 @@
   &-menu {
     float: right;
     >.ant-menu {
-
       font-size: 12px;
       font-weight: 500;
       text-transform: uppercase;
@@ -45,27 +42,25 @@
           color: @primary-color;
         }
       }
-      .ant-menu-item{
-      border:none;
-      top: 0px;
-      margin-top: 0px;
+      .ant-menu-item {
+        border: none;
+        top: 0px;
+        margin-top: 0px;
       }
     }
     .escribenos {
-       .ant-divider {
-          height: 100%;
-          background: fade(@line-color, 5);
-          margin-right: 30px;
-          margin-left: 20px;
-        }
-       
+      .ant-divider {
+        height: 100%;
+        background: fade(@line-color, 5);
+        margin-right: 30px;
+        margin-left: 20px;
+      }
     }
   }
   .ant-menu-item-selected a {
     color: @primary-color;
   }
 }
-
 @media screen and (max-width: 767px) {
   .@{header} {
     &-logo {
