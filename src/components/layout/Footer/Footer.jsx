@@ -3,10 +3,10 @@ import TweenOne from 'rc-tween-one';
 import OverPack from 'rc-scroll-anim/lib/ScrollOverPack';
 import QueueAnim from 'rc-queue-anim';
 import { Row, Col,List,Avatar   } from 'antd';
-import MapInfo from '../../img/MapInfo.png'
-import Personal from '../../img/personal.png'
-import OfficeHours from '../widgets/OfficeHours/OfficeHours.jsx'
-import ContactInfo from '../widgets/ContactInfo/ContactInfo.jsx'
+import MapInfo from '../../../img/MapInfo.png'
+import Personal from '../../../img/personal.png'
+import OfficeHours from '../../widgets/OfficeHours/OfficeHours.jsx'
+import ContactInfo from '../../widgets/ContactInfo/ContactInfo.jsx'
 
  
 class Footer extends React.Component {

@@ -3,7 +3,7 @@ import { findDOMNode } from 'react-dom';
 import TweenOne from 'rc-tween-one';
 //import classNames from 'classnames';
 import { Divider ,Button ,Menu } from 'antd';
-import logo from '../../img/logo.svg'
+import logo from '../../../img/logo.svg'
 import { Link } from 'gatsby'
 const { Item } = Menu;
 

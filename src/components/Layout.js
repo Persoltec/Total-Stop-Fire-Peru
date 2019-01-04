@@ -4,10 +4,10 @@ import React from 'react'
 import { BackTop } from 'antd';
 import { enquireScreen } from 'enquire-js';
 
-import Footer from './layout/Footer';
-import Header from './layout/Header';
+import Footer from './layout/Footer/Footer';
+import Header from './layout/Header/Header';
 
-import '../styles/antMotionStyle.less';
+import '../style.less';
 
 import 'typeface-roboto' 
 
