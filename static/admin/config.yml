@@ -51,9 +51,9 @@ collections:
         fields:
           - {label: "SliderHome", name: "slider", widget: "hidden", default: "SliderHome"}
           - {label: "Pagina", name: "pagina", widget: "list", fields: [{label: "Titulo", name: "titulo", widget: "string"},{label: "Descripción", name: "descripcion", widget: "text"},{label: Imagen, name: image, widget: image} ]}
-  - name: "brandproducts"
+  - name: "brand"
     label: "Marca de productos"
-    folder: "src/pages/brand-products"
+    folder: "src/pages/brandproducts"
     create: true
     slug: "{{slug}}"
     fields:
