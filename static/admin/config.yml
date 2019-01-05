@@ -60,7 +60,7 @@ collections:
     fields:
       - {label: "Template Key", name: "templateKey", widget: "hidden", default: "brand-products"}
       - {label: "Código", name: "codigo", widget: "string"}
-      - {label: "Titulo", name: "titulo", widget: "string"}
+      - {label: "Titulo", name: "title", widget: "string"}
       - {label: Imagen, name: Imagen, widget: image}
       - {label: "Body", name: "body", widget: "markdown"}
   - name: "blog"
