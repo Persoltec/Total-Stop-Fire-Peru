@@ -78,7 +78,7 @@ collections:
   - name: "pages"
     label: "Pages"
     files:
-      - file: "src/pages/nosotros/index.md"
+      - file: "src/pages/paginas/nosotros/index.md"
         label: "Nosotros"
         name: "nosotros"
         fields:
@@ -86,7 +86,7 @@ collections:
           - {label: "Title", name: "title", widget: "string"}
           - {label: "Portada", name: "portada", widget: image}
           - {label: "Body", name: "body", widget: "markdown"}
-      - file: "src/pages/servicios/index.md"
+      - file: "src/pages/paginas/servicios/index.md"
         label: "Servicios"
         name: "servicios"
         fields:
@@ -94,7 +94,7 @@ collections:
           - {label: Title, name: title, widget: string}
           - {label: "Portada", name: "portada", widget: image}
           - {label: "Body", name: "body", widget: "markdown"}
-      - file: "src/pages/productos/index.md"
+      - file: "src/pages/paginas/productos/index.md"
         label: "Productos"
         name: "productos"
         fields:
