@@ -36,7 +36,7 @@ export const BrandProductsTemplate = ({
   );
 };
 
-ServicePostTemplate.propTypes = {
+BrandProductsTemplate.propTypes = {
   content: PropTypes.node.isRequired,
   contentComponent: PropTypes.func,
   descripcion: PropTypes.string,
