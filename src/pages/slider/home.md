@@ -2,10 +2,10 @@
 slider: SliderHome
 pagina:
   - descripcion: Venta y recarga de extintores nacionales e importados.
-    image: /img/slider-inicio-1.jpg
+    imagen: /img/slider-inicio-1.jpg
     titulo: EXTINTORES Y SERVICIOS GENERALES
   - descripcion: gsdgsdgsdg
-    image: /img/chemex.jpg
+    imagen: /img/chemex.jpg
     titulo: dstfgsdgsdgsd
 ---
 

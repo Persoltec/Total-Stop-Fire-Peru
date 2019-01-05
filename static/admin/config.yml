@@ -50,7 +50,7 @@ collections:
         preview: false
         fields:
           - {label: "SliderHome", name: "slider", widget: "hidden", default: "SliderHome"}
-          - {label: "Pagina", name: "pagina", widget: "list", fields: [{label: "Titulo", name: "titulo", widget: "string"},{label: "Descripción", name: "descripcion", widget: "text"},{label: Imagen, name: image, widget: image} ]} 
+          - {label: "Pagina", name: "pagina", widget: "list", fields: [{label: "Titulo", name: "titulo", widget: "string"},{label: "Descripción", name: "descripcion", widget: "text"},{label: Imagen, name: imagen, widget: image} ]} 
   - name: "brand"
     label: "Marca de productos"
     folder: "src/pages/brand-products"
@@ -61,7 +61,7 @@ collections:
       - {label: "Template Key", name: "templateKey", widget: "hidden", default: "brand-products"}
       - {label: "Código", name: "codigo", widget: "string"}
       - {label: "Titulo", name: "titulo", widget: "string"}
-      - {label: Image, name: image, widget: image}
+      - {label: Imagen, name: Imagen, widget: image}
       - {label: "Descripción", name: "descripcion", widget: "text"}
       - {label: "Body", name: "body", widget: "markdown"}
   - name: "blog"

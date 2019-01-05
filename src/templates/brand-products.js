@@ -25,7 +25,7 @@ export const BrandProductsTemplate = ({
           <div className="columns">
             <div className="column is-10 is-offset-1">
               <h1 className=" ">{titulo}</h1>
-              <Img fluid={imagen.childImageSharp.fluid} />
+               
               <p>{descripcion}</p>
               <PostContent content={content} />
             </div>
