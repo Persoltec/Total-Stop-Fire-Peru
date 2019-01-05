@@ -75,16 +75,48 @@ if(String(edge.node.frontmatter.templateKey)!='null'){
   })
 }
 
+
+function slugify(string) {
+    const a = 'àáäâãåèéëêìíïîòóöôùúüûñçßÿœæŕśńṕẃǵǹḿǘẍźḧ·/_,:;'
+    const b = 'aaaaaaeeeeiiiioooouuuuncsyoarsnpwgnmuxzh------'
+    const p = new RegExp(a.split('').join('|'), 'g')
+
+    return string.toString().toLowerCase()
+        .replace(/\s+/g, '-') // Replace spaces with -
+        .replace(p, c => b.charAt(a.indexOf(c))) // Replace special characters
+        .replace(/&/g, '-and-') // Replace & with 'and'
+        .replace(/[^\w\-]+/g, '') // Remove all non-word characters
+        .replace(/\-\-+/g, '-') // Replace multiple - with single -
+        .replace(/^-+/, '') // Trim - from start of text
+        .replace(/-+$/, '') // Trim - from end of text
+}
+
+
 exports.onCreateNode = ({ node, actions, getNode }) => {
   const { createNodeField } = actions
   fmImagesToRelative(node) // convert image paths for gatsby images
-
+  
+  let slug;
+  
   if (node.internal.type === `MarkdownRemark`) {
-    const value = createFilePath({ node, getNode })
+    //const value = createFilePath({ node, getNode })
+
+    const filePath = createFilePath({ node, getNode })
+   
+ 
+if (~filePath.indexOf('paginas')) {
+  slug = `/${slugify(node.frontmatter.title)}`
+}else if(~filePath.indexOf('blog')){
+   slug = `/blog/${slugify(node.frontmatter.title)}` 
+}else{
+  slug=slugify(filePath)
+}
+
+
     createNodeField({
       name: `slug`,
       node,
-      value,
+      value: slug,
     })
   }
 }
