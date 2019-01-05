@@ -1,0 +1,39 @@
+.title-header {
+  padding-top: 80px;
+  position: relative;
+  p {
+    font-size: 16px;
+    color: @template-text-color-light;
+  }
+  h1 {
+    font-size: 40px;
+    color: @template-text-color-light;
+  }
+  &::after {
+    background-image: url('data:image/svg+xml,%3Csvg version=%221.1%22 xmlns=%22http://www.w3.org/2000/svg%22 x=%220%22 y=%220%22 viewBox=%220 0 1800 26%22 preserveAspectRatio=%22none%22%3E    %3Cpath fill=%22%23fff%22 d=%22M900,19.8C594.4,19.8,293.9,13.1,0,0v26h1800V0C1506.1,13.1,1205.6,19.8,900,19.8z%22/%3E    %3C/svg%3E');
+    margin-top: -1.625rem;
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    content: '';
+    display: block;
+    height: 1.625rem;
+    pointer-events: none;
+    position: absolute;
+    width: 100%;
+    z-index: 10;
+  }
+  .banner-text {
+    text-align: center;
+    padding: 80px 80px 80px 80px;
+  }
+  .bottom-icon {
+    bottom: 20px;
+    font-size: 24px;
+    position: absolute;
+    z-index: 10;
+    left: 50%;
+    margin-left: -12px;
+    color: @template-text-color-light;
+  }
+}

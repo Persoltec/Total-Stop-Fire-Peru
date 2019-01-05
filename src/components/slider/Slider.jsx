@@ -73,7 +73,7 @@ class Slider extends React.PureComponent {
                         backgroundSize: "cover",
                         backgroundPosition: "center"
                       }}
-                    />
+                    /> 
                  
 
                     <QueueAnim

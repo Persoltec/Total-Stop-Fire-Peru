@@ -6,6 +6,7 @@ import { enquireScreen } from 'enquire-js';
 
 import Footer from './layout/Footer/Footer';
 import Header from './layout/Header/Header';
+import Title from './layout/Title/Title';
 import Slider from './slider/Slider';
 
 
@@ -38,6 +39,8 @@ class Layout extends React.PureComponent {
 
   render() {
     const children = this.props.children
+    const inicio = this.props.inicio
+
     return (
        <div>
        <Header
@@ -46,12 +49,20 @@ class Layout extends React.PureComponent {
         isMobile={this.state.isMobile}
 
         />
-        <Slider/>
-       <BackTop />
+
+
+ {!inicio && (
+        <Title/>
+          )}
+
+
+       
+       
        {children}
        <Footer
         isMobile={this.state.isMobile}
        />
+       <BackTop />
        </div>
     );
   }

@@ -3,8 +3,9 @@ import { findDOMNode } from "react-dom";
 import TweenOne from "rc-tween-one";
 //import classNames from 'classnames';
 import { Divider, Button, Menu } from "antd";
-import logo from "../../../img/logo.svg";
 import { Link } from "gatsby";
+import Logo from "../Logo/Logo.jsx";
+
 const { Item } = Menu;
 
 class Header extends React.Component {
@@ -58,9 +59,7 @@ class Header extends React.Component {
             }}
             className="header1-logo"
           >
-            <Link to="/">
-              <img width="160px" src={logo} alt="img" />
-            </Link>
+           <Logo isMobile={isMobile}/>
           </TweenOne>
 
           {isMobile && (
