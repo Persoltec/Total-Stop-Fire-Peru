@@ -69,7 +69,7 @@ class Slider extends React.PureComponent {
                       key="bg"
                       className="bg"
                       style={{
-                        backgroundImage:`url(${item.image.childImageSharp.fluid.src})` ,
+                        backgroundImage:`url(${item.imagen.childImageSharp.fluid.src})` ,
                         backgroundSize: "cover",
                         backgroundPosition: "center"
                       }}
