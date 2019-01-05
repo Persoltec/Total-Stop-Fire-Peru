@@ -1,6 +1,6 @@
 ---
 templateKey: 'default-page'
-path: /about
+path: /pagina/productos
 title: About our values
 ---
 ### Shade-grown coffee
