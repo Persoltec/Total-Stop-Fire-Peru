@@ -92,15 +92,15 @@ class Header extends React.Component {
               </Item>
 
               <Item>
-                <Link to="about">Nosotros</Link>
+                <Link to="nosotros">Nosotros</Link>
               </Item>
 
               <Item>
-                <Link to="products">Productos</Link>
+                <Link to="productos">Productos</Link>
               </Item>
 
               <Item>
-                <Link to="/">Servicios</Link>
+                <Link to="servicios">Servicios</Link>
               </Item>
               <Item>
                 <Link>Blog</Link>
