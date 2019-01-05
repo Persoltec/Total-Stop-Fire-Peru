@@ -28,7 +28,7 @@ class Slider extends React.PureComponent {
                     pagina {
                       titulo
                       descripcion
-                      image {
+                      imagen {
                         childImageSharp {
                           fluid(
                             maxWidth: 800
