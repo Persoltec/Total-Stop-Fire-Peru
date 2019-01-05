@@ -83,8 +83,8 @@ class Slider extends React.PureComponent {
                       className="banner1-text-wrapper"
                     >
                       <div key="logo" className="banner1-title">
-                        {item.titulo}
-                    
+                        {item.titulo.toString().toUpperCase()}
+                     
                       </div>
                       <div key="content" className="banner1-content">
                         {item.descripcion}
