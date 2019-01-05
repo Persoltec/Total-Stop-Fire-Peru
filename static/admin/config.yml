@@ -51,7 +51,7 @@ collections:
         fields:
           - {label: "SliderHome", name: "slider", widget: "hidden", default: "SliderHome"}
           - {label: "Pagina", name: "pagina", widget: "list", fields: [{label: "Titulo", name: "titulo", widget: "string"},{label: "Descripción", name: "descripcion", widget: "text"},{label: Imagen, name: image, widget: image} ]}
-  - name: "Brand-products"
+  - name: "brandproducts"
     label: "Marca de productos"
     folder: "src/pages/brand-products"
     create: true
