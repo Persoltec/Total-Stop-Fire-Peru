@@ -58,7 +58,7 @@ class Header extends React.Component {
               ease: "easeOutQuad"
             }}
             className="header1-logo"
-          >
+          > 
            <Logo isMobile={isMobile}/>
           </TweenOne>
 
