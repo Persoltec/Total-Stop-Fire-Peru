@@ -6,8 +6,6 @@ media_folder: static/img
 public_folder: /img
 logo_url: https://totalstopfireperu/img/logo.svg
 
-
-
 collections: 
   - name: 'Empresa'
     label: 'empresa'
