@@ -9,7 +9,7 @@ logo_url: https://totalstopfireperu/img/logo.svg
 collections: 
   - name: 'Empresa'
     label: 'empresa'
-    delete: false # Prevent users from deleting documents in this collection
+    delete: false
     editor:
       preview: false
     files:
@@ -39,3 +39,35 @@ collections:
           - {label: 'Teléfono', name: 'telefono', widget: 'string'}
           - {label: 'Móvil', name: 'movil', widget: 'string'}
           - {label: 'Correo electrónico', name: 'correo', widget: 'string'}         
+
+      - file: "src/pages/empresa/social-links.md"
+        label: "Redes Sociales"
+        name: "social-links"
+        description: 'Datos de contacto'
+        fields:
+          - {label: "SocialLinks", name: "social", widget: "hidden", default: "SocialLinks"}
+          - label: "Red Social"
+            name: redsocial
+            widget: list
+            fields:
+              - {label: Tipo, name: tipo, widget: select , options: ["Facebook", "Google-Plus", "Youtube","Instagram","Twitter","Skype"]}
+              - {label: "Dirreción", name: direccion, widget: string}
+
+  - name: "slider"
+    label: "Portada"
+    delete: false
+    editor:
+      preview: false
+    files:
+      - file: "src/pages/slider/home.md"
+        label: "Inicio"
+        name: "slider-home"
+        fields:
+          - {label: "SliderHome", name: "slider", widget: "hidden", default: "SliderHome"}
+          - label: Pagina
+            name: pagina
+            widget: list
+            fields:
+              - {label: Titulo, name: titulo, widget: string}
+              - {label: "Descripción", name: "descripcion", widget: "text"}
+              - {label: Imagen, name: imagen, widget: image}              
