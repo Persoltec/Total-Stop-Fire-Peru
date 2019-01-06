@@ -13,9 +13,9 @@ collections:
     editor:
       preview: false
     files:
-      - name: 'office-hours'
+      - file: 'src/pages/empresa/office-hours.md'
+        name: 'office-hours'
         label: 'Horario de oficina'
-        file: 'src/pages/empresa/office-hours.md'
         description: 'Horario de oficina'
         fields:
           - {label: 'OfficeHours', name: 'widgets', widget: 'hidden', default: 'OfficeHours'}
@@ -28,9 +28,9 @@ collections:
           - {label: 'Sabado', name: 'sabado', widget: 'string'}
           - {label: 'Domingo', name: 'domingo', widget: 'string'}
 
-      - name: 'contact-info'
-        label: 'Datos de contacto'
       - file: 'src/pages/empresa/contact-info.md'
+        name: 'contact-info'
+        label: 'Datos de contacto'
         description: 'Datos de contacto'
         fields:
           - {label: 'ContactInfo', name: 'widgets', widget: 'hidden', default: 'ContactInfo'}
