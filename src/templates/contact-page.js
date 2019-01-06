@@ -4,14 +4,14 @@ import { graphql } from 'gatsby'
 import Layout from '../components/Layout'
 import Content, { HTMLContent } from '../components/Content'
 
-export const DefaultPageTemplate = ({ title, content, contentComponent }) => {
+export const ContactPageTemplate = ({ title, content, contentComponent }) => {
   const PageContent = contentComponent || Content
 
   return (
     <section className="home-page-wrapper ">
       <div className="home-page">
          
-              
+              locasooo
               <PageContent className="content" content={content} />
           
       </div>
@@ -19,18 +19,18 @@ export const DefaultPageTemplate = ({ title, content, contentComponent }) => {
   )
 }
 
-DefaultPageTemplate.propTypes = {
+ContactPageTemplate.propTypes = {
   title: PropTypes.string.isRequired,
   content: PropTypes.string,
   contentComponent: PropTypes.func,
 }
 
-const DefaultPage = ({ data }) => {
+const ContactPage = ({ data }) => {
   const { markdownRemark: post } = data
 
   return (
     <Layout titulo={post.frontmatter.title}>
-      <DefaultPageTemplate
+      <ContactPageTemplate
         contentComponent={HTMLContent}
         title={post.frontmatter.title}
         content={post.html}
@@ -39,14 +39,14 @@ const DefaultPage = ({ data }) => {
   )
 }
 
-DefaultPage.propTypes = {
+ContactPage.propTypes = {
   data: PropTypes.object.isRequired,
 }
 
-export default DefaultPage
+export default ContactPage
 
-export const DefaultPageQuery = graphql`
-  query DefaultPage($id: String!) {
+export const ContactPageQuery = graphql`
+  query ContactPage($id: String!) {
     markdownRemark(id: { eq: $id }) {
       html
       frontmatter {
