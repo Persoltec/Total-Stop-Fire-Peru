@@ -18,6 +18,16 @@ module.exports = {
         icon: `src/img/icon.png`, // This path is relative to the root of the site.
       },
     },
+    `gatsby-plugin-offline`,
+    {
+    resolve: `gatsby-plugin-nprogress`,
+    options: {
+      // Setting a color is optional.
+      color: `#f81d22`,
+      // Disable the loading spinner.
+      showSpinner: true,
+    },
+  },
   {
       resolve: 'gatsby-plugin-less',
 

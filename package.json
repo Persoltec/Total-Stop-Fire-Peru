@@ -14,6 +14,8 @@
     "gatsby-plugin-manifest": "^2.0.13",
     "gatsby-plugin-netlify": "^2.0.6",
     "gatsby-plugin-netlify-cms": "^3.0.9",
+    "gatsby-plugin-nprogress": "^2.0.7",
+    "gatsby-plugin-offline": "^2.0.21",
     "gatsby-plugin-page-creator": "^2.0.5",
     "gatsby-plugin-purgecss": "^2.4.0",
     "gatsby-plugin-react-helmet": "^3.0.4",
