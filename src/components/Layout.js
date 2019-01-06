@@ -40,6 +40,7 @@ class Layout extends React.PureComponent {
   render() {
     const children = this.props.children
     const inicio = this.props.inicio
+    const titulo = this.props.titulo
 
     return (
        <div>
@@ -52,7 +53,7 @@ class Layout extends React.PureComponent {
 
 
  {!inicio && (
-        <Title/>
+        <Title titulo={titulo}/>
           )}
 
 

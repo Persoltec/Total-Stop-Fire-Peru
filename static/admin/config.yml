@@ -4,7 +4,7 @@ backend:
 
 media_folder: static/img
 public_folder: /img
-logo_url: https://totalstopfireperu/img/logo.svg
+logo_url: https://totalstopfireperu/img/logo.png
 collections: 
   - name: "empresa"
     label: "Empresa"
@@ -61,7 +61,7 @@ collections:
       - {label: "Template Key", name: "templateKey", widget: "hidden", default: "brand-products"}
       - {label: "Código", name: "codigo", widget: "string"}
       - {label: "Titulo", name: "title", widget: "string"}
-      - {label: Imagen, name: Imagen, widget: image}
+      - {label: Imagen, name: imagen, widget: image}
       - {label: "Body", name: "body", widget: "markdown"}
   - name: "blog"
     label: "Blog"

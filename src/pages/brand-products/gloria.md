@@ -2,6 +2,6 @@
 templateKey: brand-products
 codigo: M0001
 title: Gloria
-Imagen: /img/gloria-logo.png
+imagen: /img/gloria-logo.png
 ---
 **Gloria**

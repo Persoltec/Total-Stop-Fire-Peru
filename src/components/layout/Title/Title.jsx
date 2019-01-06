@@ -12,8 +12,11 @@ class Title extends React.Component {
 
   render() {
     const { ...props } = this.props;
-    const { isMobile } = props;
+    const { isMobile,titulo } = props;
+    
+
     delete props.isMobile;
+    delete props.titulo;
 
     return (
       <div
@@ -24,7 +27,7 @@ class Title extends React.Component {
       >
       
 <div class="banner-text">
-<h1>Payments API</h1>
+<h1>{titulo}</h1>
 <p>Aggregation of all the ne univermplified API.</p>
 </div>
 

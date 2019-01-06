@@ -104,6 +104,8 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
 
     if (~filePath.indexOf("paginas")) {
       slug = `/${slugify(node.frontmatter.title)}`;
+      console.log(filePath)
+      console.log(slug)
     } else if (~filePath.indexOf("blog")) {
       slug = `/blog/${slugify(node.frontmatter.title)}`;
     } else {

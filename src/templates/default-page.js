@@ -35,7 +35,7 @@ const DefaultPage = ({ data }) => {
   const { markdownRemark: post } = data
 
   return (
-    <Layout title={post.frontmatter.title}>
+    <Layout titulo={post.frontmatter.title}>
       <DefaultPageTemplate
         contentComponent={HTMLContent}
         title={post.frontmatter.title}
