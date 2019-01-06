@@ -5,14 +5,14 @@ backend:
 media_folder: static/img
 public_folder: /img
 logo_url: https://totalstopfireperu/img/logo.svg
+
 collections: 
-  - name: "empresa"
-    label: "Empresa"
+  - label: "Empresa"
+    name: "empresa"
     files:
-      - file: "src/pages/empresa/office-hours.md"
-        label: "Horario de oficina"
+      - label: "Horario de oficina"
         name: "office-hours"
-        preview: false
+        file: "src/pages/empresa/office-hours.md"
         fields:
           - {label: "OfficeHours", name: "widgets", widget: "hidden", default: "OfficeHours"}
           - {label: "Titulo", name: "titulo", widget: "string"}
@@ -23,10 +23,9 @@ collections:
           - {label: "Viernes", name: "viernes", widget: "string"}
           - {label: "Sabado", name: "sabado", widget: "string"}
           - {label: "Domingo", name: "domingo", widget: "string"}
-      - file: "src/pages/empresa/contact-info.md"
-        label: "Datos de contacto"
+      - label: "Datos de contacto"
         name: "contact-info"
-        preview: false
+      - file: "src/pages/empresa/contact-info.md"
         fields:
           - {label: "ContactInfo", name: "widgets", widget: "hidden", default: "ContactInfo"}
           - {label: "Titulo", name: "titulo", widget: "string"}
@@ -34,28 +33,36 @@ collections:
           - {label: "Teléfono", name: "telefono", widget: "string"}
           - {label: "Móvil", name: "movil", widget: "string"}
           - {label: "Correo electrónico", name: "correo", widget: "string"}         
-      - file: "src/pages/empresa/social-links.md"
-        label: "Redes Sociales"
+      - label: "Redes Sociales"
         name: "social-links"
-        preview: false
+        file: "src/pages/empresa/social-links.md"
         fields:
           - {label: "SocialLinks", name: "social", widget: "hidden", default: "SocialLinks"}
-          - {label: "Red Social", name: "redsocial", widget: "list", fields: [{label: "Tipo", name: "tipo", widget: "select", options: ["Facebook", "Google-Plus", "Youtube","Instagram","Twitter","Skype"]},{label: "Dirreción", name: "direccion", widget: "string"}]}          
-  - name: "slider"
-    label: "Portada"
+          - label: "Red Social"
+            name: redsocial
+            widget: list
+            fields:
+              - {label: Tipo, name: tipo, widget: select options: ["Facebook", "Google-Plus", "Youtube","Instagram","Twitter","Skype"]}
+              - {label: "Dirreción", name: direccion, widget: string}         
+  - label: "Portada"
+    name: "slider"
     files:
-      - file: "src/pages/slider/home.md"
-        label: "Inicio"
+      - label: "Inicio"
         name: "slider-home"
-        preview: false
+        file: "src/pages/slider/home.md"
         fields:
           - {label: "SliderHome", name: "slider", widget: "hidden", default: "SliderHome"}
-          - {label: "Pagina", name: "pagina", widget: "list", fields: [{label: "Titulo", name: "titulo", widget: "string"},{label: "Descripción", name: "descripcion", widget: "text"},{label: Imagen, name: imagen, widget: image} ]} 
+          - label: Pagina
+            name: pagina
+            widget: list
+            fields:
+              - {label: Titulo, name: titulo, widget: string}
+              - {label: "Descripción", name: "descripcion", widget: "text"}
+              - {label: Imagen, name: imagen, widget: image}
   - name: "brand"
     label: "Marca de productos"
     folder: "src/pages/brand-products"
     create: true
-    preview: false
     slug: "{{slug}}"
     fields:
       - {label: "Template Key", name: "templateKey", widget: "hidden", default: "brand-products"}
