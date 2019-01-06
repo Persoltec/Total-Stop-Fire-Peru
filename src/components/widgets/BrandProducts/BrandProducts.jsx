@@ -56,24 +56,16 @@ class BrandProducts extends React.Component {
         `}
         render={data => (
           <div className="widget-brand-products">
-         
+         <QueueAnim delay={300} className="queue-simple">
             {data.allMarkdownRemark.edges.map((items, i) =>{
 
-
-const delay =  i * 500 ;
-    const liAnim = {
-      y: 30,
-      opacity: 0,
-      type: 'from',
-      ease: 'easeOutQuad',
-      delay,
-    };
+ 
 
             return(
                <React.Fragment>
         
-      <TweenOne component={Col} animation={liAnim} key={i.toString()} >
-        <div >
+      
+        <div  key={i.toString()}  >
           <div className="image-wrapper" >
             <Img 
 style={{ width: '160px' }} 
@@ -84,13 +76,12 @@ fluid={items.node.frontmatter.imagen.childImageSharp.fluid}
 
           
         </div>
-      </TweenOne>
-
+    
 
                 </React.Fragment>)}
 
             )}
-             
+             </QueueAnim>
           </div>
         )} 
       />
