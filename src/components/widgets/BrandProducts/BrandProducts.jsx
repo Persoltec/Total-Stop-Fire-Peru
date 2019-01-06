@@ -65,7 +65,7 @@ class BrandProducts extends React.Component {
                   left: "50%",
                   marginLeft: -165
                 }}
-              >
+              > 
                 {data.allMarkdownRemark.edges.map((items, i) => {
                   return (
                    

@@ -8,7 +8,7 @@ logo_url: https://totalstopfireperu/img/logo.svg
 
 collections: 
   - name: 'Empresa'
-    label: 'empresa'
+    label: 'Empresa'
     delete: false
     editor:
       preview: false
@@ -73,7 +73,7 @@ collections:
               - {label: Imagen, name: imagen, widget: image}
 
   - name: "brand"
-    label: "Marca de productos"
+    label: "Marcas de extintores"
     folder: "src/pages/brand-products"
     create: true
     editor:
@@ -102,7 +102,7 @@ collections:
       - {label: "Tags", name: "tags", widget: "list"}
 
   - name: "pages"
-    label: "Pages"
+    label: "Paginas"
     delete: false
     editor:
       preview: false    
@@ -115,7 +115,7 @@ collections:
           - {label: "Title", name: "title", widget: "string"}
           - {label: "Portada", name: "portada", widget: image}
           - {label: "Body", name: "body", widget: "markdown"}
-          
+
       - file: "src/pages/paginas/servicios/index.md"
         label: "Servicios"
         name: "servicios"
