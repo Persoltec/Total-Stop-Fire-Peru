@@ -42,7 +42,7 @@ collections:
             name: redsocial
             widget: list
             fields:
-              - {label: Tipo, name: tipo, widget: select options: ["Facebook", "Google-Plus", "Youtube","Instagram","Twitter","Skype"]}
+              - {label: Tipo, name: tipo, widget: select , options: ["Facebook", "Google-Plus", "Youtube","Instagram","Twitter","Skype"]}
               - {label: "Dirreción", name: direccion, widget: string}         
   - label: "Portada"
     name: "slider"
