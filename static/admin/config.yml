@@ -9,19 +9,35 @@ logo_url: https://totalstopfireperu/img/logo.svg
 
 
 collections: 
-  - label: "Empresa"
-    name: "empresa"
+  - name: 'Empresa'
+    label: 'empresa'
+    delete: false # Prevent users from deleting documents in this collection
+    editor:
+      preview: false
     files:
-      - label: "Horario de oficina"
-        name: "office-hours"
-        file: "src/pages/empresa/office-hours.md"
+      - name: 'office-hours'
+        label: 'Horario de oficina'
+        file: 'src/pages/empresa/office-hours.md'
+        description: 'Horario de oficina'
         fields:
-          - {label: "OfficeHours", name: "widgets", widget: "hidden", default: "OfficeHours"}
-          - {label: "Titulo", name: "titulo", widget: "string"}
-          - {label: "Lunes", name: "lunes", widget: "string"}
-          - {label: "Martes", name: "martes", widget: "string"}
-          - {label: "Miércoles", name: "miercoles", widget: "string"}
-          - {label: "Jueves", name: "jueves", widget: "string"}
-          - {label: "Viernes", name: "viernes", widget: "string"}
-          - {label: "Sabado", name: "sabado", widget: "string"}
-          - {label: "Domingo", name: "domingo", widget: "string"}
+          - {label: 'OfficeHours', name: 'widgets', widget: 'hidden', default: 'OfficeHours'}
+          - {label: 'Titulo', name: 'titulo', widget: 'string'}
+          - {label: 'Lunes', name: 'lunes', widget: 'string'}
+          - {label: 'Martes', name: 'martes', widget: 'string'}
+          - {label: 'Miércoles', name: 'miercoles', widget: 'string'}
+          - {label: 'Jueves', name: 'jueves', widget: 'string'}
+          - {label: 'Viernes', name: 'viernes', widget: 'string'}
+          - {label: 'Sabado', name: 'sabado', widget: 'string'}
+          - {label: 'Domingo', name: 'domingo', widget: 'string'}
+
+      - name: 'contact-info'
+        label: 'Datos de contacto'
+      - file: 'src/pages/empresa/contact-info.md'
+        description: 'Datos de contacto'
+        fields:
+          - {label: 'ContactInfo', name: 'widgets', widget: 'hidden', default: 'ContactInfo'}
+          - {label: 'Titulo', name: 'titulo', widget: 'string'}
+          - {label: 'Dirección', name: 'direccion', widget: 'string'}
+          - {label: 'Teléfono', name: 'telefono', widget: 'string'}
+          - {label: 'Móvil', name: 'movil', widget: 'string'}
+          - {label: 'Correo electrónico', name: 'correo', widget: 'string'}         
