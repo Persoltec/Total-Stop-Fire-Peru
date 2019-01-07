@@ -26,9 +26,9 @@ class Title extends React.Component {
         }}
       >
       
-<div class="banner-text">
+<div className="banner-text">
 <h1>{titulo}</h1>
-<p>Aggregation of all the ne univermplified API.</p>
+<p className="description">Total Stop - Seguridad contra incendio</p>
   <Breadcrumb>
     <Breadcrumb.Item>
      <Icon type="home" />

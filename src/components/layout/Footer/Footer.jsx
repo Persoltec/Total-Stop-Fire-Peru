@@ -1,4 +1,5 @@
 import React from "react";
+import { StaticQuery, graphql } from "gatsby";
 import TweenOne from "rc-tween-one";
 import OverPack from "rc-scroll-anim/lib/ScrollOverPack";
 import QueueAnim from "rc-queue-anim";
@@ -8,6 +9,7 @@ import Personal from "../../../img/personal.png";
 import OfficeHours from "../../widgets/OfficeHours/OfficeHours.jsx";
 import ContactInfo from "../../widgets/ContactInfo/ContactInfo.jsx";
 import SocialLinks from "../../widgets/SocialLinks/SocialLinks.jsx";
+import Img from "gatsby-image";
 
 class Footer extends React.Component {
   static defaultProps = {
@@ -36,7 +38,49 @@ class Footer extends React.Component {
                 key="block0"
                 className="block"
               >
-                <img src={Personal} alt="img" />
+
+    <StaticQuery
+        query={graphql`
+          query {
+
+personal: file(relativePath: {eq: "personal.png"}) {
+    childImageSharp {
+     fluid(maxWidth: 400, quality: 60) {
+                          base64
+                          tracedSVG
+                          aspectRatio
+                          src
+                          srcSet
+                          srcWebp
+                          srcSetWebp
+                          sizes
+                          originalImg
+                          originalName
+                        }
+    }
+  }
+ 
+          }
+        `}
+        render={data => (
+  
+<Img
+                              style={{ width: "160px", margin: "0 auto" }}
+                              fluid={
+                                data.personal.childImageSharp
+                                  .fluid
+                              }
+                             
+                            />
+
+
+ )}/>
+
+
+
+
+
+                
               </Col>
             )}
 

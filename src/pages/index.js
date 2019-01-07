@@ -3,15 +3,42 @@ import React from "react";
 // import { Link, graphql } from 'gatsby'
 import Layout from "../components/Layout";
 import Slider from "../components/slider/Slider";
+import ContentBlock from "../components/layout/ContentBlock/ContentBlock";
 import BrandProducts from "../components/widgets/BrandProducts/BrandProducts";
+import { enquireScreen } from 'enquire-js';
+
+let isMobile;
+enquireScreen((b) => {
+  isMobile = b;
+});
+
 
 export default class IndexPage extends React.Component {
+
+ constructor(props) {
+    super(props);
+    this.state = {
+      isMobile,
+    };
+  }
+
+ componentDidMount() {
+    // 适配手机屏幕;
+    enquireScreen((b) => {
+      this.setState({ isMobile: !!b });
+    });
+  }
+
+
+
 	render() {
-		return (
+		return ( 
 			<Layout inicio>
 				<Slider />
-				<BrandProducts />
+				
+					<BrandProducts Titulo="Macas Lideres" isMobile={this.state.isMobile}/>
+				
 			</Layout>
-		);
+		); 
 	}
 }

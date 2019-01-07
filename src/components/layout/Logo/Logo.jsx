@@ -4,6 +4,7 @@ import TweenOne from "rc-tween-one";
 //import classNames from 'classnames';
 import { Popover, Divider, Button, Menu } from "antd";
 import logo from "../../../img/logo.svg";
+
 import { Link } from "gatsby";
 
 const content = (
@@ -30,6 +31,7 @@ class Logo extends React.Component {
           <Popover overlayClassName="info-popover" content={content}>
             <Link to="/">
               <img width="160px" src={logo} alt="img" />
+             
             </Link>
           </Popover>
         )}
