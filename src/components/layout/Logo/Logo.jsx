@@ -28,12 +28,12 @@ class Logo extends React.Component {
     return (
       <React.Fragment>
         {!isMobile && (
-          <Popover overlayClassName="info-popover" content={content}>
+          
             <Link to="/">
               <img width="160px" src={logo} alt="img" />
              
             </Link>
-          </Popover>
+          
         )}
 
         {isMobile && (
