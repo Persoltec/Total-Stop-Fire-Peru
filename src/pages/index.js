@@ -37,7 +37,7 @@ export default class IndexPage extends React.Component {
 			<Layout inicio>
 				<Slider />
 					<BrandProducts Titulo="Marcas líderes" isMobile={this.state.isMobile}/>
-				<EnterpriseFeature/>
+				<EnterpriseFeature isMobile={this.state.isMobile}/>
 			</Layout>
 		); 
 	}

@@ -1,6 +1,6 @@
 import React from "react";
 import { StaticQuery, graphql } from "gatsby";
-import { Button, Tooltip, Carousel, Col, Row } from "antd";
+import { Button, Tooltip, Carousel, Col, Row} from "antd";
 import Img from "gatsby-image";
 
 import OverPack from "rc-scroll-anim/lib/ScrollOverPack";
@@ -17,6 +17,40 @@ class BrandProducts extends React.Component {
     delete props.isMobile;
     delete props.Titulo;
 
+   var settings = {
+      dots: true,
+      infinite: false,
+      speed: 500,
+      slidesToShow: 4,
+      slidesToScroll: 4,
+      initialSlide: 0,
+      responsive: [
+        {
+          breakpoint: 1024,
+          settings: {
+            slidesToShow: 3,
+            slidesToScroll: 3,
+            infinite: true,
+            dots: true
+          }
+        },
+        {
+          breakpoint: 600,
+          settings: {
+            slidesToShow: 2,
+            slidesToScroll: 2,
+            initialSlide: 2
+          }
+        },
+        {
+          breakpoint: 480,
+          settings: {
+            slidesToShow: 1,
+            slidesToScroll: 1
+          }
+        }
+      ]
+    };
     return (
       <StaticQuery
         query={graphql`
@@ -29,24 +63,12 @@ class BrandProducts extends React.Component {
                   frontmatter {
                     title
                     imagen {
-                      childImageSharp {
-                        fluid(
-                          maxWidth: 400
-                          quality: 60
-                          traceSVG: { color: "rgb(56, 47, 92)", threshold: 75 }
-                        ) {
-                          base64
-                          tracedSVG
-                          aspectRatio
-                          src
-                          srcSet
-                          srcWebp
-                          srcSetWebp
-                          sizes
-                          originalImg
-                          originalName
-                        }
-                      }
+                       
+                       childImageSharp {
+     sizes(maxWidth: 400 ) {
+        ...GatsbyImageSharpSizes_tracedSVG
+      }
+    }
                     }
                   }
                 }
@@ -67,50 +89,9 @@ class BrandProducts extends React.Component {
                 <h1 className="title-h1">{Titulo}</h1>
               </div>
 
-              {!isMobile && (
-                <OverPack className={`content-template`} playScale="0.3">
-                  <TweenOneGroup
-                    component={Row}
-                    gutter={32}
-                    key="ul"
-                    enter={{
-                      y: "+=30",
-                      opacity: 0,
-                      type: "from",
-                      ease: "easeOutQuad"
-                    }}
-                    leave={{ y: "+=30", opacity: 0, ease: "easeOutQuad" }}
-                    className="img-wrapper"
-                  >
-                    {data.allMarkdownRemark.edges.map((item, i) => {
-                      return (
-                        <Col
-                          key={i.toString()}
-                          className="block"
-                          md={8}
-                          xs={24}
-                        >
-                          <div className="block-content">
-                            <span>
-                              <Img
-                                style={{ width: "160px", margin: "0 auto" }}
-                                fluid={
-                                  item.node.frontmatter.imagen.childImageSharp
-                                    .fluid
-                                }
-                                alt={item.node.frontmatter.title}
-                              />
-                            </span>
-                          </div>
-                        </Col>
-                      );
-                    })}
-                  </TweenOneGroup>
-                </OverPack>
-              )}
-
-              {isMobile && (
-                <OverPack className={`content-template`} playScale="0.3">
+            
+ 
+            <OverPack className={`content-template`} playScale="0.3">
                   <TweenOneGroup
                     key="ul"
                     enter={{
@@ -121,28 +102,28 @@ class BrandProducts extends React.Component {
                     }}
                     leave={{ y: "+=30", opacity: 0, ease: "easeOutQuad" }}
                   >
-                    <Carousel key="Carousel" autoplay>
+                    <Carousel {...settings} key="bran-product">
                       {data.allMarkdownRemark.edges.map((item, i) => {
                         return (
-                          <div className="block-content">
-                            <span>
-                              <Img
+                            <React.Fragment>
+                             
+                              <Img 
                                 style={{ width: "160px", margin: "0 auto" }}
-                                fluid={
+                                sizes={
                                   item.node.frontmatter.imagen.childImageSharp
-                                    .fluid
+                                    .sizes
                                 }
                                 alt={item.node.frontmatter.title}
                               />
                               <h1>{item.node.frontmatter.title}</h1>
-                            </span>
-                          </div>
+                             
+                            </React.Fragment>
                         );
                       })}
                     </Carousel>
-                  </TweenOneGroup>
+                    </TweenOneGroup>
                 </OverPack>
-              )}
+               
             </div>
           </div>
         )}

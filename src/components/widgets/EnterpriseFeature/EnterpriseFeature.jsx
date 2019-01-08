@@ -1,6 +1,6 @@
 import React from "react";
 import { StaticQuery, graphql } from "gatsby";
-import { Button, Tooltip, Carousel, Col, Row } from "antd";
+import { Button, Tooltip, Carousel, Col, Row ,List, Avatar } from "antd";
 import Img from "gatsby-image";
 
 import OverPack from "rc-scroll-anim/lib/ScrollOverPack";
@@ -41,12 +41,97 @@ class EnterpriseFeature extends React.Component {
         `}
         render={data => (
           <div className="widget-enterprise-feature">
-            <div className="">
+         
+
+
+
+  
+
+ {isMobile && (
+ <React.Fragment>
+{data.allMarkdownRemark.edges.map((items, i) => {
+
+
+ let color = ["a", "b", "c"];
+                let n = 0;
+
+
+
+
+                        return (
+  
+
+            <OverPack className={`content-template`} playScale="0.3">
+                  <TweenOneGroup
+                    component={List}
+                    itemLayout="horizontal"
+                    key={i.toString()}
+                    enter={{
+                      y: "+=30",
+                      opacity: 0,
+                      type: "from",
+                      ease: "easeOutQuad"
+                    }}
+                    leave={{ y: "+=30", opacity: 0, ease: "easeOutQuad" }}
+                    className="img-wrapper"
+                  >
+
+
+
+
+      {items.node.frontmatter.caracteristica.map((item, i) => {
+         let setColor = color[n];
+                      n = n + 1;
+                       if (n >2) {
+                        n = 0;
+                      }
+         return (            
+     <List.Item
+      key={i.toString()}
+       className={` ${setColor}`}
+       >
+        <List.Item.Meta
+          avatar={<Avatar src={item.imagen.publicURL} />}
+          title={<a href="https://ant.design">{item.titulo}</a>}
+          description={item.descripcion}
+        />
+      </List.Item>
+)})}
+      </TweenOneGroup>
+                </OverPack>
+
+
+)
+})}
+ </React.Fragment>
+)}
+    
+
+
+
+
+
+ {!isMobile && (
+ <React.Fragment>
+
               {data.allMarkdownRemark.edges.map((items, i) => {
                 let color = ["rojo", "negro", "blanco"];
                 let n = 0;
                 return (
-                  <Row>
+                        <OverPack className={`content-template`} playScale="0.3">
+                  <TweenOneGroup
+                    component={Row}
+                    gutter={32}
+                    key="ul"
+                    enter={{
+                      y: "+=30",
+                      opacity: 0,
+                      type: "from",
+                      ease: "easeOutQuad"
+                    }}
+                    leave={{ y: "+=30", opacity: 0, ease: "easeOutQuad" }}
+                    className="img-wrapper"
+                  >
                     {items.node.frontmatter.caracteristica.map((item, i) => {
                      
                       let setColor = color[n];
@@ -55,7 +140,11 @@ class EnterpriseFeature extends React.Component {
                         n = 0;
                       }
                       return (
-                        <Col span={6} className={`block ${setColor}`}>
+                        <Col 
+                        key={i.toString()}
+                        span={6} 
+                        className={`block ${setColor}`}
+                        >
                           <SVG className="icono" src={item.imagen.publicURL}>
                             <img
                               src={item.imagen.publicURL}
@@ -72,10 +161,16 @@ class EnterpriseFeature extends React.Component {
                         </Col>
                       );
                     })}
-                  </Row>
+                   </TweenOneGroup>
+                </OverPack>
                 );
+
               })}
-            </div>
+             
+ 
+ </React.Fragment>
+)}
+
           </div>
         )}
       />
