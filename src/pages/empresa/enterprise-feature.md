@@ -1,4 +1,5 @@
 ---
+widgets: EnterpriseFeature
 caracteristica:
   - descripcion: >-
       Retirada y entrega de sus equipos extintores a domicilio, con tiempo

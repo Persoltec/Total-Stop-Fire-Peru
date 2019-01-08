@@ -1,0 +1,70 @@
+ .widget-enterprise-feature {
+   text-align: center;
+   .block {
+     padding: 20px;
+     padding-bottom: 40px;
+     button {}
+     &.rojo {
+       background: @primary-color;
+       color: white;
+       h1 {
+         color: white;
+       }
+       svg {
+         path {
+           fill: white;
+         }
+       }
+     }
+     &.negro {
+       background: #333333;
+       color: white;
+       h1 {
+         color: white;
+       }
+       svg {
+         path {
+           fill: white;
+         }
+       }
+     }
+     &.blanco {
+       background: #ededed;
+       color: @primary-color;
+       h1 {
+         color: @primary-color;
+       }
+       svg {
+         path {
+           fill: @primary-color;
+         }
+       }
+     }
+   }
+   .titulo {
+     min-height: 100px;
+     display: block;
+     padding: 20px;
+     h1 {
+       padding: 20px;
+       line-height: 28px;
+       font-size: 25px;
+     }
+   }
+   .descripcion {
+     padding-bottom: 20px;
+     min-height: 100px;
+   }
+   .icono {
+     display: block;
+     width: 100%;
+     margin-top: 30px;
+     svg {
+       width: 80px;
+       height: 80px;
+     }
+   }
+ }
+ @media screen and (max-width: 767px) {
+   .widget-enterprise-feature {}
+ }

@@ -5,6 +5,7 @@ import Layout from "../components/Layout";
 import Slider from "../components/slider/Slider";
 import ContentBlock from "../components/layout/ContentBlock/ContentBlock";
 import BrandProducts from "../components/widgets/BrandProducts/BrandProducts";
+import EnterpriseFeature from "../components/widgets/EnterpriseFeature/EnterpriseFeature";
 import { enquireScreen } from 'enquire-js';
 
 let isMobile;
@@ -35,9 +36,8 @@ export default class IndexPage extends React.Component {
 		return ( 
 			<Layout inicio>
 				<Slider />
-				
 					<BrandProducts Titulo="Marcas líderes" isMobile={this.state.isMobile}/>
-				
+				<EnterpriseFeature/>
 			</Layout>
 		); 
 	}
