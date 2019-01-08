@@ -53,6 +53,20 @@ collections:
               - {label: Tipo, name: tipo, widget: select , options: ["Facebook", "Google-Plus", "Youtube","Instagram","Twitter","Skype"]}
               - {label: "Dirreción", name: direccion, widget: string}
 
+      - file: "src/pages/empresa/enterprise-feature.md"
+        label: "característica de la empresa"
+        name: "enterprise-feature"
+        description: 'característica de la empresa'
+        fields:
+          - {label: "EnterpriseFeature", name: "widgets", widget: "hidden", default: "EnterpriseFeature"}
+          - label: 'Característica'
+            name: caracteristica
+            widget: list
+            fields:
+              - {label: Titulo, name: titulo, widget: string}
+              - {label: "Descripción", name: "descripcion", widget: "text"}
+              - {label: Imagen, name: imagen, widget: image}
+
   - name: "slider"
     label: "Portada"
     delete: false

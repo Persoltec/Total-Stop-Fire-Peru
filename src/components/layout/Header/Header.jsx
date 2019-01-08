@@ -5,7 +5,7 @@ import TweenOne from "rc-tween-one";
 import { Divider, Button, Menu } from "antd";
 import { Link } from "gatsby";
 import Logo from "../Logo/Logo.jsx";
-
+ 
 const { Item } = Menu;
 
 class Header extends React.Component {

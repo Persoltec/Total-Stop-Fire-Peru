@@ -45,18 +45,9 @@ class Footer extends React.Component {
 
 personal: file(relativePath: {eq: "personal.png"}) {
     childImageSharp {
-     fluid(maxWidth: 400, quality: 60) {
-                          base64
-                          tracedSVG
-                          aspectRatio
-                          src
-                          srcSet
-                          srcWebp
-                          srcSetWebp
-                          sizes
-                          originalImg
-                          originalName
-                        }
+     sizes(maxWidth: 400 ) {
+        ...GatsbyImageSharpSizes_tracedSVG
+      }
     }
   }
  
@@ -66,9 +57,8 @@ personal: file(relativePath: {eq: "personal.png"}) {
   
 <Img
                               style={{ width: "160px", margin: "0 auto" }}
-                              fluid={
-                                data.personal.childImageSharp
-                                  .fluid
+                              sizes={
+                                data.personal.childImageSharp.sizes
                               }
                              
                             />
