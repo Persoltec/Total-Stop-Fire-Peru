@@ -3,12 +3,13 @@ import { findDOMNode } from "react-dom";
 import TweenOne from "rc-tween-one";
 //import classNames from 'classnames';
 import { Popover, Divider, Button, Menu } from "antd";
-import logo from "../../../img/logo.svg";
-
+//import logo from "../../../img/logo.svg";
+ 
+import MyIcon from '../../../img/logo.svg';
 import { Link } from "gatsby";
 
 const content = (
-  <div>
+  <div> 
     <p>Content</p>
     <p>Content</p>
   </div>
@@ -30,15 +31,14 @@ class Logo extends React.Component {
         {!isMobile && (
           
             <Link to="/">
-              <img width="160px" src={logo} alt="img" />
-             
+              <MyIcon/>
             </Link>
           
         )}
 
         {isMobile && (
           <Link to="/">
-            <img width="160px" src={logo} alt="img" />
+             
           </Link>
         )}
       </React.Fragment>
