@@ -1,0 +1,15 @@
+.widget-brand-products {
+  min-height: 400px;
+  .titulo {
+    padding-bottom: 50px;
+  }
+  .slider {
+    .slider-control-bottomcenter {
+      bottom: initial !important;
+      top: 100% !important;
+      ul {
+        top: 0px !important;
+      }
+    }
+  }
+}

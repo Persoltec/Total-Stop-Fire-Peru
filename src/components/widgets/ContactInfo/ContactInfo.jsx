@@ -1,7 +1,7 @@
 import React from "react";
 import { StaticQuery, graphql } from "gatsby";
-import { List,Avatar  } from "antd";
-import MapInfo from '../../../img/MapInfo.png'
+
+import MapInfo from "../../../img/MapInfo.png";
 
 class ContactInfo extends React.Component {
   render() {
@@ -32,45 +32,43 @@ class ContactInfo extends React.Component {
         `}
         render={data => (
           <div>
-            {data.allMarkdownRemark.edges.map((edge, index) => (
-              <List 
-              style={{ backgroundImage: `url(${MapInfo})` }}
-              className="widget-contact-info"
-              itemLayout="horizontal"
-              >
-                <List.Item>
-        <List.Item.Meta
-          avatar={  <Avatar shape="square" size="large" icon="pushpin" />}
-          title="Dirección"
-          description={edge.node.frontmatter.direccion}
-        />
-                </List.Item>
-         <List.Item>
-        <List.Item.Meta
-          avatar={  <Avatar shape="square" size="large" icon="phone" />}
-          title="Teléfono"
-          description={edge.node.frontmatter.telefono}
-        />
-                </List.Item>
-                       
-         <List.Item>
-        <List.Item.Meta
-          avatar={  <Avatar shape="square" size="large" icon="mobile" />}
-          title="Móvil"
-          description={edge.node.frontmatter.movil}
-        />
-                </List.Item>
- <List.Item>
-        <List.Item.Meta
-          avatar={  <Avatar shape="square" size="large" icon="mail" />}
-          title="Correo electrónico"
-          description={edge.node.frontmatter.correo}
-        />
-                </List.Item>
+            {data.allMarkdownRemark.edges.map((edge, index) => {
+              var titulos = [
+                "Dirección",
+                "Teléfono",
+                "Móvil",
+                "Correo electrónico"
+              ];
+              var info = Object.values(edge.node.frontmatter).splice(1, 4);
 
-                
-              </List>
-            ))}
+              return (
+                <div
+                  style={{ backgroundImage: `url(${MapInfo})` }}
+                  className="widget-contact-info"
+                >
+                  {info.map((info, i) => {
+                    return (
+                      <article class="media">
+                        <figure class="media-left">
+                          <p class="image is-48x48">
+                            <img src="https://bulma.io/images/placeholders/128x128.png" />
+                          </p>
+                        </figure>
+                        <div class="media-content">
+                          <div class="content">
+                            <p>
+                              <strong className="titulo">{titulos[i]}</strong>
+                              <br />
+                              <span className="descripcion">{info}</span>
+                            </p>
+                          </div>
+                        </div>
+                      </article>
+                    );
+                  })}
+                </div>
+              );
+            })}
           </div>
         )}
       />

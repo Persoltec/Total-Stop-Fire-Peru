@@ -1,0 +1,23 @@
+@import "~bulma/sass/utilities/initial-variables";
+
+
+// Config vars
+// Kalidi logo brand color: #FD461E
+$kaldi-red: #D64000;
+$kaldi-red-invert: #fff;
+$primary: $kaldi-red;
+$primary-invert: $kaldi-red-invert;
+$body-color: #333;
+$Primary-color: red; 
+$family-primary:'Roboto';
+$body-size:14px;
+$weight-normal:300;
+@import "~bulma"; 
+
+@import "/components/layout/Header/Header"; 
+@import '/components/layout/Footer/Footer';
+@import '/components/layout/BackToTop/BackToTop';
+@import '/components/widgets/OfficeHours/OfficeHours';
+@import '/components/widgets/ContactInfo/ContactInfo'; 
+@import '/components/widgets/BrandProducts/BrandProducts';
+@import '/components/widgets/EnterpriseFeature/EnterpriseFeature';

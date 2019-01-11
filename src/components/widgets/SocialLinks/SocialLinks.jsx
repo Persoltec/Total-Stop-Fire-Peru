@@ -1,12 +1,9 @@
 import React from "react";
 import { StaticQuery, graphql } from "gatsby";
-import { Button,Tooltip } from "antd";
-
+ 
 class SocialLinks extends React.Component {
   render() {
-    // const { ...props } = this.props;
-    // const {isMobile   } = props;
-    // delete props.isMobile;
+    
 
     return (
       <StaticQuery
@@ -33,9 +30,10 @@ class SocialLinks extends React.Component {
             {data.allMarkdownRemark.edges.map((items, index) => (
                <React.Fragment>
                {items.node.frontmatter.redsocial.map((item, i) => (
-                   <Tooltip title={item.tipo}>
-                     <Button size="default" className={item.tipo.toString().toLowerCase()} href = {item.direccion} target="_blank"  icon={item.tipo.toString().toLowerCase()} />
-                   </Tooltip>
+                    
+                     <a  className={item.tipo.toString().toLowerCase()} href = {item.direccion} target="_blank"  icon={item.tipo.toString().toLowerCase()} >
+                    {item.tipo}
+                    </a>
                 ))}
                 </React.Fragment>
             ))}

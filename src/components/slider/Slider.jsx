@@ -1,15 +1,11 @@
 import React from "react";
 import { StaticQuery, graphql } from "gatsby";
 import PropTypes from "prop-types";
-import { Button, Icon } from "antd";
-import QueueAnim from "rc-queue-anim";
-import TweenOne, { TweenOneGroup } from "rc-tween-one";
-import BannerAnim, { Element } from "rc-banner-anim";
-//import Items from "./Items.jsx";
-import "rc-banner-anim/assets/index.css";
+ 
 import Img from "gatsby-image";
-const { BgElement } = Element;
+import Carousel from 'nuka-carousel';
 
+ 
 class Slider extends React.PureComponent {
   render() {
     const { ...props } = this.props;
@@ -36,7 +32,6 @@ class Slider extends React.PureComponent {
                             toFormat: JPG
                           ) {
                             base64
-                            tracedSVG
                             aspectRatio
                             src
                             srcSet
@@ -58,44 +53,31 @@ class Slider extends React.PureComponent {
         render={data => (
           <React.Fragment>
             {data.allMarkdownRemark.edges.map((items, i) => (
-              <BannerAnim prefixCls="banner-user">
+               <Carousel
+               transitionMode="fade"
+               autoplay="true"
+               autoplayInterval="1000"
+               className="slider"
+               >
                 {items.node.frontmatter.pagina.map((item, i) => (
-                  <Element
-                    key={i.toString()}
-                    className="banner-user-elem"
-                    prefixCls="banner-user-elem"
-                  >
-                    <BgElement
-                      key="bg"
-                      className="bg"
-                      style={{
-                        backgroundImage:`url(${item.imagen.childImageSharp.fluid.src})` ,
-                        backgroundSize: "cover",
-                        backgroundPosition: "center"
-                      }}
-                    /> 
-                 
-
-                    <QueueAnim
-                      type={["bottom", "top"]}
-                      delay={200}
-                      key="text"
-                      className="banner1-text-wrapper"
-                    >
-                      <div key="logo" className="banner1-title">
-                        {item.titulo.toString().toUpperCase()}
-                     
-                      </div>
-                      <div key="content" className="banner1-content">
-                        {item.descripcion}
-                      </div>
-                      <Button ghost key="button" className="banner1-button">
-                        Solicitar cotización
-                      </Button>
-                    </QueueAnim>
-                  </Element>
+                  <div className="itemslider" key={i.toString()}>
+            
+                   <Img  fluid= {item.imagen.childImageSharp.fluid}/>
+                   
+   <div class="hero-body is-overlay">
+    <div class="container has-text-centered">
+      <h1 class="title  is-size-1-desktop is-size-2-tablet is-size-3-mobile">
+        {item.titulo.toString().toUpperCase()}
+      </h1>
+      <h2 class="subtitle">
+        {item.descripcion}
+      </h2>
+      <a class="button is-primary">Solicitar cotización</a>
+    </div>
+  </div>
+                  </div>
                 ))}
-              </BannerAnim>
+              </Carousel>
             ))}
           </React.Fragment>
         )}
@@ -103,31 +85,9 @@ class Slider extends React.PureComponent {
     );
 
     return (
-      <div className="banner1">
-        <TweenOneGroup
-          key="bannerGroup"
-          enter={{ opacity: 0, type: "from" }}
-          leave={{ opacity: 0 }}
-          component=""
-        >
-          <div className="banner1-wrapper" key="wrapper">
-            <SliderAnimation />
-          </div>
-        </TweenOneGroup>
-        <TweenOne
-          animation={{
-            y: "-=20",
-            yoyo: true,
-            repeat: -1,
-            duration: 1000
-          }}
-          className="banner1-icon"
-          style={{ bottom: 40 }}
-          key="icon"
-        >
-          <Icon type="down" />
-        </TweenOne>
-      </div>
+      <React.Fragment>
+       <SliderAnimation />
+      </React.Fragment>
     );
   }
 }
@@ -137,3 +97,5 @@ Slider.propTypes = {
 };
 
 export default Slider;
+
+                   

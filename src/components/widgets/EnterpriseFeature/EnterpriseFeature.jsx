@@ -1,12 +1,9 @@
 import React from "react";
 import { StaticQuery, graphql } from "gatsby";
-import { Button, Tooltip, Carousel, Col, Row ,List, Avatar } from "antd";
+ 
 import Img from "gatsby-image";
 
-import OverPack from "rc-scroll-anim/lib/ScrollOverPack";
-import { Parallax } from "rc-scroll-anim";
-import QueueAnim from "rc-queue-anim";
-import { TweenOneGroup, TweenOne } from "rc-tween-one";
+ 
 import SVG from "react-inlinesvg";
 
 class EnterpriseFeature extends React.Component {
@@ -43,95 +40,18 @@ class EnterpriseFeature extends React.Component {
           <div className="widget-enterprise-feature">
          
 
-
-
-  
-
- {isMobile && (
- <React.Fragment>
-{data.allMarkdownRemark.edges.map((items, i) => {
-
-
- let color = ["a", "b", "c"];
-                let n = 0;
+ 
 
 
 
-
-                        return (
-  
-
-            <OverPack className={`content-template`} playScale="0.3">
-                  <TweenOneGroup
-                    component={List}
-                    itemLayout="horizontal"
-                    key={i.toString()}
-                    enter={{
-                      y: "+=30",
-                      opacity: 0,
-                      type: "from",
-                      ease: "easeOutQuad"
-                    }}
-                    leave={{ y: "+=30", opacity: 0, ease: "easeOutQuad" }}
-                    className="img-wrapper"
-                  >
-
-
-
-
-      {items.node.frontmatter.caracteristica.map((item, i) => {
-         let setColor = color[n];
-                      n = n + 1;
-                       if (n >2) {
-                        n = 0;
-                      }
-         return (            
-     <List.Item
-      key={i.toString()}
-       className={` ${setColor}`}
-       >
-        <List.Item.Meta
-          avatar={<Avatar src={item.imagen.publicURL} />}
-          title={<a href="https://ant.design">{item.titulo}</a>}
-          description={item.descripcion}
-        />
-      </List.Item>
-)})}
-      </TweenOneGroup>
-                </OverPack>
-
-
-)
-})}
- </React.Fragment>
-)}
-    
-
-
-
-
-
- {!isMobile && (
  <React.Fragment>
 
               {data.allMarkdownRemark.edges.map((items, i) => {
                 let color = ["rojo", "negro", "blanco"];
                 let n = 0;
-                return (
-                        <OverPack className={`content-template`} playScale="0.3">
-                  <TweenOneGroup
-                    component={Row}
-                    gutter={32}
-                    key="ul"
-                    enter={{
-                      y: "+=30",
-                      opacity: 0,
-                      type: "from",
-                      ease: "easeOutQuad"
-                    }}
-                    leave={{ y: "+=30", opacity: 0, ease: "easeOutQuad" }}
-                    className="img-wrapper"
-                  >
+                return ( 
+                  <div class="tile   has-text-centered">
+      <div class="tile is-horizontal">
                     {items.node.frontmatter.caracteristica.map((item, i) => {
                      
                       let setColor = color[n];
@@ -140,36 +60,45 @@ class EnterpriseFeature extends React.Component {
                         n = 0;
                       }
                       return (
-                        <Col 
-                        key={i.toString()}
-                        span={6} 
-                        className={`block ${setColor}`}
-                        >
-                          <SVG className="icono" src={item.imagen.publicURL}>
+
+       <div  key={i.toString()}  className={`tile is-parent is-3 ${setColor}`}>
+          <div class="tile is-child   ">
+            
+<div className="content">
+   <SVG className="icono" src={item.imagen.publicURL}>
                             <img
                               src={item.imagen.publicURL}
                               className="icono"
                             />
                           </SVG>
-                          <span className="titulo">
-                          <h1 >{item.titulo}</h1>
-                          </span>
-                          <p className="descripcion">{item.descripcion}</p>
-                          <Button type="dashed"  >
+                          
+                          <h1 className="title is-size-3-desktop is-size-4-touch">{item.titulo}</h1>
+                          
+                          <p className="descripcion  ">{item.descripcion}</p>
+                          <a class="button">
                             Solicitar cotización
-                          </Button>
-                        </Col>
+                          </a>
+
+</div>
+
+          </div>
+        </div>
+
+ 
+                       
+                        
+                        
                       );
                     })}
-                   </TweenOneGroup>
-                </OverPack>
+                 </div>
+                 </div>
                 );
 
               })}
              
  
  </React.Fragment>
-)}
+ 
 
           </div>
         )}

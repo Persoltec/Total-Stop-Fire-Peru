@@ -1,9 +1,6 @@
 import React from "react";
 import { StaticQuery, graphql } from "gatsby";
-import TweenOne from "rc-tween-one";
-import OverPack from "rc-scroll-anim/lib/ScrollOverPack";
-import QueueAnim from "rc-queue-anim";
-import { Row, Col, List, Avatar } from "antd";
+
 import MapInfo from "../../../img/MapInfo.png";
 import Personal from "../../../img/personal.png";
 import OfficeHours from "../../widgets/OfficeHours/OfficeHours.jsx";
@@ -22,97 +19,74 @@ class Footer extends React.Component {
     delete props.isMobile;
 
     return (
-      <div className="home-page-wrapper footer1-wrapper">
-        <OverPack className="footer1" playScale={0.2}>
-          <QueueAnim
-            type="bottom"
-            key="ul"
-            leaveReverse
-            component={Row}
-            className="home-page"
-          >
-            {!isMobile && (
-              <Col
-                xs={{ span: 24 }}
-                md={{ span: 8 }}
-                key="block0"
-                className="block"
-              >
-
-    <StaticQuery
-        query={graphql`
-          query {
-
-personal: file(relativePath: {eq: "personal.png"}) {
-    childImageSharp {
-     sizes(maxWidth: 400 ) {
-        ...GatsbyImageSharpSizes_tracedSVG
-      }
-    }
-  }
- 
-          }
-        `}
-        render={data => (
-  
-<Img
-                              style={{ width: "160px", margin: "0 auto" }}
-                              sizes={
-                                data.personal.childImageSharp.sizes
-                              }
-                             
-                            />
-
-
- )}/>
+      <footer class="footer">
+       <section class="section">
+        <div class="container">
 
 
 
 
 
-                
-              </Col>
-            )}
 
-            <Col
-              xs={{ span: 24 }}
-              md={{ span: 8 }}
-              key="block1"
-              className="block"
-            >
-              <ContactInfo />
-            </Col>
-            {!isMobile && (
-              <Col
-                xs={{ span: 24 }}
-                md={{ span: 8 }}
-                key="block2"
-                className="block"
-              >
-                <OfficeHours />
-              </Col>
-            )}
-          </QueueAnim>
 
-          <TweenOne
-            animation={{ y: "+=30", opacity: 0, type: "from" }}
-            key="copyright"
-            className="copyright-wrapper"
-          >
-            <div className="home-page">
-              <div className="copyright">
-                {!isMobile && (
-                <span>
-                  ©2019 <a href="https://totalstopfireperu.com">Total Stop</a>{" "}
-                  Todos los derechos reservados{" "}
-                </span>
+
+          <div className="columns">
+            <div className="column is-hidden-touch">
+              <StaticQuery
+                query={graphql`
+                  query {
+                    personal: file(relativePath: { eq: "personal.png" }) {
+                      childImageSharp {
+                        sizes(maxWidth: 400) {
+                          ...GatsbyImageSharpSizes_tracedSVG
+                        }
+                      }
+                    }
+                  }
+                `}
+                render={data => (
+                  <Img
+                    style={{ width: "160px", margin: "0 auto" }}
+                    sizes={data.personal.childImageSharp.sizes}
+                  />
                 )}
-                <SocialLinks />
-              </div>
+              />
             </div>
-          </TweenOne>
-        </OverPack>
-      </div>
+
+            <div className="column">
+              <ContactInfo />
+            </div>
+
+            <div className="column">
+              <OfficeHours />
+            </div>
+          </div>
+
+
+        </div>
+           </section> 
+
+
+            <div className="copyright">
+             <section class="section">
+            <div className="container">
+            <div className="level has-text-centered-touch">
+               <div class="level-left">
+                ©2019 <a href="https://totalstopfireperu.com">Total Stop</a>
+                Todos los derechos reservados
+                </div>
+                 <div class="level-rigth">
+                 <SocialLinks />
+              </div>
+
+              
+            </div>
+            </div>
+            </section>
+            </div>
+
+           
+      </footer>
     );
   }
 }

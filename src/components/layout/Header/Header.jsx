@@ -1,123 +1,107 @@
 import React from "react";
 import { findDOMNode } from "react-dom";
-import TweenOne from "rc-tween-one";
+
 //import classNames from 'classnames';
-import { Divider, Button, Menu } from "antd";
+
+import Slider from "../../slider/Slider";
 import { Link } from "gatsby";
-import Logo from "../Logo/Logo.jsx";
- 
-const { Item } = Menu;
+//import Logo from "../Logo/Logo.jsx";
+import logo from "../../../img/logo.svg";
 
 class Header extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {
-      phoneOpen: false,
-      menuHeight: 0
-    };
   }
-
-  phoneClick = () => {
-    const menu = findDOMNode(this.menu);
-    const phoneOpen = !this.state.phoneOpen;
-    this.setState({
-      phoneOpen,
-      menuHeight: phoneOpen ? menu.scrollHeight : 0
-    });
-  };
 
   render() {
     const { ...props } = this.props;
-    const { isMobile } = props;
+    const { isMobile, titulo } = props;
 
-    delete props.isMobile;
-    delete props.isFirstScreen;
-    const { menuHeight, phoneOpen } = this.state;
-
-    // const headerClassName = classNames({
-    //   clearfix: true,
-    //   'home-nav-white': !isFirstScreen,
-    // });
-
-    return (
-      <TweenOne
-        component="header"
-        animation={{ opacity: 0, type: "from" }}
-        className="header1 home-page-wrapper"
-      >
-        <div
-          className={`${"home-page jqauf4uk7uk-editor_css"}${
-            phoneOpen ? " open" : ""
-          }`}
-        >
-          <TweenOne
-            animation={{
-              x: -30,
-              delay: 100,
-              type: "from",
-              ease: "easeOutQuad"
-            }}
-            className="header1-logo"
-          > 
-           <Logo isMobile={isMobile}/>
-          </TweenOne>
-
-          {isMobile && (
-            <div
-              className="header1-mobile-menu"
-              onClick={() => {
-                this.phoneClick();
-              }}
+    return ( 
+      <React.Fragment>
+        <section className={`hero ${titulo ? ' is-medium' : ' is-fullheight'} is-dark is-bold header`} >
+          <div class="hero-head">
+            <nav
+              class="navbar is-transparent is-fixed-top is-dark"
+              role="navigation"
+              aria-label="main navigation"
             >
-              <em />
-              <em />
-              <em />
-            </div>
-          )}
-          <TweenOne
-            className="header1-menu"
-            animation={{ x: 30, type: "from", ease: "easeOutQuad" }}
-            ref={c => {
-              this.menu = c;
-            }}
-            style={isMobile ? { height: menuHeight } : null}
-          >
-            <Menu
-              mode={isMobile ? "inline" : "horizontal"}
-              defaultSelectedKeys={["0"]}
-              theme={isMobile ? "dark" : "default"}
-            >
-              <Item>
-                <Link to="/">Inicio</Link>
-              </Item>
- 
-              <Item>
-                <Link to="nosotros">Nosotros</Link>
-              </Item>
+              <div class="container">
+                <div class="navbar-brand">
+                  <Link className="navbar-item" to="/">
+                    <img src={logo} />
+                  </Link>
 
-              <Item>
-                <Link to="productos">Productos</Link>
-              </Item>
+                  <a
+                    role="button"
+                    class="navbar-burger burger"
+                    aria-label="menu"
+                    aria-expanded="false"
+                    data-target="navbarBasicExample"
+                  >
+                    <span aria-hidden="true" />
+                    <span aria-hidden="true" />
+                    <span aria-hidden="true" />
+                  </a>
+                </div>
 
-              <Item>
-                <Link to="servicios">Servicios</Link>
-              </Item>
-              <Item>
-                <Link>Blog</Link>
-              </Item>
-              {!isMobile && (
-                <span className="escribenos">
-                  <Divider type="vertical" />
+                <div id="navbarBasicExample" class="navbar-menu">
+                  <div class="navbar-start">
+                    <Link to="/" className="navbar-item">
+                      Inicio
+                    </Link>
 
-                  <Button type="primary" icon="phone">
-                    Contáctenos
-                  </Button>
-                </span>
-              )}
-            </Menu>
-          </TweenOne>
-        </div>
-      </TweenOne>
+                    <Link to="nosotros" className="navbar-item">
+                      Nosotros
+                    </Link>
+                    <Link to="productos" className="navbar-item">
+                      Productos
+                    </Link>
+                    <Link to="servicios" className="navbar-item">
+                      Servicios
+                    </Link>
+                    <Link to="/" className="navbar-item">
+                      Blog
+                    </Link>
+                  </div>
+                </div>
+
+                <div class="navbar-end is-hidden-mobile">
+                  <div class="navbar-item">
+                    <div class="buttons">
+                    
+                    <Link to="contactanos" className="button is-primary">
+                       
+                        <strong>Contáctenos</strong>
+                      </Link>
+                       
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </nav>
+          </div>
+          {!titulo && <Slider />}
+
+          {titulo && (
+  <div class="hero-body">
+    <div class="container  has-text-centered">
+      <h1 class="title">
+        {titulo}
+      </h1>
+      <h2 class="subtitle">
+        ........................
+      </h2>
+    </div>
+  </div>
+
+            )}
+
+          <div class="hero-foot has-text-centered">
+            <div class="container">Bajar</div>
+          </div>
+        </section>
+      </React.Fragment>
     );
   }
 }

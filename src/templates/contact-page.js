@@ -8,10 +8,9 @@ export const ContactPageTemplate = ({ title, content, contentComponent }) => {
   const PageContent = contentComponent || Content
 
   return (
-    <section className="home-page-wrapper ">
-      <div className="home-page">
-         
-              locasooo
+   <section class="section">
+    <div class="container">
+              
               <PageContent className="content" content={content} />
           
       </div>

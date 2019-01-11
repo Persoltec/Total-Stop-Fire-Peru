@@ -1,6 +1,5 @@
 import React from "react";
 import { StaticQuery, graphql } from "gatsby";
-import { List } from "antd";
 
 class OfficeHours extends React.Component {
   render() {
@@ -33,45 +32,32 @@ class OfficeHours extends React.Component {
           }
         `}
         render={data => (
-          <div>
-            {data.allMarkdownRemark.edges.map((edge, index) => (
-              <List className="widget-office-hours" itemLayout="horizontal">
-                <List.Item>
-                  <List.Item.Meta title="Lunes" />
-                  <div class="hour">{edge.node.frontmatter.lunes}</div>
-                </List.Item>
+          <div className="widget-office-hours">
+            {data.allMarkdownRemark.edges.map((items, i) => {
+              var dias = [
+                "Lunes",
+                "Martes",
+                "Miércoles",
+                "Jueves",
+                "Viernes",
+                "Sábado",
+                "Domingo"
+              ];
+              var horario = Object.values(items.node.frontmatter).splice(1, 7);
 
-                <List.Item>
-                  <List.Item.Meta title="Martes" />
-                  <div class="hour">{edge.node.frontmatter.martes}</div>
-                </List.Item>
-
-                <List.Item>
-                  <List.Item.Meta title="Miércoles" />
-                  <div class="hour">{edge.node.frontmatter.miercoles}</div>
-                </List.Item>
-
-                <List.Item>
-                  <List.Item.Meta title="Jueves" />
-                  <div class="hour">{edge.node.frontmatter.jueves}</div>
-                </List.Item>
-
-                <List.Item>
-                  <List.Item.Meta title="Viernes" />
-                  <div class="hour">{edge.node.frontmatter.viernes}</div>
-                </List.Item>
-
-                <List.Item>
-                  <List.Item.Meta title="Sábado" />
-                  <div class="hour">{edge.node.frontmatter.sabado}</div>
-                </List.Item>
-
-                <List.Item>
-                  <List.Item.Meta title="Domingo" />
-                  <div class="hour">{edge.node.frontmatter.domingo}</div>
-                </List.Item>
-              </List>
-            ))}
+              return (
+                <React.Fragment>
+                  {dias.map((dia, i) => {
+                    return (
+                      <div className="level">
+                        <div className="level-left"> {dia}</div>
+                        <div className="level-right hour"> {horario[i]}</div>
+                      </div>
+                    );
+                  })}
+                </React.Fragment>
+              );
+            })}
           </div>
         )}
       />

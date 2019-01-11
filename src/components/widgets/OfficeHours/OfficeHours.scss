@@ -1,0 +1,30 @@
+ .widget-office-hours {
+   .level {
+     margin: 0;
+     padding: 8px 20px;
+     &:nth-child(odd) {
+       background: #222c42;
+     }
+   }
+   .hour {
+     color: $Primary-color;
+     font-weight: 500;
+   }
+ }
+
+ @media screen and (max-width: 768px){
+
+   .widget-office-hours {
+   .level {
+    display: flex;
+    
+    .level-left + .level-right{
+      margin-top: 0px;
+    }
+   
+   }
+   
+ }
+
+ }
+ 
