@@ -61,6 +61,7 @@ class Slider extends React.PureComponent {
                autoplayInterval="3000"
                className="slider inicio"
                wrapAround="true"
+               dragging="false"
   renderCenterLeftControls={({ previousSlide }) => (
     <a className="button previous" onClick={previousSlide}>
       <Icon size={32}  icon={ic_navigate_before} />
