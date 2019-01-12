@@ -11,9 +11,9 @@ import {ic_mail} from 'react-icons-kit/md/ic_mail'
 
 class ContactInfo extends React.Component {
   render() {
-    // const { ...props } = this.props;
-    // const {isMobile   } = props;
-    // delete props.isMobile;
+    const { ...props } = this.props;
+    const {name   } = props;
+    delete props.name;
 
     return (
       <StaticQuery
@@ -52,7 +52,8 @@ class ContactInfo extends React.Component {
               return (
                 <div
                   style={{ backgroundImage: `url(${MapInfo})` }}
-                  className="widget-contact-info"
+ 
+                  className={`${name ? name : ' widget-contact-info'}`}
                 >
                   {info.map((info, i) => {
                     return (

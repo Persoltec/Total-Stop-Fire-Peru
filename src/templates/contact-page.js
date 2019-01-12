@@ -11,13 +11,16 @@ export const ContactPageTemplate = ({ title, content, contentComponent }) => {
   const PageContent = contentComponent || Content
 
   return (
+    <React.Fragment>
+     <LocationCompany/> 
    <section class="section">
     <div class="container">
-          <LocationCompany/>     
+             
               <PageContent className="content" content={content} />
           
       </div>
     </section>
+    </React.Fragment>
   )
 }
 

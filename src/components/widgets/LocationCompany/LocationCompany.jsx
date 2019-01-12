@@ -1,22 +1,20 @@
 import React from "react";
 import { StaticQuery, graphql } from "gatsby";
+import ContactInfo from "../ContactInfo/ContactInfo.jsx";
 
-import MapInfo from "../../../img/MapInfo.png";
-import { Icon } from 'react-icons-kit'
-
-import {ic_location_on} from 'react-icons-kit/md/ic_location_on'
-import {ic_phone} from 'react-icons-kit/md/ic_phone'
-import {ic_stay_current_portrait} from 'react-icons-kit/md/ic_stay_current_portrait'
-import {ic_mail} from 'react-icons-kit/md/ic_mail'
-
+import marker from "../../../img/marker.png";
+ 
 import { Map, Marker, Popup, TileLayer } from 'react-leaflet'
+import L from 'leaflet'
 
 
-
-
-const position = [51.505, -0.09]
-
-
+export const pointerIcon = new L.Icon({
+  iconUrl: marker,
+  iconRetinaUrl: marker,
+  iconSize: [128, 128],
+})
+ 
+ 
 class LocationCompany extends React.Component {
   render() {
     // const { ...props } = this.props;
@@ -33,11 +31,7 @@ class LocationCompany extends React.Component {
               edges {
                 node {
                   frontmatter {
-                    titulo
-                    direccion
-                    telefono
-                    movil
-                    correo
+                    coordenadas
                   }
                 }
               }
@@ -53,19 +47,27 @@ if (typeof window !== 'undefined') {
                   
                   className="widget-location-company"
                 >
-                 
+   {data.allMarkdownRemark.edges.map((item, index) => {
+    let position=item.node.frontmatter.coordenadas.toString().split(",")
+
+    return (              
  <Map center={position} zoom={13}>
     <TileLayer
-      url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-      attribution="&copy; <a href=&quot;http://osm.org/copyright&quot;>OpenStreetMap</a> contributors"
+      url='https://api.mapbox.com/styles/v1/mapbox/emerald-v8/tiles/{z}/{x}/{y}?access_token=<pk.eyJ1IjoibXlzdGVyeXBlcnV0b3VyIiwiYSI6ImNqa2psOTJ6YjBiNmUza3RqZXhmbW5obWUifQ.1mfJDOzid-8LdsQ_6kMmEw>'
+   
     />
-    <Marker position={position}>
-      <Popup>A pretty CSS3 popup.<br />Easily customizable.</Popup>
+    <Marker position={position} icon={pointerIcon}>
+      <Popup>
+        
+
+        <ContactInfo name="popup-info"/>
+      </Popup>
     </Marker>
   </Map>
 
 
-
+   )
+})}
                 </div>
    
         )

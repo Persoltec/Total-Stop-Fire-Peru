@@ -36,6 +36,7 @@ collections:
           - {label: 'ContactInfo', name: 'widgets', widget: 'hidden', default: 'ContactInfo'}
           - {label: 'Titulo', name: 'titulo', widget: 'string'}
           - {label: 'Dirección', name: 'direccion', widget: 'string'}
+          - {label: 'Coordenadas', name: 'coordenadas', widget: 'string'}
           - {label: 'Teléfono', name: 'telefono', widget: 'string'}
           - {label: 'Móvil', name: 'movil', widget: 'string'}
           - {label: 'Correo electrónico', name: 'correo', widget: 'string'}         
