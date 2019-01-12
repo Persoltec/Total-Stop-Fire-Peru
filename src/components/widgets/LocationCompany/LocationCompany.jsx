@@ -51,9 +51,9 @@ if (typeof window !== 'undefined') {
     let position=item.node.frontmatter.coordenadas.toString().split(",")
 
     return (              
- <Map center={position} zoom={13}>
+ <Map center={position} zoom={15}>
     <TileLayer
-      url='https://api.mapbox.com/styles/v1/mapbox/emerald-v8/tiles/{z}/{x}/{y}?access_token=<pk.eyJ1IjoibXlzdGVyeXBlcnV0b3VyIiwiYSI6ImNqa2psOTJ6YjBiNmUza3RqZXhmbW5obWUifQ.1mfJDOzid-8LdsQ_6kMmEw>'
+      url='http://{s}.tiles.wmflabs.org/bw-mapnik/{z}/{x}/{y}.png'
    
     />
     <Marker position={position} icon={pointerIcon}>
