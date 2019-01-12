@@ -44,7 +44,10 @@ class LocationCompany extends React.Component {
             }
           }
         `}
-        render={data => (
+        render={data => {
+
+if (typeof window !== 'undefined') {
+          return(
             
                 <div
                   
@@ -65,7 +68,11 @@ class LocationCompany extends React.Component {
 
                 </div>
    
-        )}
+        )
+}
+    return null
+
+        }}
       />
     );
   }
