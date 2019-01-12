@@ -2,7 +2,10 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { graphql } from 'gatsby'
 import Layout from '../components/Layout'
+import LocationCompany from '../components/widgets/LocationCompany/LocationCompany'
 import Content, { HTMLContent } from '../components/Content'
+
+
 
 export const ContactPageTemplate = ({ title, content, contentComponent }) => {
   const PageContent = contentComponent || Content
@@ -10,7 +13,7 @@ export const ContactPageTemplate = ({ title, content, contentComponent }) => {
   return (
    <section class="section">
     <div class="container">
-              
+          <LocationCompany/>     
               <PageContent className="content" content={content} />
           
       </div>
