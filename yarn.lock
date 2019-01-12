@@ -2284,7 +2284,7 @@ callsites@^3.0.0:
   version "3.0.0"
   resolved "https://registry.yarnpkg.com/callsites/-/callsites-3.0.0.tgz#fb7eb569b72ad7a45812f93fd9430a3e410b3dd3"
 
-camel-case@3.0.x:
+camel-case@3.0.x, camel-case@^3.0.0:
   version "3.0.0"
   resolved "https://registry.yarnpkg.com/camel-case/-/camel-case-3.0.0.tgz#ca3c3688a4e9cf3a4cda777dc4dcbc713249cf73"
   dependencies:
@@ -10090,6 +10090,13 @@ react-hot-loader@^4.0.0, react-hot-loader@^4.6.2:
     shallowequal "^1.0.2"
     source-map "^0.7.3"
 
+react-icons-kit@^1.2.1:
+  version "1.2.1"
+  resolved "https://registry.yarnpkg.com/react-icons-kit/-/react-icons-kit-1.2.1.tgz#8c4ff22fbe70a6e014f1952eac0494bca4b006b5"
+  dependencies:
+    camel-case "^3.0.0"
+    prop-types "^15.5.8"
+
 react-immutable-proptypes@^2.1.0:
   version "2.1.0"
   resolved "https://registry.yarnpkg.com/react-immutable-proptypes/-/react-immutable-proptypes-2.1.0.tgz#023d6f39bb15c97c071e9e60d00d136eac5fa0b4"
@@ -10255,6 +10262,12 @@ react-slick@^0.23.2:
     lodash.debounce "^4.0.8"
     prettier "^1.14.3"
     resize-observer-polyfill "^1.5.0"
+
+react-social-icons@^4.1.0:
+  version "4.1.0"
+  resolved "https://registry.yarnpkg.com/react-social-icons/-/react-social-icons-4.1.0.tgz#d8c1f846783cba15ae0e75704377bc67805f4c20"
+  dependencies:
+    prop-types "^15.6.2"
 
 react-sortable-hoc@^0.6.8:
   version "0.6.8"

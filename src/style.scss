@@ -12,12 +12,15 @@ $Primary-color: red;
 $family-primary:'Roboto';
 $body-size:14px;
 $weight-normal:300;
+$link: $Primary-color !default;
 @import "~bulma"; 
 
 @import "/components/layout/Header/Header"; 
 @import '/components/layout/Footer/Footer';
+@import '/components/slider/Slider';
 @import '/components/layout/BackToTop/BackToTop';
 @import '/components/widgets/OfficeHours/OfficeHours';
 @import '/components/widgets/ContactInfo/ContactInfo'; 
+@import '/components/layout/BackToTop/BackToTop'; 
 @import '/components/widgets/BrandProducts/BrandProducts';
 @import '/components/widgets/EnterpriseFeature/EnterpriseFeature';

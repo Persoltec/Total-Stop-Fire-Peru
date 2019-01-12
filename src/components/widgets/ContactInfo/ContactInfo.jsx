@@ -2,6 +2,12 @@ import React from "react";
 import { StaticQuery, graphql } from "gatsby";
 
 import MapInfo from "../../../img/MapInfo.png";
+import { Icon } from 'react-icons-kit'
+
+import {ic_location_on} from 'react-icons-kit/md/ic_location_on'
+import {ic_phone} from 'react-icons-kit/md/ic_phone'
+import {ic_stay_current_portrait} from 'react-icons-kit/md/ic_stay_current_portrait'
+import {ic_mail} from 'react-icons-kit/md/ic_mail'
 
 class ContactInfo extends React.Component {
   render() {
@@ -41,6 +47,8 @@ class ContactInfo extends React.Component {
               ];
               var info = Object.values(edge.node.frontmatter).splice(1, 4);
 
+              var icono =[ic_location_on,ic_phone,ic_stay_current_portrait,ic_mail]
+ 
               return (
                 <div
                   style={{ backgroundImage: `url(${MapInfo})` }}
@@ -50,9 +58,8 @@ class ContactInfo extends React.Component {
                     return (
                       <article class="media">
                         <figure class="media-left">
-                          <p class="image is-48x48">
-                            <img src="https://bulma.io/images/placeholders/128x128.png" />
-                          </p>
+                           <Icon size={24}  icon={icono[i]} />
+ 
                         </figure>
                         <div class="media-content">
                           <div class="content">

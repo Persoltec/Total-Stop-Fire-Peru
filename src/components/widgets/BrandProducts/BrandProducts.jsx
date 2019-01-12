@@ -60,8 +60,8 @@ class BrandProducts extends React.Component {
                slidesToScroll="auto"
                slideIndex="1"
                autoplay="true"
-               autoplayInterval="1000"
-                
+               autoplayInterval="2000"
+                 wrapAround="true"
                >
                       {data.allMarkdownRemark.edges.map((item, i) => {
                         return (
@@ -87,8 +87,8 @@ class BrandProducts extends React.Component {
                slidesToScroll="1"
                slideIndex="1"
                autoplay="true"
-               autoplayInterval="1000"
-               
+               autoplayInterval="2000"
+             
                >
                       {data.allMarkdownRemark.edges.map((item, i) => {
                         return (

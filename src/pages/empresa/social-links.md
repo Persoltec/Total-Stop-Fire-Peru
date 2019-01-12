@@ -1,13 +1,13 @@
 ---
 social: SocialLinks
 redsocial:
-  - direccion: 'https://www.facebook.com/totalstopfire/'
+  - direccion: 'https://www.facebook.com/totalstopfire'
     tipo: Facebook
-  - direccion: '#'
+  - direccion: 'https://www.instagram.com'
     tipo: Instagram
-  - direccion: '#'
+  - direccion: 'https://plus.google.com'
     tipo: Google-Plus
-  - direccion: '#'
+  - direccion: 'https://www.youtube.com'
     tipo: Youtube
 ---
 

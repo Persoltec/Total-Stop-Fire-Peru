@@ -73,7 +73,7 @@ class Footer extends React.Component {
             <div className="level has-text-centered-touch">
                <div class="level-left">
                 ©2019 <a href="https://totalstopfireperu.com">Total Stop</a>
-                Todos los derechos reservados
+                 Todos los derechos reservados
                 </div>
                  <div class="level-rigth">
                  <SocialLinks />

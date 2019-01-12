@@ -1,4 +1,5 @@
 import React from "react";
+import { SocialIcon }   from 'react-social-icons';
 import { StaticQuery, graphql } from "gatsby";
  
 class SocialLinks extends React.Component {
@@ -27,13 +28,20 @@ class SocialLinks extends React.Component {
         `}
         render={data => (
           <div className="widget-social-links">
+
             {data.allMarkdownRemark.edges.map((items, index) => (
                <React.Fragment>
                {items.node.frontmatter.redsocial.map((item, i) => (
-                    
-                     <a  className={item.tipo.toString().toLowerCase()} href = {item.direccion} target="_blank"  icon={item.tipo.toString().toLowerCase()} >
-                    {item.tipo}
-                    </a>
+                    <SocialIcon
+                    style={{ height: 32, width: 32 }}
+                    fgColor="white"
+                    bgColor="transparent"
+                    className={item.tipo.toString().toLowerCase()}
+                    target="_blank" 
+                    url={item.direccion}
+                    label={item.tipo}
+                     />
+                  
                 ))}
                 </React.Fragment>
             ))}

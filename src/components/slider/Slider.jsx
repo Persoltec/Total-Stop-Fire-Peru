@@ -4,8 +4,10 @@ import PropTypes from "prop-types";
  
 import Img from "gatsby-image";
 import Carousel from 'nuka-carousel';
+import { Icon } from 'react-icons-kit'
+import {ic_navigate_next} from 'react-icons-kit/md/ic_navigate_next'
+import {ic_navigate_before} from 'react-icons-kit/md/ic_navigate_before'  
 
- 
 class Slider extends React.PureComponent {
   render() {
     const { ...props } = this.props;
@@ -56,8 +58,23 @@ class Slider extends React.PureComponent {
                <Carousel
                transitionMode="fade"
                autoplay="true"
-               autoplayInterval="1000"
-               className="slider"
+               autoplayInterval="3000"
+               className="slider inicio"
+               wrapAround="true"
+  renderCenterLeftControls={({ previousSlide }) => (
+    <a className="button previous" onClick={previousSlide}>
+      <Icon size={32}  icon={ic_navigate_before} />
+ 
+    </a>
+  )}
+  renderCenterRightControls={({ nextSlide }) => (
+    <a className="button next" onClick={nextSlide}>
+  <Icon size={32}  icon={ic_navigate_next} />
+    </a>
+  )}
+
+
+
                >
                 {items.node.frontmatter.pagina.map((item, i) => (
                   <div className="itemslider" key={i.toString()}>
