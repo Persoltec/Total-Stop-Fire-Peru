@@ -68,11 +68,11 @@ if (typeof window !== 'undefined') {
     let position=item.node.frontmatter.coordenadas.toString().split(",")
 
     return (              
- <Map center={position} zoom={15}>
+ <Map center={position} zoom={17}>
     <TileLayer
-      url='https://tiles.wmflabs.org/bw-mapnik/${z}/${x}/${y}.png'
+      url='https://server.arcgisonline.com/ArcGIS/rest/services/World_Topo_Map/MapServer/tile/{z}/{y}/{x}'
    
-    />
+    /> 
   
     <Marker position={position}  ref={this.openPopup}>
       <Popup popupOpen='true'>
