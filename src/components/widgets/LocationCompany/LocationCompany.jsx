@@ -5,17 +5,8 @@ import ContactInfo from "../ContactInfo/ContactInfo.jsx";
 import marker from "../../../img/marker.png";
  
 import { Map, Marker, Popup, TileLayer } from 'react-leaflet'
-import L from 'leaflet'
-
-
-export const pointerIcon = new L.Icon({
-  iconUrl: marker,
-  iconRetinaUrl: marker,
-  iconSize: [128, 128],
-})
  
-
-
+ 
 class LocationCompany extends React.Component {
 
    openPopup (marker) {
@@ -66,7 +57,7 @@ if (typeof window !== 'undefined') {
       url='http://{s}.tiles.wmflabs.org/bw-mapnik/{z}/{x}/{y}.png'
    
     />
-    <Marker position={position} icon={pointerIcon} ref={this.openPopup}>
+    <Marker position={position}   ref={this.openPopup}>
       <Popup popupOpen='true'>
         
 
