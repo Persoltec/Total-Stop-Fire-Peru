@@ -1,22 +1,9 @@
 import React from "react";
 import { StaticQuery, graphql } from "gatsby";
 import Img from "gatsby-image";
-import Media from 'react-media';
- 
 
-    const params = {
-      slidesPerView: 3,
-      pagination: {
-        el: '.swiper-pagination',
-        type: 'bullets',
-        clickable: true
-      },
-      navigation: {
-        nextEl: '.swiper-button-next',
-        prevEl: '.swiper-button-prev'
-      },
-      spaceBetween: 30
-    }
+
+
 
 const flickityOptions = {
  cellAlign: 'left',
@@ -27,24 +14,31 @@ const flickityOptions = {
 
 class BrandProducts extends React.Component {
 
-   state = { Flickity: null };
+  state = { Flickity: null };
 
   constructor(props) {
     super(props);
-    if (typeof window !== 'undefined') {
+     if (typeof window !== 'undefined') {
       const Flickity = require('react-flickity-component');
       this.state.Flickity = Flickity;
     }
   }
 
+
+  componentDidMount() {
+
+    
+   }
+
+
+
   render() {
     const { ...props } = this.props;
-    const { isMobile } = props;
     const { Titulo } = props;
-    delete props.isMobile;
     delete props.Titulo;
- let num=4;
  
+ 
+ const { Flickity } = this.state;
 
     return (
       <StaticQuery
@@ -73,7 +67,6 @@ class BrandProducts extends React.Component {
         `}
         render={data => {
 
- const { Flickity } = this.state;
 
           return(
          <section class="widget-brand-products section">
@@ -84,13 +77,13 @@ class BrandProducts extends React.Component {
                 </h1>
                 <h2 className="subtitle">{Titulo}</h2>
               </div>
-
+{Flickity && (
   <Flickity
-      className={'carousel'} // default ''
-      elementType={'div'} // default 'div'
-      options={flickityOptions} // takes flickity options {}
-      disableImagesLoaded={false} // default false
-      reloadOnUpdate // default false
+      className={'carousel'}  
+      elementType={'div'}  
+      options={flickityOptions}  
+      disableImagesLoaded={false}  
+      reloadOnUpdate  
     >
                       {data.allMarkdownRemark.edges.map((item, i) => {
                         return (
@@ -99,8 +92,7 @@ class BrandProducts extends React.Component {
                               <Img 
                                 style={{ width: "160px", margin: "0 auto" }}
                                 sizes={
-                                  item.node.frontmatter.imagen.childImageSharp
-                                    .sizes
+                                  item.node.frontmatter.imagen.childImageSharp.sizes
                                 }
                                 alt={item.node.frontmatter.title}
                               />
@@ -109,19 +101,8 @@ class BrandProducts extends React.Component {
                         );
                       })}
                     </Flickity>
-
-
-
-
-   
-
-
+)}
  
-
-        
- 
-          
-               
             </div>
           </section>
         )}}

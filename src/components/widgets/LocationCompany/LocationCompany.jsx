@@ -51,7 +51,27 @@ if (typeof window !== 'undefined') {
                   
                   className="widget-location-company"
                 >
-  
+   {data.allMarkdownRemark.edges.map((item, index) => {
+    let position=item.node.frontmatter.coordenadas.toString().split(",")
+
+    return (              
+ <Map center={position} zoom={15}>
+    <TileLayer
+      url='http://{s}.tiles.wmflabs.org/bw-mapnik/{z}/{x}/{y}.png'
+   
+    />
+    <Marker position={position}   ref={this.openPopup}>
+      <Popup popupOpen='true'>
+        
+
+        <ContactInfo name="popup-info"/>
+      </Popup>
+    </Marker>
+  </Map>
+
+
+   )
+})}
                 </div>
    
         )
