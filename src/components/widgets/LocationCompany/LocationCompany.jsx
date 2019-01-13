@@ -5,9 +5,7 @@ import ContactInfo from "../ContactInfo/ContactInfo.jsx";
 import marker from "../../../img/marker.png";
  
 import { Map, Marker, Popup, TileLayer } from 'react-leaflet'
-import L from 'leaflet'
-
-
+ 
 
 
 
