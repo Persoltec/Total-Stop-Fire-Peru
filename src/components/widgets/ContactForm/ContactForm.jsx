@@ -44,7 +44,7 @@ class ContactForm extends React.Component {
         `}
         render={data => {
           return (
-            <div className="widget-contact-form">
+            <div className="widget-contact-form" id="widget-contact-form">
               <form method="POST">
                 <label htmlFor="name">Name</label>
                 <input type="text" name="name" />

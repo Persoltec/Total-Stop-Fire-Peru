@@ -120,7 +120,9 @@ class Header extends React.Component {
           <div class="hero-foot has-text-centered">
           <Waypoint onLeave={this.onExitViewport}  onEnter={this.onEnterViewport}>
             <div class="container">
+            <a href='#widget-contact-form'>
 <Icon size={48} icon={ic_keyboard_arrow_down}/>
+</a>
             </div>
             </Waypoint> 
           </div>

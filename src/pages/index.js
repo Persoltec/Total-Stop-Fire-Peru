@@ -25,7 +25,7 @@ export default class IndexPage extends React.Component {
 			<Layout >
 				
 				
-				<EnterpriseFeature />
+				<EnterpriseFeature  />
 				<BrandProducts Titulo="Marcas líderes" />
 			</Layout>
 		); 

@@ -98,8 +98,22 @@
  
 
   .slider {
-    .slider-control-centerleft + .slider-control-centerright {
+    .slider-control-centerleft {
+    margin-left: 20px;
+    top: 20%;
+    }
+    .slider-control-centerright {
+    margin-right: 20px;
+top: 20%;
+    }
+    .slider-control-centerleft , .slider-control-centerright {
       z-index: 20;
+      a{
+            color: white;
+    background: #00000024;
+    border: none;
+        width: 40px;
+      }
     }
 
     .itemslider {
@@ -124,6 +138,22 @@
 
 @media screen and (max-width: 767px) {
   .header {
+      .slider {
+    .slider-control-centerleft {
+       top: 80% !important;
+      a{
+   background:transparent !important;
+ }
+   
+    }
+    .slider-control-centerright {
+      top: 80% !important;
+       a{
+   background:transparent !important;
+ }
+
+    }
+  }
     nav{
       height: 40px !important;
       .navbar-brand {
