@@ -4,8 +4,6 @@ import Img from "gatsby-image";
 import Carousel from 'nuka-carousel';
 import Media from 'react-media';
  
-import Flickity from 'react-flickity-component'
- 
 
     const params = {
       slidesPerView: 3,
@@ -29,7 +27,17 @@ const flickityOptions = {
 
 
 class BrandProducts extends React.Component {
- 
+
+   state = { Flickity: null };
+
+  constructor(props) {
+    super(props);
+    if (typeof window !== 'undefined') {
+      const Flickity = require('react-flickity-component');
+      this.state.Flickity = Flickity;
+    }
+  }
+
   render() {
     const { ...props } = this.props;
     const { isMobile } = props;
@@ -38,6 +46,7 @@ class BrandProducts extends React.Component {
     delete props.Titulo;
  let num=4;
  
+
     return (
       <StaticQuery
         query={graphql`
@@ -63,7 +72,11 @@ class BrandProducts extends React.Component {
             }
           }
         `}
-        render={data => (
+        render={data => {
+
+ const { Flickity } = this.state;
+
+          return(
          <section class="widget-brand-products section">
     <div class="container">
               <div  className="titulo has-text-centered">
@@ -112,7 +125,7 @@ class BrandProducts extends React.Component {
                
             </div>
           </section>
-        )}
+        )}}
       />
     );
   }

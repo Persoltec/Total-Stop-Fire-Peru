@@ -1,8 +1,7 @@
 import React from "react";
 import { StaticQuery, graphql } from "gatsby";
 import PropTypes from "prop-types";
-import Flickity from "react-flickity-component";
-
+ 
 import Img from "gatsby-image";
 
 // import { Icon } from 'react-icons-kit'
@@ -15,10 +14,22 @@ const flickityOptions = {
 };
 
 class Slider extends React.PureComponent {
+
+  state = { Flickity: null };
+  constructor(props) {
+    super(props);
+    if (typeof window !== 'undefined') {
+      const Flickity = require('react-flickity-component');
+      this.state.Flickity = Flickity;
+    }
+  }
+
+
+
   render() {
     const { ...props } = this.props;
     delete props.isMobile;
-
+const { Flickity } = this.state;
     const SliderAnimation = props => (
       <StaticQuery
         query={graphql`
@@ -54,7 +65,10 @@ class Slider extends React.PureComponent {
             }
           }
         `}
-        render={data => (
+             render={data => {
+
+ const { Flickity } = this.state;
+return(
           <React.Fragment>
             {data.allMarkdownRemark.edges.map((items, i) => (
               <Flickity
@@ -82,16 +96,16 @@ class Slider extends React.PureComponent {
               </Flickity>
             ))}
           </React.Fragment>
-        )}
+        )}}
       />
     );
-if (typeof window !== 'undefined') {
+ 
     return (
       <React.Fragment>
         <SliderAnimation />
       </React.Fragment>
     );
-  }
+   
   }
 }
 
