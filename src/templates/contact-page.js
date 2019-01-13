@@ -4,6 +4,8 @@ import { graphql } from "gatsby";
 import Layout from "../components/Layout";
 import LocationCompany from "../components/widgets/LocationCompany/LocationCompany";
 import ContactForm from "../components/widgets/ContactForm/ContactForm";
+import EnterpriseFeature from "../components/widgets/EnterpriseFeature/EnterpriseFeature";
+
 import Content, { HTMLContent } from "../components/Content";
 
 export const ContactPageTemplate = ({ title, content, contentComponent }) => {
@@ -29,6 +31,7 @@ export const ContactPageTemplate = ({ title, content, contentComponent }) => {
               </div>
             </div>
           </div>
+          <EnterpriseFeature/>
         </div>
       </section>
     </React.Fragment>

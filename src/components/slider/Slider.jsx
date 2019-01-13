@@ -4,24 +4,34 @@ import PropTypes from "prop-types";
  
 import Img from "gatsby-image";
 
-// import { Icon } from 'react-icons-kit'
-// import {ic_navigate_next} from 'react-icons-kit/md/ic_navigate_next'
-// import {ic_navigate_before} from 'react-icons-kit/md/ic_navigate_before'
+import Carousel from "nuka-carousel";
+import { Icon } from 'react-icons-kit'
+import {ic_navigate_next} from 'react-icons-kit/md/ic_navigate_next'
+import {ic_navigate_before} from 'react-icons-kit/md/ic_navigate_before'  
 
-const flickityOptions = {
+
+
+const nuka = {
+  slideIndex: 0,
   wrapAround: true,
-  setGallerySize: false
+  underlineHeader: true,
+  slidesToShow: 1,
+  slidesToScroll: "1",
+  cellAlign: "left",
+  transitionMode: "fade",
+  heightMode: "max",
+  withoutControls: false
 };
+
+ 
+ 
 
 class Slider extends React.PureComponent {
 
-  state = { Flickity: null };
+ 
   constructor(props) {
     super(props);
-    if (typeof window !== 'undefined') {
-      const Flickity = require('react-flickity-component');
-      this.state.Flickity = Flickity;
-    }
+  
   }
 
 
@@ -29,7 +39,7 @@ class Slider extends React.PureComponent {
   render() {
     const { ...props } = this.props;
     delete props.isMobile;
-const { Flickity } = this.state;
+ 
     const SliderAnimation = props => (
       <StaticQuery
         query={graphql`
@@ -69,14 +79,26 @@ const { Flickity } = this.state;
           <React.Fragment>
             {data.allMarkdownRemark.edges.map((items, i) => (
               <React.Fragment>
-              {Flickity && (
-              <Flickity
-                className={"carousel"} // default ''
-                elementType={"div"} // default 'div'
-                options={flickityOptions} // takes flickity options {}
-                disableImagesLoaded={false} // default false
-                reloadOnUpdate // default false
-              >
+           
+
+
+
+                <Carousel 
+
+                {...nuka}
+  renderCenterLeftControls={({ previousSlide }) => (
+    <a className="button previous" onClick={previousSlide}>
+      <Icon size={32}  icon={ic_navigate_before} />
+ 
+    </a>
+  )}
+  renderCenterRightControls={({ nextSlide }) => (
+    <a className="button next" onClick={nextSlide}>
+  <Icon size={32}  icon={ic_navigate_next} />
+    </a>
+  )}
+
+                >
                 {items.node.frontmatter.pagina.map((item, i) => (
                   <div className="itemslider" key={i.toString()}>
                     <Img fluid={item.imagen.childImageSharp.fluid} />
@@ -92,8 +114,9 @@ const { Flickity } = this.state;
                     </div>
                   </div>
                 ))}
-              </Flickity>
-              )}
+              </Carousel>
+            
+
               </React.Fragment>
             ))}
           </React.Fragment>

@@ -68,7 +68,7 @@ if (typeof window !== 'undefined') {
     let position=item.node.frontmatter.coordenadas.toString().split(",")
 
     return (              
- <Map center={position} zoom={17}>
+ <Map center={position} zoom={15}>
     <TileLayer
       url='https://server.arcgisonline.com/ArcGIS/rest/services/World_Topo_Map/MapServer/tile/{z}/{y}/{x}'
    
