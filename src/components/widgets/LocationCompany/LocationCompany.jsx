@@ -5,9 +5,10 @@ import ContactInfo from "../ContactInfo/ContactInfo.jsx";
 import marker from "../../../img/marker.png";
  
 import { Map, Marker, Popup, TileLayer } from 'react-leaflet'
- 
+import L from 'leaflet'
 
- 
+
+
 
 
 class LocationCompany extends React.Component {
@@ -24,7 +25,12 @@ class LocationCompany extends React.Component {
     // const { ...props } = this.props;
     // const {isMobile   } = props;
     // delete props.isMobile;
-
+const pointerIcon = new L.Icon({
+  iconUrl: marker,
+  iconRetinaUrl: marker,
+  iconSize: [128, 128],
+})
+ 
     return (
       <StaticQuery
         query={graphql`
@@ -57,10 +63,10 @@ if (typeof window !== 'undefined') {
     return (              
  <Map center={position} zoom={15}>
     <TileLayer
-      url='http://{s}.tiles.wmflabs.org/bw-mapnik/{z}/{x}/{y}.png'
+      url='https://{s}.tiles.wmflabs.org/bw-mapnik/{z}/{x}/{y}.png'
    
     />
-    <Marker position={position}   ref={this.openPopup}>
+    <Marker position={position} icon={pointerIcon} ref={this.openPopup}>
       <Popup popupOpen='true'>
         
 
