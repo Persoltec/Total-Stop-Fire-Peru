@@ -85,12 +85,13 @@ class Slider extends React.PureComponent {
         )}
       />
     );
-
+if (typeof window !== 'undefined') {
     return (
       <React.Fragment>
         <SliderAnimation />
       </React.Fragment>
     );
+  }
   }
 }
 
