@@ -22,10 +22,11 @@ export default class IndexPage extends React.Component {
 
 	render() {
 		return ( 
-			<Layout>
+			<Layout >
 				
-				<BrandProducts Titulo="Marcas líderes" />
+				
 				<EnterpriseFeature />
+				<BrandProducts Titulo="Marcas líderes" />
 			</Layout>
 		); 
 	}

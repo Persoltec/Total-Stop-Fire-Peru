@@ -51,7 +51,7 @@ class OfficeHours extends React.Component {
                     return (
                       <div className="level">
                         <div className="level-left"> {dia}</div>
-                        <div className="level-right hour"> {horario[i]}</div>
+                        <div className="level-right has-text-primary"> {horario[i]}</div>
                       </div>
                     );
                   })}

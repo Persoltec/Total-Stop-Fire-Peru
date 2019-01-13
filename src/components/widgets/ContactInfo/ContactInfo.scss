@@ -10,14 +10,12 @@
       margin-right: 1rem;
       height: 40px;
       width: 40px;
-      border: 1px solid #9d0404;
+      border: 1px solid rgba($primary, 0.5);
       border-radius: 2px;
       text-align: center;
       line-height: 40px;
-      color: #ededed;
     }
   }
   .titulo {
-    color: $Primary-color;
   }
 }

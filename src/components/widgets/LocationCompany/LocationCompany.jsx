@@ -14,8 +14,18 @@ export const pointerIcon = new L.Icon({
   iconSize: [128, 128],
 })
  
- 
+
+
 class LocationCompany extends React.Component {
+
+   openPopup (marker) {
+    if (marker && marker.leafletElement) {
+      window.setTimeout(() => {
+        marker.leafletElement.openPopup()
+      })
+    }
+  }
+  
   render() {
     // const { ...props } = this.props;
     // const {isMobile   } = props;
@@ -56,8 +66,8 @@ if (typeof window !== 'undefined') {
       url='http://{s}.tiles.wmflabs.org/bw-mapnik/{z}/{x}/{y}.png'
    
     />
-    <Marker position={position} icon={pointerIcon}>
-      <Popup>
+    <Marker position={position} icon={pointerIcon} ref={this.openPopup}>
+      <Popup popupOpen='true'>
         
 
         <ContactInfo name="popup-info"/>

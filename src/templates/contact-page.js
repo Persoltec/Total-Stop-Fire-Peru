@@ -1,37 +1,48 @@
-import React from 'react'
-import PropTypes from 'prop-types'
-import { graphql } from 'gatsby'
-import Layout from '../components/Layout'
-import LocationCompany from '../components/widgets/LocationCompany/LocationCompany'
-import Content, { HTMLContent } from '../components/Content'
-
-
+import React from "react";
+import PropTypes from "prop-types";
+import { graphql } from "gatsby";
+import Layout from "../components/Layout";
+import LocationCompany from "../components/widgets/LocationCompany/LocationCompany";
+import ContactForm from "../components/widgets/ContactForm/ContactForm";
+import Content, { HTMLContent } from "../components/Content";
 
 export const ContactPageTemplate = ({ title, content, contentComponent }) => {
-  const PageContent = contentComponent || Content
+  const PageContent = contentComponent || Content;
 
   return (
     <React.Fragment>
-     <LocationCompany/> 
-   <section class="section">
-    <div class="container">
-             
-              <PageContent className="content" content={content} />
-          
-      </div>
-    </section>
+      <section class="section">
+        <div class="container">
+          <div class="tile">
+            <div class="tile is-horizontal">
+              <div className="tile is-parent is-6">
+                <div class="tile is-child ">
+                  <PageContent className="content" content={content} />
+                  <ContactForm />
+                </div>
+              </div>
+
+              <div className="tile is-parent is-6 is-hidden-touch">
+                <div class="tile is-child ">
+                  <LocationCompany />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
     </React.Fragment>
-  )
-}
+  );
+};
 
 ContactPageTemplate.propTypes = {
   title: PropTypes.string.isRequired,
   content: PropTypes.string,
-  contentComponent: PropTypes.func,
-}
+  contentComponent: PropTypes.func
+};
 
 const ContactPage = ({ data }) => {
-  const { markdownRemark: post } = data
+  const { markdownRemark: post } = data;
 
   return (
     <Layout titulo={post.frontmatter.title}>
@@ -41,14 +52,14 @@ const ContactPage = ({ data }) => {
         content={post.html}
       />
     </Layout>
-  )
-}
+  );
+};
 
 ContactPage.propTypes = {
-  data: PropTypes.object.isRequired,
-}
+  data: PropTypes.object.isRequired
+};
 
-export default ContactPage
+export default ContactPage;
 
 export const ContactPageQuery = graphql`
   query ContactPage($id: String!) {
@@ -59,4 +70,4 @@ export const ContactPageQuery = graphql`
       }
     }
   }
-`
+`;

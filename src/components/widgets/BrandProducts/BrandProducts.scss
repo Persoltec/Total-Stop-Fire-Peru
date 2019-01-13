@@ -1,12 +1,18 @@
 .widget-brand-products {
+  .flickity-slider {
+    div {
+      width: 25%;
+    }
+  }
   min-height: 400px;
   .titulo {
     padding-bottom: 50px;
   }
   .slider {
-    .slider-control-centerleft , .slider-control-centerright{
-    display: none;
-}
+    .slider-control-centerleft,
+    .slider-control-centerright {
+      display: none;
+    }
     .slider-control-bottomcenter {
       bottom: initial !important;
       top: 100% !important;
@@ -18,7 +24,12 @@
 }
 
 @media screen and (max-width: 767px) {
-.widget-brand-products {
-  min-height: 300px;
-}
+  .widget-brand-products {
+    .flickity-slider {
+      div {
+        width: 50%;
+      }
+    }
+    min-height: 300px;
   }
+}

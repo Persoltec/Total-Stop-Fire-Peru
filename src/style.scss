@@ -1,18 +1,25 @@
+@import "~flickity/css/flickity.css";
+@import "~swiper/dist/css/swiper.min.css";
 @import "~bulma/sass/utilities/initial-variables";
 
-
+ 
 // Config vars
 // Kalidi logo brand color: #FD461E
 $kaldi-red: #D64000;
 $kaldi-red-invert: #fff;
-$primary: $kaldi-red;
+ 
 $primary-invert: $kaldi-red-invert;
-$body-color: #333;
-$Primary-color: red; 
+
+//Configuracion de Colores
+ 
+$primary:#e6212b;
+$link: $primary !default;
+$body-color:$grey-darker;
+
 $family-primary:'Roboto';
 $body-size:14px;
 $weight-normal:300;
-$link: $Primary-color !default;
+ 
 @import "~bulma"; 
 
 @import "/components/layout/Header/Header"; 
@@ -21,6 +28,7 @@ $link: $Primary-color !default;
 @import '/components/layout/BackToTop/BackToTop';
 @import '/components/widgets/OfficeHours/OfficeHours';
 @import '/components/widgets/ContactInfo/ContactInfo'; 
+@import '/components/widgets/ContactForm/ContactForm'; 
 @import '/components/widgets/LocationCompany/LocationCompany'; 
 @import '/components/layout/BackToTop/BackToTop'; 
 @import '/components/widgets/BrandProducts/BrandProducts';

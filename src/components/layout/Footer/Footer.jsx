@@ -19,73 +19,58 @@ class Footer extends React.Component {
     delete props.isMobile;
 
     return (
-      <footer class="footer">
-       <section class="section">
-        <div class="container">
-
-
-
-
-
-
-
-
-          <div className="columns">
-            <div className="column is-hidden-touch">
-              <StaticQuery
-                query={graphql`
-                  query {
-                    personal: file(relativePath: { eq: "personal.png" }) {
-                      childImageSharp {
-                        sizes(maxWidth: 400) {
-                          ...GatsbyImageSharpSizes_tracedSVG
+      <footer class="footer has-text-light">
+        <section class="section">
+          <div class="container">
+            <div className="columns">
+              <div className="column is-hidden-touch">
+                <StaticQuery
+                  query={graphql`
+                    query {
+                      personal: file(relativePath: { eq: "personal.png" }) {
+                        childImageSharp {
+                          sizes(maxWidth: 400) {
+                            ...GatsbyImageSharpSizes_tracedSVG
+                          }
                         }
                       }
                     }
-                  }
-                `}
-                render={data => (
-                  <Img
-                    style={{ width: "160px", margin: "0 auto" }}
-                    sizes={data.personal.childImageSharp.sizes}
-                  />
-                )}
-              />
-            </div>
-
-            <div className="column">
-              <ContactInfo />
-            </div>
-
-            <div className="column">
-              <OfficeHours />
-            </div>
-          </div>
-
-
-        </div>
-           </section> 
-
-
-            <div className="copyright">
-             <section class="section">
-            <div className="container">
-            <div className="level has-text-centered-touch">
-               <div class="level-left">
-                ©2019 <a href="https://totalstopfireperu.com">Total Stop</a>
-                 Todos los derechos reservados
-                </div>
-                 <div class="level-rigth">
-                 <SocialLinks />
+                  `}
+                  render={data => (
+                    <Img
+                      style={{ width: "160px", margin: "0 auto" }}
+                      sizes={data.personal.childImageSharp.sizes}
+                    />
+                  )}
+                />
               </div>
 
-              
-            </div>
-            </div>
-            </section>
-            </div>
+              <div className="column">
+                <ContactInfo />
+              </div>
 
-           
+              <div className="column">
+                <OfficeHours />
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <div className="copyright">
+          <section class="section">
+            <div className="container">
+              <div className="level has-text-centered-touch">
+                <div class="level-left">
+                  ©2019 <a href="https://totalstopfireperu.com">Total Stop</a>
+                  Todos los derechos reservados
+                </div>
+                <div class="level-rigth">
+                  <SocialLinks />
+                </div>
+              </div>
+            </div>
+          </section>
+        </div>
       </footer>
     );
   }

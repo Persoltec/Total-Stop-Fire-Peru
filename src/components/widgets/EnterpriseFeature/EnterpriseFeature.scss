@@ -2,38 +2,38 @@
   .tile.is-parent {
     padding: 0px;
     &.rojo {
-      background: red;
-      color: white;
+      background: $primary;
+      color: $white-ter;
       h1 {
-        color: white;
+        color: $white-ter;
       }
       svg {
         path {
-          fill: white;
+          fill: $white-ter;
         }
       }
     }
     &.negro {
-      background: #333333;
-      color: white;
+      background: $grey-dark;
+      color: $white-ter;
       h1 {
-        color: white;
+        color: $white-ter;
       }
       svg {
         path {
-          fill: white;
+          fill: $white-ter;
         }
       }
     }
     &.blanco {
-      background: #ededed;
-      color: red;
+      background: $white-ter;
+      color: $primary;
       h1 {
-        color: red;
+        color: $primary;
       }
       svg {
         path {
-          fill: red;
+          fill: $primary;
         }
       }
     }

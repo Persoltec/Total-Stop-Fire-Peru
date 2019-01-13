@@ -3,7 +3,29 @@ import { StaticQuery, graphql } from "gatsby";
 import Img from "gatsby-image";
 import Carousel from 'nuka-carousel';
 import Media from 'react-media';
+ 
+import Flickity from 'react-flickity-component'
+ 
 
+    const params = {
+      slidesPerView: 3,
+      pagination: {
+        el: '.swiper-pagination',
+        type: 'bullets',
+        clickable: true
+      },
+      navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev'
+      },
+      spaceBetween: 30
+    }
+
+const flickityOptions = {
+ cellAlign: 'left',
+    wrapAround: true ,
+    adaptiveHeight: true,
+}
 
 
 class BrandProducts extends React.Component {
@@ -51,21 +73,16 @@ class BrandProducts extends React.Component {
                 <h2 className="subtitle">{Titulo}</h2>
               </div>
 
- <Media query="(max-width: 599px)">
-          {matches =>
-            matches ? (
-              <Carousel
-              cellAlign="left"
-               slidesToShow="2"
-               slidesToScroll="auto"
-               slideIndex="1"
-               autoplay="true"
-               autoplayInterval="2000"
-                 wrapAround="true"
-               >
+  <Flickity
+      className={'carousel'} // default ''
+      elementType={'div'} // default 'div'
+      options={flickityOptions} // takes flickity options {}
+      disableImagesLoaded={false} // default false
+      reloadOnUpdate // default false
+    >
                       {data.allMarkdownRemark.edges.map((item, i) => {
                         return (
-                            <div>
+                            <div key={i.toString()}>
                              
                               <Img 
                                 style={{ width: "160px", margin: "0 auto" }}
@@ -79,37 +96,15 @@ class BrandProducts extends React.Component {
                             </div>
                         );
                       })}
-                    </Carousel>
-            ) : (
-              <Carousel
-               cellAlign="left"
-               slidesToShow="4"
-               slidesToScroll="1"
-               slideIndex="1"
-               autoplay="true"
-               autoplayInterval="2000"
-             
-               >
-                      {data.allMarkdownRemark.edges.map((item, i) => {
-                        return (
-                            <div>
-                             
-                              <Img 
-                                style={{ width: "160px", margin: "0 auto" }}
-                                sizes={
-                                  item.node.frontmatter.imagen.childImageSharp
-                                    .sizes
-                                }
-                                alt={item.node.frontmatter.title}
-                              />
-                              
-                            </div>
-                        );
-                      })}
-                    </Carousel>
-            )
-          }
-        </Media>
+                    </Flickity>
+
+
+
+
+   
+
+
+ 
 
         
  
