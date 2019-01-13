@@ -14,10 +14,7 @@ class LocationCompany extends React.Component {
  state = { L: null };
   constructor(props) {
     super(props);
-    if (typeof window !== 'undefined') {
-      const L = require('leaflet');
-      this.state.L = L;
-    }
+  
   }
 
 
@@ -37,13 +34,7 @@ class LocationCompany extends React.Component {
     // const { ...props } = this.props;
     // const {isMobile   } = props;
     // delete props.isMobile;
-    const { L } = this.state;
-
-     const pointerIcon = new L.Icon({
-  iconUrl: marker,
-  iconRetinaUrl: marker,
-  iconSize: [128, 128],
-})
+  
 
 
  
@@ -82,15 +73,15 @@ if (typeof window !== 'undefined') {
       url='https://{s}.tiles.wmflabs.org/bw-mapnik/{z}/{x}/{y}.png'
    
     />
-    {L && (
-    <Marker position={position} icon={pointerIcon} ref={this.openPopup}>
+  
+    <Marker position={position}  ref={this.openPopup}>
       <Popup popupOpen='true'>
         
 
         <ContactInfo name="popup-info"/>
       </Popup>
     </Marker>
-    )}
+ 
   </Map>
 
 
