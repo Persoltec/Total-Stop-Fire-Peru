@@ -2,28 +2,47 @@ import React from "react";
 import { findDOMNode } from "react-dom";
 import { Icon } from 'react-icons-kit'
 import {ic_keyboard_arrow_down} from 'react-icons-kit/md/ic_keyboard_arrow_down'
-//import classNames from 'classnames';
+import Waypoint from 'react-waypoint';
 
 import Slider from "../../slider/Slider";
 import { Link } from "gatsby";
 //import Logo from "../Logo/Logo.jsx";
 import logo from "../../../img/logo.svg";
-
+ 
 class Header extends React.Component {
-  constructor(props) {
-    super(props);
+ state = {
+      HeaderWhite: false
+    }
+
+
+   onEnterViewport = () => {
+    this.setState({
+      HeaderWhite: true,
+    });
   }
 
+  onExitViewport = () => {
+    this.setState({
+      HeaderWhite: false,
+    });
+  }
+
+
+ 
   render() {
     const { ...props } = this.props;
-    const { isMobile, titulo } = props;
-
+    const { titulo } = props;
+ 
+ const { HeaderWhite } = this.state;
+ 
     return ( 
       <React.Fragment>
+      
         <section className={`hero ${titulo ? ' is-medium' : ' is-fullheight'} is-dark is-bold header`} >
           <div class="hero-head">
             <nav
-              class="navbar is-transparent is-fixed-top is-dark"
+            className={`navbar  is-fixed-top  ${HeaderWhite ? 'header-black' : 'header-white is-white'}`}
+            
               role="navigation"
               aria-label="main navigation"
             >
@@ -85,7 +104,7 @@ class Header extends React.Component {
           {!titulo && <Slider />}
 
           {titulo && (
-  <div class="hero-body">
+        <div class="hero-body">
     <div class="container  has-text-centered">
       <h1 class="title">
         {titulo}
@@ -99,9 +118,11 @@ class Header extends React.Component {
             )}
 
           <div class="hero-foot has-text-centered">
+          <Waypoint onLeave={this.onExitViewport}  onEnter={this.onEnterViewport}>
             <div class="container">
 <Icon size={48} icon={ic_keyboard_arrow_down}/>
             </div>
+            </Waypoint> 
           </div>
         </section>
       </React.Fragment>

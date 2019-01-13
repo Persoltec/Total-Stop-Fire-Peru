@@ -2530,6 +2530,10 @@ clean-css@4.2.x:
   dependencies:
     source-map "~0.6.0"
 
+clean-react-props@^0.2.9:
+  version "0.2.11"
+  resolved "https://registry.yarnpkg.com/clean-react-props/-/clean-react-props-0.2.11.tgz#59e967d871cc9c2dcc3e4cbe6bbeaaba9ccea6c7"
+
 cli-boxes@^1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/cli-boxes/-/cli-boxes-1.0.0.tgz#4fa917c3e59c94a004cd61f8ee509da651687143"
@@ -7469,6 +7473,10 @@ lodash.templatesettings@^4.0.0:
   dependencies:
     lodash._reinterpolate "~3.0.0"
 
+lodash.throttle@^4.1.1:
+  version "4.1.1"
+  resolved "https://registry.yarnpkg.com/lodash.throttle/-/lodash.throttle-4.1.1.tgz#c23e91b710242ac70c37f1e1cda9274cc39bf2f4"
+
 lodash.toarray@^4.4.0:
   version "4.4.0"
   resolved "https://registry.yarnpkg.com/lodash.toarray/-/lodash.toarray-4.4.0.tgz#24c4bfcd6b2fba38bfd0594db1179d8e9b656561"
@@ -10389,6 +10397,14 @@ react-router@^4.2.0, react-router@^4.3.1:
 react-scroll-sync@^0.6.0:
   version "0.6.0"
   resolved "https://registry.yarnpkg.com/react-scroll-sync/-/react-scroll-sync-0.6.0.tgz#c87eba2cdd55ae35874277d74b034419d73df59a"
+
+react-scroll-trigger@^0.5.2:
+  version "0.5.2"
+  resolved "https://registry.yarnpkg.com/react-scroll-trigger/-/react-scroll-trigger-0.5.2.tgz#ff6ac50bf8ec940dc897fa9748b34c481ffd29dd"
+  dependencies:
+    clean-react-props "^0.2.9"
+    lodash.throttle "^4.1.1"
+    prop-types "^15.6.2"
 
 react-scroll-up-button@^1.6.4:
   version "1.6.4"
