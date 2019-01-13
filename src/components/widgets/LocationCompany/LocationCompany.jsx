@@ -70,7 +70,7 @@ if (typeof window !== 'undefined') {
     return (              
  <Map center={position} zoom={15}>
     <TileLayer
-      url='https://{s}.tiles.wmflabs.org/bw-mapnik/{z}/{x}/{y}.png'
+      url='https://tiles.wmflabs.org/bw-mapnik/${z}/${x}/${y}.png'
    
     />
   
