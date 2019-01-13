@@ -13,6 +13,16 @@ import L from 'leaflet'
 
 class LocationCompany extends React.Component {
 
+ state = { L: null };
+  constructor(props) {
+    super(props);
+    if (typeof window !== 'undefined') {
+      const L = require('leaflet');
+      this.state.L = L;
+    }
+  }
+
+
    openPopup (marker) {
     if (marker && marker.leafletElement) {
       window.setTimeout(() => {
@@ -21,15 +31,23 @@ class LocationCompany extends React.Component {
     }
   }
   
+
+
+
+
   render() {
     // const { ...props } = this.props;
     // const {isMobile   } = props;
     // delete props.isMobile;
-const pointerIcon = new L.Icon({
+    const { L } = this.state;
+if (typeof window !== 'undefined') {
+     const pointerIcon = new L.Icon({
   iconUrl: marker,
   iconRetinaUrl: marker,
   iconSize: [128, 128],
 })
+    }
+
  
     return (
       <StaticQuery
@@ -66,6 +84,7 @@ if (typeof window !== 'undefined') {
       url='https://{s}.tiles.wmflabs.org/bw-mapnik/{z}/{x}/{y}.png'
    
     />
+    {L && (
     <Marker position={position} icon={pointerIcon} ref={this.openPopup}>
       <Popup popupOpen='true'>
         
@@ -73,6 +92,7 @@ if (typeof window !== 'undefined') {
         <ContactInfo name="popup-info"/>
       </Popup>
     </Marker>
+    )}
   </Map>
 
 
