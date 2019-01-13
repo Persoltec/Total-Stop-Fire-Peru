@@ -61,14 +61,25 @@
   }
   .hero-foot {
     position: absolute;
-    bottom: 40px;
     width: 100%;
+    height: 100vh; 
+    .container {
+    position: absolute;
+    width: 100%;
+    bottom: 50px;
+}
   }
   .hero {
     position: relative;
   }
 
   
+.slider {
+
+.slider-control-centerleft+ .slider-control-centerright {
+    z-index: 20;
+}
+
   .itemslider{
     height: 100vh !important;
           .gatsby-image-wrapper {
@@ -87,7 +98,7 @@
       }
   }
  
-
+}
   
 }
 

@@ -15,12 +15,16 @@ const nuka = {
   slideIndex: 0,
   wrapAround: true,
   underlineHeader: true,
-  slidesToShow: 1,
+  slidesToShow: '1',
   slidesToScroll: "1",
   cellAlign: "left",
   transitionMode: "fade",
   heightMode: "max",
-  withoutControls: false
+  withoutControls: false,
+  dragging:false,
+  disableKeyboardControls:true,
+  autoplay:true,
+  autoplayInterval:2000
 };
 
  
