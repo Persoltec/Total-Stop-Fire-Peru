@@ -38,13 +38,13 @@ class LocationCompany extends React.Component {
     // const {isMobile   } = props;
     // delete props.isMobile;
     const { L } = this.state;
-if (typeof window !== 'undefined') {
+
      const pointerIcon = new L.Icon({
   iconUrl: marker,
   iconRetinaUrl: marker,
   iconSize: [128, 128],
 })
-    }
+
 
  
     return (
