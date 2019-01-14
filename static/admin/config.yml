@@ -87,6 +87,48 @@ collections:
               - {label: "Descripción", name: "descripcion", widget: "text"}
               - {label: Imagen, name: imagen, widget: image}
 
+- name: "servicios"
+    label: "Servicios"
+    delete: false
+    editor:
+      preview: false    
+    files:
+      - file: "src/pages/servicios/recarga_de_extintores/index.md"
+        label: "Recarga de Extintores"
+        name: "recarga_de_extintores"
+        fields:
+          - {label: "Template Key", name: "templateKey", widget: "hidden", default: "default-service"}
+          - {label: "Title", name: "title", widget: "string"}
+          - {label: "Portada", name: "portada", widget: image}
+          - {label: "Body", name: "body", widget: "markdown"}
+
+      - file: "src/pages/servicios/mantenimiento/index.md"
+        label: "Mantenimiento"
+        name: "mantenimiento"
+        fields:
+          - {label: "Template Key", name: "templateKey", widget: "hidden", default: "default-service"}
+          - {label: Title, name: title, widget: string}
+          - {label: "Portada", name: "portada", widget: image}
+          - {label: "Body", name: "body", widget: "markdown"}
+
+      - file: "src/pages/servicios/capacitacion/index.md"
+        label: "Capacitación"
+        name: "capacitacion"
+        fields:
+          - {label: "Template Key", name: "templateKey", widget: "hidden", default: "default-service"}
+          - {label: Title, name: title, widget: string}
+          - {label: "Portada", name: "portada", widget: image}
+          - {label: "Body", name: "body", widget: "markdown"} 
+    
+    - file: "src/pages/servicios/inspecciones/index.md"
+        label: "Inspecciones"
+        name: "inspecciones"
+        fields:
+          - {label: "Template Key", name: "templateKey", widget: "hidden", default: "default-service"}
+          - {label: Title, name: title, widget: string}
+          - {label: "Portada", name: "portada", widget: image}
+          - {label: "Body", name: "body", widget: "markdown"} 
+
   - name: "brand"
     label: "Marcas de extintores"
     folder: "src/pages/brand-products"

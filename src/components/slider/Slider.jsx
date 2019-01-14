@@ -42,6 +42,7 @@ const nuka = {
 };
 
 
+
 class Slider extends React.PureComponent {
 
  

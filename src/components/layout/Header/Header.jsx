@@ -8,7 +8,8 @@ import Slider from "../../slider/Slider";
 import { Link } from "gatsby";
 //import Logo from "../Logo/Logo.jsx";
 import logo from "../../../img/logo.svg";
- 
+  
+
 class Header extends React.Component {
  state = {
       HeaderWhite: false
@@ -120,9 +121,14 @@ class Header extends React.Component {
           <div class="hero-foot has-text-centered">
           <Waypoint onLeave={this.onExitViewport}  onEnter={this.onEnterViewport}>
             <div class="container">
-            <a href='#widget-contact-form'>
+            
+             <a href='#widget-contact-form'>
 <Icon size={48} icon={ic_keyboard_arrow_down}/>
 </a>
+ 
+
+ 
+
             </div>
             </Waypoint> 
           </div>

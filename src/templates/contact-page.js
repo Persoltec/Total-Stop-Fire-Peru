@@ -31,9 +31,10 @@ export const ContactPageTemplate = ({ title, content, contentComponent }) => {
               </div>
             </div>
           </div>
-          <EnterpriseFeature/>
+          
         </div>
       </section>
+      <EnterpriseFeature/>
     </React.Fragment>
   );
 };

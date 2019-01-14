@@ -8,13 +8,10 @@ export const DefaultPageTemplate = ({ title, content, contentComponent }) => {
   const PageContent = contentComponent || Content
 
   return (
-     <section class="section">
-    <div class="container">
-          
+      
               <PageContent className="content" content={content} />
           
-      </div>
-    </section>
+    
   )
 }
 

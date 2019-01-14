@@ -30,12 +30,20 @@ class Layout extends React.PureComponent {
       <div>
          <Header titulo={titulo}  />
 
+
+
+
+ 
         {children}
+        
+ 
+
+
         <Footer />
 
         <BackToTop />
       </div>
-    );
+    )
   }
 }
 

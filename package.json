@@ -5,6 +5,7 @@
   "author": "Austin Green",
   "dependencies": {
     "bulma": "^0.7.2",
+    "delay": "^4.1.0",
     "enquire-js": "^0.2.1",
     "gatsby": "^2.0.85",
     "gatsby-image": "^2.0.25",
