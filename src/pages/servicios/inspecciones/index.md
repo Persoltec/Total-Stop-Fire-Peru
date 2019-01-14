@@ -1,5 +1,5 @@
 ---
-templateKey: 'contact-page'
+templateKey: 'default-service'
 path: /servicios/inspecciones
 title: Inspecciones
 ---

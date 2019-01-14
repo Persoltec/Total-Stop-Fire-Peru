@@ -1,5 +1,5 @@
 ---
-templateKey: 'default-page'
+templateKey: 'default-service'
 path: /servicios/recarga_de_extintores
 title: Recarga de Extintores
 ---

@@ -5,7 +5,8 @@ import Layout from "../components/Layout";
 import BrandProducts from "../components/widgets/BrandProducts/BrandProducts";
 import EnterpriseFeature from "../components/widgets/EnterpriseFeature/EnterpriseFeature";
  
-
+import ServiceList from "../components/widgets/ServiceList/ServiceList";
+ 
 export default class IndexPage extends React.Component {
 
  constructor(props) {
@@ -24,7 +25,7 @@ export default class IndexPage extends React.Component {
 		return ( 
 			<Layout >
 				
-				
+				<ServiceList/>
 				<EnterpriseFeature  />
 				<BrandProducts Titulo="Marcas líderes" />
 			</Layout>

@@ -1,5 +1,5 @@
 ---
-templateKey: 'default-page'
+templateKey: 'default-service'
 path: /servicios/capacitacion
 title: Capacitación
 ---
