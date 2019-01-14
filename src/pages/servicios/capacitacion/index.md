@@ -1,6 +1,37 @@
 ---
-templateKey: 'default-service'
-path: /servicios/capacitacion
+templateKey: default-service
 title: Capacitación
+portada: /img/slider-inicio-2.jpg
+descripcion: >-
+  El equipo Fénix te enseña todo lo que necesitas saber sobre el fuego y cómo
+  combatirlo.
 ---
-Muy lejos, más allá de las montañas de palabras, alejados de los países de las vocales y las consonantes, viven los textos simulados. Viven aislados en casas de letras, en la costa de la semántica, un gran océano de lenguas. Un riachuelo llamado Pons fluye por su pueblo y los abastece con las normas necesarias. Hablamos de un país paraisomático en el que a uno le caen pedazos de frases asadas en la boca. Ni siquiera los todopoderosos signos de puntuación dominan a los textos simulados; una vida, se puede decir, poco ortográfica. Pero un buen día, una pequeña línea de texto simulado, llamada Lorem Ipsum, decidió aventurarse y salir al vasto mundo de la gramática. El gran Oxmox le desanconsejó hacerlo, ya que esas tierras estaban llenas de comas malvadas, signos de interrogación salvajes y puntos y coma traicioneros, pero el texto simulado no se dejó atemorizar. Empacó sus siete versales, enfundó su inicial en el cinturón y se puso en camino. Cuando ya había escalado las primeras colinas de las montañas cursivas, se dio media vuelta para dirigir su mirada por última vez, hacia su ciudad natal Letralandia, el encabezamiento del pueblo Alfabeto y el subtítulo de su propia calle, la calle del renglón. Una pregunta retórica se le pasó por la mente y le puso melancólico, pero enseguida reemprendió su marcha. De nuevo en camino, se encontró con una copia. La copia advirtió al pequeño texto simulado de que en el lugar del que ella venía, la habían reescrito miles de veces y que todo lo que había quedado de su original era la palabra "y", así que más le valía al pequeño texto simulado volver a su país, donde estaría mucho más seguro. Pero nada de lo dicho por la copia pudo convencerlo, de manera que al cabo de poco tiempo, unos pérfidos redactores publicitarios lo encontraron y emborracharon con Longe y Parole para llevárselo después a su agencia, donde abusaron de él para sus proyectos, una y otra vez. Y si aún no lo han reescrito, lo siguen utilizando hasta ahora.Muy lejos, más allá de las montañas de palabras, alejados de los países de las vocales y las consonantes, viven los textos simulados. Viven aislados en casas de letras, en la costa de la semántica, un gran océano de lenguas. Un riachuelo llamado Pons fluye por su pueblo y los abastece con las normas
+**PROGRAMA DE ENTRENAMIENTO “TOTALSTOP”**
+
+Para combatir un incendio con éxito, primero debe entenderlo. Cómo crece y se propaga. Cuáles son sus formas.
+
+El Programa de Entrenamiento para la Seguridad contra Incendios de FENIX cubre todas las posibles líneas de defensa contra la amenaza del fuego.
+
+El programa comprende segmentos clave de capacitación en seguridad contra incendios y se basa en el material recopilado por varios expertos destacados de la industria y nuestra propia investigación a lo largo de décadas.
+
+**LA FALTA DE FORMACIÓN ES SU MAYOR RIESGO DE INCENDIO**
+
+De los muchos miles de oficinas, tiendas y fábricas que son vaciados por el fuego cada año, más de la mitad probablemente tienen instalados extintores.
+
+La razón de esta estadística bastante impactante es que incluso el equipo de extinción de incendios más avanzado se ve obstaculizado cuando el usuario no está entrenado. Es por eso que es legalmente obligatorio que los establecimientos comerciales lleven a cabo programas regulares de capacitación en seguridad contra incendios para sus empleados.
+
+**APRENDA SOBRE EL ENEMIGO ANTES DE QUE SE VEA OBLIGADO A COMBATIRLO**
+
+Hay procedimientos claros y predefinidos para activar y operar diferentes tipos de extintores.
+
+Con el fin de combatir eficazmente un incendio, un individuo necesita estar familiarizado con los diferentes tipos de fuego, los diferentes tipos de extintores y los procedimientos para la activación y el uso de cada uno de estos extintores.
+
+Sin embargo, sorprendentemente, muchas personas tratan de aprender a usar un extintor de incendios cuando están realmente cara a cara con un fuego real.
+
+
+
+**HAY MÁS DE LA SEGURIDAD CONTRA INCENDIOS QUE SÓLO LA LUCHA CONTRA UN INCENDIO.**
+
+De los muchos miles de oficinas, tiendas y fábricas que son vaciados por el fuego cada año, más de la mitad probablemente tienen instalados extintores.
+
+La razón de esta estadística bastante impactante es que incluso el equipo de extinción de incendios más avanzado se ve obstaculizado cuando el usuario no está entrenado. Es por eso que es legalmente obligatorio que los establecimientos comerciales lleven a cabo programas regulares de capacitación en seguridad contra incendios para sus empleados.
