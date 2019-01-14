@@ -1,10 +1,10 @@
 ---
 templateKey: default-service
 title: Capacitación
-portada: /img/slider-inicio-2.jpg
+portada: /img/capacitacion-portada.jpg
 descripcion: >-
-  El equipo Total Stop Fire te enseña todo lo que necesitas saber sobre el fuego y cómo
-  combatirlo.
+  El equipo Total Stop Fire te enseña todo lo que necesitas saber sobre el fuego
+  y cómo combatirlo.
 ---
 ## PROGRAMA DE ENTRENAMIENTO “TOTALSTOP”
 
