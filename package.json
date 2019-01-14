@@ -54,6 +54,7 @@
     "react-spring": "^7.2.8",
     "react-sublime-video": "^0.2.5",
     "react-waypoint": "^8.1.0",
+    "typeface-oswald": "^0.0.54",
     "typeface-roboto": "^0.0.54",
     "uuid": "^3.2.1"
   },

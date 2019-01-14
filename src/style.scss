@@ -13,21 +13,32 @@ $primary-invert: $kaldi-red-invert;
  
 $primary:#e6212b;
 $link: $primary !default;
-$body-color:$grey-darker;
+$body-color:$grey-dark;
 
 $family-primary:'Roboto';
 $body-size:14px;
-$weight-normal:300;
+$weight-normal:400;
  
+
 @import "~bulma"; 
+
+
+.content h1,
+.content h2,
+.content h3,
+.content h4{
+  font-family: 'Oswald'
+}
 
 @import "/components/layout/Header/Header"; 
 @import '/components/layout/Footer/Footer';
 @import '/components/slider/Slider';
 @import '/components/layout/BackToTop/BackToTop';
+@import '/components/layout/Sidebar/Sidebar';
 @import '/components/widgets/OfficeHours/OfficeHours';
 @import '/components/widgets/ContactInfo/ContactInfo'; 
 @import '/components/widgets/ContactForm/ContactForm'; 
+@import '/components/widgets/ServiceMenu/ServiceMenu'; 
 @import '/components/widgets/LocationCompany/LocationCompany'; 
 @import '/components/layout/BackToTop/BackToTop'; 
 @import '/components/widgets/BrandProducts/BrandProducts';

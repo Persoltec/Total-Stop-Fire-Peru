@@ -3,31 +3,39 @@ import PropTypes from 'prop-types'
 import { graphql } from 'gatsby'
 import Layout from '../components/Layout'
 import Content, { HTMLContent } from '../components/Content'
-
-export const DefaultServiceTemplate = ({ title, content, contentComponent }) => {
+import ServiceList from "../components/widgets/ServiceList/ServiceList";
+ 
+ 
+export const PageServiceTemplate = ({ title, content, contentComponent }) => {
   const PageContent = contentComponent || Content
 
   return (
-      
-              <PageContent className="content " content={content} />
-           
+   <React.Fragment>
+    <section class="section">
+        <div class="container">
+              <PageContent className="content" content={content} />
+
+              <ServiceList mini/>
+                 </div>
+      </section>
+      </React.Fragment>  
     
   )
 }
 
 
-DefaultServiceTemplate.propTypes = {
+PageServiceTemplate.propTypes = {
   content: PropTypes.string,
   contentComponent: PropTypes.func,
   description: PropTypes.string,
   title: PropTypes.string.isRequired,
 }
-const DefaultService = ({ data }) => {
+const PageService = ({ data }) => {
   const { markdownRemark: post } = data
 
   return (
-    <Layout titulo={post.frontmatter.title}>
-      <DefaultServiceTemplate
+    <Layout full titulo={post.frontmatter.title}>
+      <PageServiceTemplate
         contentComponent={HTMLContent}
         title={post.frontmatter.title}
         content={post.html}
@@ -37,28 +45,21 @@ const DefaultService = ({ data }) => {
 }
  
 
-DefaultService.propTypes = {
+PageService.propTypes = {
   data: PropTypes.shape({
     markdownRemark: PropTypes.object,
   }),
 }
 
 
-export default DefaultService
+export default PageService
 
-export const DefaultServiceQuery = graphql`
-  query DefaultService($id: String!) {
+export const PageServiceQuery = graphql`
+  query PageService($id: String!) {
     markdownRemark(id: { eq: $id }) {
       html
       frontmatter {
         title
-        portada {
-                      childImageSharp {
-                        sizes(maxWidth: 400) {
-                          ...GatsbyImageSharpSizes_tracedSVG
-                        }
-                      }
-                    }
       }
     }
   }
