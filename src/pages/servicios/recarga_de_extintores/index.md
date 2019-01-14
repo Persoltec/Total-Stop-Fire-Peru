@@ -1,6 +1,22 @@
 ---
-templateKey: 'default-service'
-path: /servicios/recarga_de_extintores
+templateKey: default-service
 title: Recarga de Extintores
+portada: /img/slider-inicio-2.jpg
+descripcion: >-
+  En un incendio, un extintor vacía o usado es inútil. Recárgalo y recibe una
+  garantía por 3 años.
 ---
-Muy lejos, más allá de las montañas de palabras, alejados de los países de las vocales y las consonantes, viven los textos simulados. Viven aislados en casas de letras, en la costa de la semántica, un gran océano de lenguas. Un riachuelo llamado Pons fluye por su pueblo y los abastece con las normas necesarias. Hablamos de un país paraisomático en el que a uno le caen pedazos de frases asadas en la boca. Ni siquiera los todopoderosos signos de puntuación dominan a los textos simulados; una vida, se puede decir, poco ortográfica. Pero un buen día, una pequeña línea de texto simulado, llamada Lorem Ipsum, decidió aventurarse y salir al vasto mundo de la gramática. El gran Oxmox le desanconsejó hacerlo, ya que esas tierras estaban llenas de comas malvadas, signos de interrogación salvajes y puntos y coma traicioneros, pero el texto simulado no se dejó atemorizar. Empacó sus siete versales, enfundó su inicial en el cinturón y se puso en camino. Cuando ya había escalado las primeras colinas de las montañas cursivas, se dio media vuelta para dirigir su mirada por última vez, hacia su ciudad natal Letralandia, el encabezamiento del pueblo Alfabeto y el subtítulo de su propia calle, la calle del renglón. Una pregunta retórica se le pasó por la mente y le puso melancólico, pero enseguida reemprendió su marcha. De nuevo en camino, se encontró con una copia. La copia advirtió al pequeño texto simulado de que en el lugar del que ella venía, la habían reescrito miles de veces y que todo lo que había quedado de su original era la palabra "y", así que más le valía al pequeño texto simulado volver a su país, donde estaría mucho más seguro. Pero nada de lo dicho por la copia pudo convencerlo, de manera que al cabo de poco tiempo, unos pérfidos redactores publicitarios lo encontraron y emborracharon con Longe y Parole para llevárselo después a su agencia, donde abusaron de él para sus proyectos, una y otra vez. Y si aún no lo han reescrito, lo siguen utilizando hasta ahora.Muy lejos, más allá de las montañas de palabras, alejados de los países de las vocales y las consonantes, viven los textos simulados. Viven aislados en casas de letras, en la costa de la semántica, un gran océano de lenguas. Un riachuelo llamado Pons fluye por su pueblo y los abastece con las normas
+**¡NO PIERDA SU INVERSIÓN!**
+
+Por ahorrar unos cuantos cientos, puede perder toda su inversión.\
+Si elige a Fénix como proveedor de su empresa, estará eligiendo al mejor en seguridad contra incendios.\
+Sin embargo, usted o alguien en su organización puede estar eligiendo a un proveedor local más barato para una recarga.
+
+**¿CUÁNDO SE NECESITA UNA RECARGA?**
+
+Un extintor es un producto pasivo que necesita mantenerse siempre listo para cualquier caso de incendio, aunque poco probable, que pueda suceder en cualquier momento.
+
+* En una situación de vida o muerte, no estar preparado no es una opción.
+* Cuando se ha utilizado un extintor, aunque sea parcialmente, necesita ser recargado inmediatamente
+* Un extintor vacío o incluso parcialmente usado, es inútil en un momento de emergencia.
+* Lo mismo ocurre con un extintor que ha sido recargado por un proveedor de dudosa reputación.
