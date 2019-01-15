@@ -2,7 +2,7 @@ import React from "react";
 import { findDOMNode } from "react-dom";
 import { Icon } from 'react-icons-kit'
 import {ic_keyboard_arrow_down} from 'react-icons-kit/md/ic_keyboard_arrow_down'
-import Waypoint from 'react-waypoint';
+import VisibilitySensor from "react-visibility-sensor";
 
 import Slider from "../../slider/Slider";
 import { Link } from "gatsby";
@@ -12,29 +12,30 @@ import logo from "../../../img/logo.svg";
 
 class Header extends React.Component {
  state = {
-      HeaderWhite: false
+      fixed: false
     }
 
+  visibilitySensorChange = val => {
+    if (val) {
+      this.setState({ fixed: false });
+    } else {
+      this.setState({ fixed: true });
+    }
+  };
 
-   onEnterViewport = () => {
-    this.setState({
-      HeaderWhite: true,
-    });
-  }
+  getHeaderSize = () => {
+    const fixed = this.state.fixed ? "fixed header-white is-white" : "";
+    const homepage = this.props.path === "/" ? "homepage" : "";
 
-  onExitViewport = () => {
-    this.setState({
-      HeaderWhite: false,
-    });
-  }
-
-
+    return `${fixed} ${homepage}`;
+  };
+  
  
   render() {
     const { ...props } = this.props;
     const { titulo } = props;
  
- const { HeaderWhite } = this.state;
+ const { fixed } = this.state;
  
     return ( 
       <React.Fragment>
@@ -42,7 +43,7 @@ class Header extends React.Component {
         <section className={`hero ${titulo ? ' is-medium' : ' is-fullheight'} is-dark is-bold header`} >
           <div class="hero-head">
             <nav
-            className={`navbar  is-fixed-top  ${HeaderWhite ? 'header-black' : 'header-white is-white'}`}
+            className={`navbar  is-fixed-top ${this.getHeaderSize()}`}
             
               role="navigation"
               aria-label="main navigation"
@@ -119,7 +120,7 @@ class Header extends React.Component {
             )}
 
           <div class="hero-foot has-text-centered">
-          <Waypoint onLeave={this.onExitViewport}  onEnter={this.onEnterViewport}>
+          <VisibilitySensor onChange={this.visibilitySensorChange}>
             <div class="container">
             
              <a href='#widget-contact-form'>
@@ -130,7 +131,7 @@ class Header extends React.Component {
  
 
             </div>
-            </Waypoint> 
+            </VisibilitySensor> 
           </div>
         </section>
       </React.Fragment>

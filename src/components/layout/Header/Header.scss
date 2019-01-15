@@ -62,21 +62,19 @@
     z-index: 10;
     bottom: -1px;
   }
-  .hero-body {
+  .hero-body { 
     padding-bottom: 6rem !important;
     padding-top: 10rem !important;
   }
   nav {
     transition: all 0.5s ease;
-        &.header-black {
-      height: 80px;
+    height: 80px;
       background: rgba($black, 0.4) !important;
       .navbar-brand img {
         transition: all 0.5s ease;
         max-height: 60px;
       }
-    }
-    &.header-white {
+    &.fixed {
       background: white !important;
       border-bottom: 1px solid rgba(0,0,0,.15);
       box-shadow: 0 1px 1px rgba(27,31,35,.1)!important;

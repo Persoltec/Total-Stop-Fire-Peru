@@ -60,7 +60,7 @@ class ServiceMenu extends React.Component {
               <div className="items">
                 {data.allMarkdownRemark.edges.map((item, i) => {
                   return (
-                    
+                     
                  
                     <Link key={i.toString()} className="has-text-dark"  to={item.node.fields.slug}>   
                         <article class="media">
@@ -73,8 +73,7 @@ class ServiceMenu extends React.Component {
                                   margin: "0 auto"
                                 }}
                                 sizes={
-                                  item.node.frontmatter.portada.childImageSharp
-                                    .sizes
+                                  item.node.frontmatter.portada.childImageSharp.sizes
                                 }
                                 alt={item.node.frontmatter.title}
                               />
