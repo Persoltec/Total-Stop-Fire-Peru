@@ -1,35 +1,19 @@
-.widget-brand-products {
-  .flickity-slider {
-    div {
-      width: 25%;
-    }
-  }
-  min-height: 400px;
-  .titulo {
-    padding-bottom: 50px;
-  }
-  .slider {
-    .slider-control-centerleft,
-    .slider-control-centerright {
-     
-    }
-    .slider-control-bottomcenter {
-      bottom: initial !important;
-      top: 100% !important;
-      ul {
-        top: 0px !important;
-      }
-    }
-  }
+.widget-service-list {
+   .box {
+    padding: 0px;
+    border-radius: 4px;
+    .media-content {
+    margin-top: 1rem;
+}
+}
 }
 
 @media screen and (max-width: 767px) {
-  .widget-brand-products {
-    .flickity-slider {
-      div {
-        width: 50%;
-      }
-    }
-    min-height: 300px;
-  }
+  .widget-service-list {
+    .box {
+       .media-content {
+    margin-top: 0.5rem;
+}
+}
+}
 }

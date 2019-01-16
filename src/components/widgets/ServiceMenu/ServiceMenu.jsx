@@ -36,9 +36,17 @@ class ServiceMenu extends React.Component {
                     descripcion
                     portada {
                       childImageSharp {
-                        sizes(maxWidth: 400) {
-                          ...GatsbyImageSharpSizes_tracedSVG
-                        }
+                        fluid(maxWidth: 800, quality: 50, toFormat: JPG) {
+                            base64
+                            aspectRatio
+                            src
+                            srcSet
+                            srcWebp
+                            srcSetWebp
+                            sizes
+                            originalImg
+                            originalName
+                          }
                       }
                     }
                   }
@@ -50,12 +58,11 @@ class ServiceMenu extends React.Component {
         render={data => {
           return (
             <div className="widget-service-menu">
-              <div className="titulo has-text-centered">
-                <h1 name="image" className="title">
+               
+                <h1  className="title is-size-4 is-uppercase">
                   Nuestros Servicios
                 </h1>
-                <h2 className="subtitle">{Titulo}</h2>
-              </div>
+               
 
               <div className="items">
                 {data.allMarkdownRemark.edges.map((item, i) => {
@@ -72,8 +79,8 @@ class ServiceMenu extends React.Component {
                                   height: "100%",
                                   margin: "0 auto"
                                 }}
-                                sizes={
-                                  item.node.frontmatter.portada.childImageSharp.sizes
+                                fluid={
+                                  item.node.frontmatter.portada.childImageSharp.fluid
                                 }
                                 alt={item.node.frontmatter.title}
                               />

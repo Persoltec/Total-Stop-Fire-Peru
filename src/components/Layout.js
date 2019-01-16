@@ -30,14 +30,14 @@ class Layout extends React.PureComponent {
    
 
     return (
-      <div>
+      <div id="pagina">
          <Header titulo={titulo}  />
 
 
  {full ? (
-         <React.Fragment>
+         <div id="contenido">
          {children}
-         </React.Fragment>
+         </div>
       ) : (
           <section class="section">
     <div class="container">

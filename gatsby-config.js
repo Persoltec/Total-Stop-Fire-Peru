@@ -2,11 +2,29 @@ const autoprefixer = require("autoprefixer");
 
 module.exports = {
   siteMetadata: {
-    title: "Gatsby + Netlify CMS Starter",
+    title: "",
     description:
-      "This repo contains an example business website that is built with Gatsby, and Netlify CMS.It follows the JAMstack architecture by using Git as a single source of truth, and Netlify for continuous deployment, and CDN distribution."
+      ""
   },
   plugins: [
+     {
+      resolve: `gatsby-plugin-nprogress`,
+      options: {
+        // Setting a color is optional.
+        color: `#f81d22`,
+        // Disable the loading spinner.
+        showSpinner: true
+      }
+    },
+    `gatsby-plugin-transition-link`,
+      {
+      resolve: `gatsby-plugin-sass`,
+      options: {
+        implementation: require("sass"),
+        postCssPlugins: [require('autoprefixer')],
+        precision: 8
+      }
+    },
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
@@ -22,23 +40,7 @@ module.exports = {
       }
     },
     `gatsby-plugin-offline`,
-    {
-      resolve: `gatsby-plugin-nprogress`,
-      options: {
-        // Setting a color is optional.
-        color: `#f81d22`,
-        // Disable the loading spinner.
-        showSpinner: true
-      }
-    },
     "gatsby-plugin-react-helmet",
-    {
-      resolve: `gatsby-plugin-sass`,
-      options: {
-        postCssPlugins: [autoprefixer()],
-        precision: 8
-      }
-    },
     {
       // keep as first gatsby-source-filesystem plugin for gatsby image support
       resolve: "gatsby-source-filesystem",
@@ -91,7 +93,6 @@ module.exports = {
         ]
       }
     },
-    "gatsby-plugin-react-leaflet",
     {
       resolve: "gatsby-plugin-netlify-cms",
       options: {

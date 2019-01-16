@@ -2,7 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 import { graphql } from "gatsby";
 import Layout from "../components/Layout";
-import LocationCompany from "../components/widgets/LocationCompany/LocationCompany";
+//import LocationCompany from "../components/widgets/LocationCompany/LocationCompany";
 import ContactForm from "../components/widgets/ContactForm/ContactForm";
 import EnterpriseFeature from "../components/widgets/EnterpriseFeature/EnterpriseFeature";
 
@@ -26,7 +26,7 @@ export const ContactPageTemplate = ({ title, content, contentComponent }) => {
 
               <div className="tile is-parent is-6 is-hidden-touch">
                 <div class="tile is-child ">
-                  <LocationCompany />
+                   
                 </div>
               </div>
             </div>

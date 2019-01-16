@@ -8,11 +8,39 @@ import Slider from "../../slider/Slider";
 import { Link } from "gatsby";
 //import Logo from "../Logo/Logo.jsx";
 import logo from "../../../img/logo.svg";
-  
-
+ import AniLink from "gatsby-plugin-transition-link/AniLink"; 
+ 
 class Header extends React.Component {
+
+componentDidMount() {
+    // Get all "navbar-burger" elements
+   const $navbarBurgers = Array.prototype.slice.call(document.querySelectorAll('.navbar-burger'), 0);
+    // Check if there are any navbar burgers
+   if ($navbarBurgers.length > 0) {
+ 
+     // Add a click event on each of them
+     $navbarBurgers.forEach( el => {
+       el.addEventListener('click', () => {
+ 
+         // Get the target from the "data-target" attribute
+         const target = el.dataset.target;
+         const $target = document.getElementById(target);
+ 
+         // Toggle the "is-active" class on both the "navbar-burger" and the "navbar-menu"
+         el.classList.toggle('is-active');
+         $target.classList.toggle('is-active');
+ 
+       });
+     });
+   }
+ }
+ 
+
+
+
  state = {
-      fixed: false
+      fixed: false,
+      MovilMenu:false
     }
 
   visibilitySensorChange = val => {
@@ -39,8 +67,8 @@ class Header extends React.Component {
  
     return ( 
       <React.Fragment>
-      
-        <section className={`hero ${titulo ? ' is-medium' : ' is-fullheight'} is-dark is-bold header`} >
+     
+        <section id="header" className={`hero ${titulo ? ' is-medium' : ' is-fullheight'} is-dark is-bold header`} >
           <div class="hero-head">
             <nav
             className={`navbar  is-fixed-top ${this.getHeaderSize()}`}
@@ -56,10 +84,10 @@ class Header extends React.Component {
 
                   <a
                     role="button"
-                    class="navbar-burger burger"
+                    class="navbar-burger burger drawer-handle"
                     aria-label="menu"
                     aria-expanded="false"
-                    data-target="navbarBasicExample"
+                    data-target="header"
                   >
                     <span aria-hidden="true" />
                     <span aria-hidden="true" />
@@ -67,7 +95,7 @@ class Header extends React.Component {
                   </a>
                 </div>
 
-                <div id="navbarBasicExample" class="navbar-menu">
+                <div id="navMenu" class="navbar-menu has-text-centered-touch">
                   <div class="navbar-start">
                     <Link to="/" className="navbar-item">
                       Inicio
@@ -85,15 +113,16 @@ class Header extends React.Component {
                     <Link to="/" className="navbar-item">
                       Blog
                     </Link>
+                    <Link to="contactanos" className="navbar-item is-hidden-desktop">
+                      Contáctenos
+                    </Link>
                   </div>
                 </div>
 
-                <div class="navbar-end is-hidden-mobile">
+                <div class="navbar-end is-hidden-touch">
                   <div class="navbar-item">
-                    <div class="buttons">
-                    
+                    <div class="buttons">  
                     <Link to="contactanos" className="button is-primary">
-                       
                         <strong>Contáctenos</strong>
                       </Link>
                        
@@ -111,9 +140,15 @@ class Header extends React.Component {
       <h1 class="title">
         {titulo}
       </h1>
-      <h2 class="subtitle">
-        ........................
-      </h2>
+       
+       <nav class="breadcrumb is-centered is-small" aria-label="breadcrumbs">
+  <ul>
+    <li><a href="#">Inicio</a></li>
+    <li class="is-active has-text-primary"><a href="#" aria-current="page">{titulo}</a></li>
+    
+  </ul>
+</nav>
+      
     </div>
   </div>
 

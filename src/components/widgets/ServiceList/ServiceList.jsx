@@ -35,9 +35,17 @@ class ServiceList extends React.Component {
                     descripcion
                     portada {
                       childImageSharp {
-                        sizes(maxWidth: 400) {
-                          ...GatsbyImageSharpSizes_tracedSVG
-                        }
+                       fluid(maxWidth: 800, quality: 50, toFormat: JPG) {
+                            base64
+                            aspectRatio
+                            src
+                            srcSet
+                            srcWebp
+                            srcSetWebp
+                            sizes
+                            originalImg
+                            originalName
+                          }
                       }
                     }
                   }
@@ -65,11 +73,11 @@ class ServiceList extends React.Component {
 <div class="box" key={i.toString()}>
   <article class="media">
     <div class="media-left">
-      <figure class="image is-64x64">
+      <figure class="image is-96x96">
           <Img
                           style={{ width: "100%", height:"100%", margin: "0 auto" }}
-                          sizes={
-                            item.node.frontmatter.portada.childImageSharp.sizes
+                          fluid={
+                            item.node.frontmatter.portada.childImageSharp.fluid
                           }
                           alt={item.node.frontmatter.title}
                         />
@@ -100,9 +108,9 @@ class ServiceList extends React.Component {
           return (
 <React.Fragment>
 {mini ? (
-         <React.Fragment>
+        <div className="widget-service-list">
          {Items}
-         </React.Fragment>
+         </div>
       ) : (
          <section class="widget-service-list section">
               <div class="container">

@@ -1,5 +1,5 @@
-//@import "~flickity/css/flickity.css";
 @import "~bulma/sass/utilities/initial-variables";
+
 
  
 // Config vars
@@ -21,7 +21,7 @@ $weight-normal:400;
  
 
 @import "~bulma"; 
-
+@import "~bulma-timeline";
 
 .content h1,
 .content h2,
@@ -30,18 +30,18 @@ $weight-normal:400;
   font-family: 'Oswald'
 }
 
-@import "/components/layout/Header/Header"; 
-@import '/components/layout/Footer/Footer';
-@import '/components/slider/Slider';
-@import '/components/layout/BackToTop/BackToTop';
-@import '/components/layout/Sidebar/Sidebar';
-@import '/components/widgets/OfficeHours/OfficeHours';
-@import '/components/widgets/ContactInfo/ContactInfo'; 
-@import '/components/widgets/ContactForm/ContactForm'; 
-@import '/components/widgets/ServiceMenu/ServiceMenu'; 
-@import '/components/widgets/LocationCompany/LocationCompany'; 
-@import '/components/layout/BackToTop/BackToTop'; 
-@import '/components/widgets/BrandProducts/BrandProducts';
+@import "components/layout/Header/Header"; 
+@import 'components/layout/Footer/Footer';
+@import 'components/slider/Slider';
+@import 'components/layout/BackToTop/BackToTop';
+@import 'components/layout/Sidebar/Sidebar';
+@import 'components/widgets/OfficeHours/OfficeHours';
+@import 'components/widgets/ContactInfo/ContactInfo'; 
+@import 'components/widgets/ContactForm/ContactForm'; 
+@import 'components/widgets/ServiceMenu/ServiceMenu'; 
+//@import '/components/widgets/LocationCompany/LocationCompany'; 
+@import 'components/layout/BackToTop/BackToTop'; 
+@import 'components/widgets/BrandProducts/BrandProducts';
 
-@import '/components/widgets/ServiceList/ServiceList';
-@import '/components/widgets/EnterpriseFeature/EnterpriseFeature';
+@import 'components/widgets/ServiceList/ServiceList';
+@import 'components/widgets/EnterpriseFeature/EnterpriseFeature';

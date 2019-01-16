@@ -2,6 +2,52 @@
   z-index: 99999;
   position: relative;
 
+
+  
+
+&.is-active {
+
+nav.navbar {
+    transition: all 0.4s ease;
+        height: 100vh !important;
+    background: rgba(10, 10, 10, 0.9) !important;
+}
+
+
+
+  .navbar-menu {
+    display: block;
+    background-image: none !important;
+    background: transparent;
+    box-shadow:none !important;
+}
+}
+
+
+ .hero-foot {
+    position: absolute;
+    width: 100%;
+    height: 100vh;
+    .container {
+      position: absolute;
+      max-width: 100% !important;
+      bottom: 50px;
+      width: 100%;
+    }
+  }
+
+
+&.is-medium  {
+        .hero-foot {
+      .container{
+        bottom: 20px;
+     } 
+     }
+}
+
+
+
+
  .hero-foot {
     position: absolute;
     width: 100%;
@@ -66,22 +112,46 @@
     padding-bottom: 6rem !important;
     padding-top: 10rem !important;
   }
-  nav {
-    transition: all 0.5s ease;
+  nav.navbar {
+    transition: all 0.4s ease;
     height: 80px;
       background: rgba($black, 0.4) !important;
-      .navbar-brand img {
-        transition: all 0.5s ease;
-        max-height: 60px;
+     
+
+  .navbar-brand {
+        .navbar-item{
+    padding-top: 0px;
+    padding-bottom: 0px;
+        
+        img {
+       transition: all 0.4s ease;
+            max-height: 60px;
+    max-width: 160px;
+      }  
+        }
       }
+
+
+
+
+
+.navbar-burger.burger {
+  transition: all 0.4s ease;
+    height: 80px;
+}
+
+
     &.fixed {
       background: white !important;
       border-bottom: 1px solid rgba(0,0,0,.15);
       box-shadow: 0 1px 1px rgba(27,31,35,.1)!important;
       height: 40px;
-
+.navbar-burger.burger {
+  transition: all 0.4s ease;
+    height: 40px;
+}
       .navbar-brand img {
-        transition: all 0.5s ease;
+        transition: all 0.4s ease;
         max-height: 40px;
       }
     }
@@ -153,16 +223,21 @@ top: 20%;
 
     }
   }
-    nav{
+    nav.navbar{
       height: 40px !important;
+      .navbar-burger.burger {
+        transition: all 0.4s ease;
+    height: 40px;
+}
       .navbar-brand {
         .navbar-item{
     padding-top: 0px;
     padding-bottom: 0px;
         
         img {
-        transition: all 0.5s ease;
-        max-height: 40px !important;
+        transition: all 0.4s ease;
+            max-height: 30px;
+    max-width: 80px;
       }  
         }
         
