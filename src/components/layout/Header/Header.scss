@@ -2,7 +2,13 @@
   z-index: 99999;
   position: relative;
 
-
+.menu-movil{
+aside.menu {
+    padding: 20px;
+}
+ .drawer-handle {
+    display: none;
+}}
   
 
 &.is-active {

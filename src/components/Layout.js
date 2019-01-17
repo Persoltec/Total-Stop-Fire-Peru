@@ -10,6 +10,7 @@ import Sidebar from "./layout/Sidebar/Sidebar";
 import BackToTop from "./layout/BackToTop/BackToTop";
  
 import Slider from "./slider/Slider";
+ 
 
 import "typeface-roboto";
 import "typeface-oswald";
@@ -41,7 +42,7 @@ class Layout extends React.PureComponent {
       ) : (
           <section class="section">
     <div class="container">
-  <div className="columns is-variable bd-klmn-columns is-6">
+  <div className="columns is-variable bd-klmn-columns is-6 invert">
   <div className="column is-3">
         <Sidebar/>
   </div>
@@ -63,11 +64,12 @@ class Layout extends React.PureComponent {
         
         
  
-
+ 
 
         <Footer />
 
         <BackToTop />
+         
       </div>
     )
   }

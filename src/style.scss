@@ -22,6 +22,7 @@ $weight-normal:400;
 
 @import "~bulma"; 
 @import "~bulma-timeline";
+@import "~bulma-carousel/dist/css/bulma-carousel.sass";
 
 .content h1,
 .content h2,
@@ -45,3 +46,11 @@ $weight-normal:400;
 
 @import 'components/widgets/ServiceList/ServiceList';
 @import 'components/widgets/EnterpriseFeature/EnterpriseFeature';
+
+
+@media(max-width: 767px) {
+  .invert {
+    flex-direction: column-reverse;
+    display: flex;
+  }
+}

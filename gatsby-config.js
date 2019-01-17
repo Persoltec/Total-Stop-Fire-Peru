@@ -7,6 +7,7 @@ module.exports = {
       ""
   },
   plugins: [
+  //`gatsby-plugin-transition-link`,
      {
       resolve: `gatsby-plugin-nprogress`,
       options: {
@@ -16,7 +17,6 @@ module.exports = {
         showSpinner: true
       }
     },
-    `gatsby-plugin-transition-link`,
       {
       resolve: `gatsby-plugin-sass`,
       options: {
