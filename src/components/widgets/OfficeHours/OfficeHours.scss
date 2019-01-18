@@ -2,8 +2,21 @@
   .level {
     margin: 0;
     padding: 8px 20px;
+    position: relative;
+    &:before{
+    content: "-";
+    font-weight: 500;
+    position: absolute;
+    left: 0px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: rgba($primary, 0.8); 
+    }
     &:nth-child(odd) {
-      background: #222c42;
+      background: linear-gradient(to right, rgba(255,255,255,0) 30%,rgba(151, 156, 165, 0.19) 100%);
+    }
+    .level-right {
+      font-size: 12px;
     }
   }
   .hour {

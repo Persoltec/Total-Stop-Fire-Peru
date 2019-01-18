@@ -137,7 +137,11 @@ nav.navbar {
         }
       }
 
-
+.ventas{
+  .texto{
+    vertical-align: sub;
+  }
+}
 
 
 
@@ -151,14 +155,11 @@ nav.navbar {
       background: white !important;
       border-bottom: 1px solid rgba(0,0,0,.15);
       box-shadow: 0 1px 1px rgba(27,31,35,.1)!important;
-      height: 40px;
-.navbar-burger.burger {
-  transition: all 0.4s ease;
-    height: 40px;
-}
+      height: 60px;
+ 
       .navbar-brand img {
         transition: all 0.4s ease;
-        max-height: 40px;
+        max-height: 50px;
       }
     }
 
@@ -230,10 +231,10 @@ top: 20%;
     }
   }
     nav.navbar{
-      height: 40px !important;
+      height: 50px !important;
       .navbar-burger.burger {
         transition: all 0.4s ease;
-    height: 40px;
+    height: 50px;
 }
       .navbar-brand {
         .navbar-item{
@@ -242,8 +243,8 @@ top: 20%;
         
         img {
         transition: all 0.4s ease;
-            max-height: 30px;
-    max-width: 80px;
+            max-height: 40px;
+     
       }  
         }
         

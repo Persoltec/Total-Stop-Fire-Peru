@@ -9,7 +9,9 @@ import Slider from "../../slider/Slider";
 import { Link } from "gatsby";
 //import Logo from "../Logo/Logo.jsx";
 import logo from "../../../img/logo.svg";
+ 
 
+import {ic_phone_in_talk} from 'react-icons-kit/md/ic_phone_in_talk'
 class Header extends React.Component {
   componentDidMount() {
     // Get all "navbar-burger" elements
@@ -67,7 +69,7 @@ class Header extends React.Component {
       <React.Fragment>
         <Drawer
           className="menu-movil"
-          level= '#contenido'
+          level= '#___gatsby'
           placement="right"
           showMask="true"
           onMaskClick={this.OpenClose}
@@ -75,6 +77,7 @@ class Header extends React.Component {
           width="250px"
           mode="inline"
         >
+        
         <div class="container">
           <aside class="menu">
             <p class="menu-label">General</p>
@@ -209,6 +212,20 @@ class Header extends React.Component {
                       </Link>
                     </div>
                   </div>
+
+
+<div class="ventas navbar-item has-text-light">
+<div>
+              <div class="is-capitalized is-size-7">
+              <span className="texto" >For Support Call </span>
+              <Icon className="icono"  size={24}  icon={ic_phone_in_talk} />
+              </div>
+              <div class="telefono has-text-weight-bold is-size-5">800-369-8527</div>
+            </div>
+            </div>
+
+
+
                 </div>
               </div>
             </nav>

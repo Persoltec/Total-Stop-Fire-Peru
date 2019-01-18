@@ -1,13 +1,13 @@
 import React from "react";
 import { StaticQuery, graphql } from "gatsby";
 
-import MapInfo from "../../../img/MapInfo.png";
+import logo from "../../../img/logo.svg";
 import Personal from "../../../img/personal.png";
 import OfficeHours from "../../widgets/OfficeHours/OfficeHours.jsx";
 import ContactInfo from "../../widgets/ContactInfo/ContactInfo.jsx";
 import SocialLinks from "../../widgets/SocialLinks/SocialLinks.jsx";
 import Img from "gatsby-image";
-
+import { Link } from "gatsby";
 class Footer extends React.Component {
   static defaultProps = {
     className: "footer1"
@@ -19,30 +19,21 @@ class Footer extends React.Component {
     delete props.isMobile;
 
     return (
+      <React.Fragment>
       <footer class="footer has-text-light">
-        <section class="section">
-          <div class="container">
+        <div  class="container ">
+          
             <div className="columns">
               <div className="column is-hidden-touch">
-                <StaticQuery
-                  query={graphql`
-                    query {
-                      personal: file(relativePath: { eq: "personal.png" }) {
-                        childImageSharp {
-                          sizes(maxWidth: 400) {
-                            ...GatsbyImageSharpSizes_tracedSVG
-                          }
-                        }
-                      }
-                    }
-                  `}
-                  render={data => (
-                    <Img
-                      style={{ width: "160px", margin: "0 auto" }}
-                      sizes={data.personal.childImageSharp.sizes}
-                    />
-                  )}
-                />
+                <img src={logo} />
+                <br /><br />
+                <div class="text">
+                  Lorem ipsum dolor amet consectetur adipisicing elit sed eiusm
+                  tempor incidi dunt labore dolore magna aliqua enim ad minim
+                  veniam.
+                </div>
+                <br />
+                <SocialLinks />
               </div>
 
               <div className="column">
@@ -53,11 +44,13 @@ class Footer extends React.Component {
                 <OfficeHours />
               </div>
             </div>
-          </div>
-        </section>
+          
+        </div >
 
-        <div className="copyright">
-          <section class="section">
+        
+      </footer>
+      <div className="copyright">
+          
             <div className="container">
               <div className="level has-text-centered-touch">
                 <div class="level-left">
@@ -69,9 +62,9 @@ class Footer extends React.Component {
                 </div>
               </div>
             </div>
-          </section>
+          
         </div>
-      </footer>
+        </React.Fragment>
     );
   }
 }

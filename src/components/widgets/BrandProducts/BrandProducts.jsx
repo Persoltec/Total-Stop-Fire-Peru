@@ -7,7 +7,7 @@ import {ic_navigate_next} from 'react-icons-kit/md/ic_navigate_next'
 import {ic_navigate_before} from 'react-icons-kit/md/ic_navigate_before'  
 import MediaQuery from 'react-responsive';
 import Media from 'react-media';
-
+import Slider from "react-slick";
 const nuka = {
   slideIndex: 0,
   wrapAround: false,
@@ -18,6 +18,26 @@ const nuka = {
   heightMode: "max",
   withoutControls: false
 };
+
+ var settings = {
+      dots: true,
+      infinite: true,
+      speed: 500,
+      slidesToShow: 4,
+      slidesToScroll: 4,
+      responsive: [
+        {
+          breakpoint: 600,
+          settings: {
+            slidesToShow: 2,
+            slidesToScroll: 2,
+            infinite: true,
+            dots: true
+          }
+        }
+        ]
+      }
+ 
 
 class BrandProducts extends React.Component {
   constructor(props) {
@@ -111,16 +131,25 @@ const CarouselRes = ({  className,items,scroll }) => (
                   <h2 className="subtitle">{Titulo}</h2>
                 </div>
 
+<Slider {...settings}>
+{data.allMarkdownRemark.edges.map((item, i) => {
+                    return (
+                      <div key={i.toString()}>
+                        <Img
+                          style={{ width: "160px", margin: "0 auto" }}
+                          sizes={
+                            item.node.frontmatter.imagen.childImageSharp.sizes
+                          }
+                          alt={item.node.frontmatter.title}
+                        />
+                      </div>
+                    );
+                  })}
 
-<Media query="(max-width: 599px)">
-          {matches =>
-            matches ? (
-               <CarouselRes items="1"  scroll= "auto" />
-            ) : (
-               <CarouselRes items="4" scroll= "1" />
-            )
-          }
-        </Media>
+</Slider>
+
+
+ 
 
 
  

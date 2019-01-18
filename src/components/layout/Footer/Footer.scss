@@ -1,21 +1,28 @@
  .footer {
-   background: #001529;
-   padding: 0px;
-   color: white;
-   .copyright {
-     border-top: 1px solid #e9e9e91a;
-     background: #001529;
+   background: #191d26;
+  
+   background-image: url("./img/map.png") ;
+    background-position: 40% center;
+    background-repeat: no-repeat;
+   background-size: auto;
+   
+ .container {
+    padding-top: 40px;
+}
+
+ }
+    .copyright {
+     background: #11141a;
      padding: 20px 0px;
      section {
        padding-top: 0px;
        padding-bottom: 0px;
      }
    }
- }
  @media screen and (max-width: 767px) {
-   .footer {
+  
      .copyright .level-left {
        padding-bottom: 10px;
      }
-   }
+  
  }

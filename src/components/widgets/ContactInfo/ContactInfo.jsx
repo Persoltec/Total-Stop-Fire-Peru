@@ -1,7 +1,7 @@
 import React from "react";
 import { StaticQuery, graphql } from "gatsby";
 
-import MapInfo from "../../../img/MapInfo.png";
+
 import { Icon } from "react-icons-kit";
 
 import { ic_location_on } from "react-icons-kit/md/ic_location_on";
@@ -56,7 +56,7 @@ class ContactInfo extends React.Component {
 
               return (
                 <div
-                  style={{ backgroundImage: `url(${MapInfo})` }}
+                  
                   className={`${name ? name : " widget-contact-info"}`}
                 >
                   {info.map((info, i) => {

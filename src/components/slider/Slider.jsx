@@ -15,23 +15,18 @@ import {ic_navigate_next} from 'react-icons-kit/md/ic_navigate_next'
 import {ic_navigate_before} from 'react-icons-kit/md/ic_navigate_before'  
 
  
-const nuka = {
-  slideIndex: 0,
-  wrapAround: true,
-  underlineHeader: true,
-  slidesToShow: '1',
-  slidesToScroll: "1",
-  cellAlign: "left",
-  transitionMode: "fade",
-  heightMode: "max",
-  withoutControls: false,
-  dragging:false,
-  disableKeyboardControls:true,
-  autoplay:true,
-  autoplayInterval:2000
-};
+
  
- 
+ const settings = {
+      dots: true,
+      fade: true,
+      infinite: true,
+      speed: 500,
+      slidesToShow: 1,
+      slidesToScroll: 1
+    };
+
+
  const charPoses = {
   exit: { opacity: 0, y: 20 },
   enter: {
@@ -110,25 +105,9 @@ state = {
             {data.allMarkdownRemark.edges.map((items, i) => (
               <React.Fragment>
            
-
-
-
-                <Carousel 
-
-                {...nuka}
-  renderCenterLeftControls={({ previousSlide }) => (
-    <a className="button previous" onClick={previousSlide}>
-      <Icon size={32}  icon={ic_navigate_before} />
  
-    </a>
-  )}
-  renderCenterRightControls={({ nextSlide }) => (
-    <a className="button next" onClick={nextSlide}>
-  <Icon size={32}  icon={ic_navigate_next} />
-    </a>
-  )}
 
-                >
+   <Slider {...settings}>
                 {items.node.frontmatter.pagina.map((item, i) => (
                   <div className="itemslider" key={i.toString()}>
                     <Img fluid={item.imagen.childImageSharp.fluid} />
@@ -150,9 +129,9 @@ state = {
                     </div>
                   </div>
                 ))}
-              </Carousel>
+              </Slider>
             
-
+ 
               </React.Fragment>
             ))}
           </React.Fragment>

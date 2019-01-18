@@ -11,14 +11,18 @@ $primary-invert: $kaldi-red-invert;
 
 //Configuracion de Colores
  
-$primary:#e6212b;
+$primary:#e6202d;
+$light:#d4dae3;
+
 $link: $primary !default;
 $body-color:$grey-dark;
 
 $family-primary:'Roboto';
 $body-size:14px;
-$weight-normal:400;
+$weight-normal:400; 
  
+
+
 
 @import "~bulma"; 
 @import "~bulma-timeline";
