@@ -4,12 +4,7 @@ import PropTypes from "prop-types";
  
 import Img from "gatsby-image";
 
-import SplitText from 'react-pose-text';
-
-import Carousel from "nuka-carousel";
-
-import Waypoint from 'react-waypoint';
-
+ 
 import { Icon } from 'react-icons-kit'
 import {ic_navigate_next} from 'react-icons-kit/md/ic_navigate_next'
 import {ic_navigate_before} from 'react-icons-kit/md/ic_navigate_before'  
@@ -27,18 +22,10 @@ import {ic_navigate_before} from 'react-icons-kit/md/ic_navigate_before'
     };
 
 
- const charPoses = {
-  exit: { opacity: 0, y: 20 },
-  enter: {
-    opacity: 1,
-    y: 0,
-    delay: ({ charIndex }) => charIndex * 30
-  }
-};
+ 
 
 
-
-class Slider extends React.PureComponent {
+class HomeSlider extends React.PureComponent {
 
  
 state = {
@@ -116,9 +103,9 @@ state = {
                       <div class="container has-text-centered">
                         
                         <h1 class="title  is-size-1-desktop is-size-2-tablet is-size-3-mobile">
-                           <SplitText initialPose="exit" pose="enter" charPoses={charPoses}>
+                        
         {item.titulo.toString().toUpperCase()}
-      </SplitText>
+      
 
 
                         </h1>
@@ -152,4 +139,4 @@ Slider.propTypes = {
   onEnterChange: PropTypes.func
 };
 
-export default Slider;
+export default HomeSlider;

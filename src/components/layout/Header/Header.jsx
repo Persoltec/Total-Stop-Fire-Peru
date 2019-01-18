@@ -5,7 +5,7 @@ import { ic_keyboard_arrow_down } from "react-icons-kit/md/ic_keyboard_arrow_dow
 import VisibilitySensor from "react-visibility-sensor";
 import Drawer from "rc-drawer";
 import "rc-drawer/assets/index.css";
-import Slider from "../../slider/Slider";
+import HomeSlider from "../../slider/HomeHomeSlider";
 import { Link } from "gatsby";
 //import Logo from "../Logo/Logo.jsx";
 import logo from "../../../img/logo.svg";
@@ -230,7 +230,7 @@ class Header extends React.Component {
               </div>
             </nav>
           </div>
-          {!titulo && <Slider />}
+          {!titulo && <HomeSlider />}
 
           {titulo && (
             <div class="hero-body">
