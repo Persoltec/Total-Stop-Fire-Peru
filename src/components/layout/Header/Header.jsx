@@ -5,7 +5,7 @@ import { ic_keyboard_arrow_down } from "react-icons-kit/md/ic_keyboard_arrow_dow
 import VisibilitySensor from "react-visibility-sensor";
 import Drawer from "rc-drawer";
 import "rc-drawer/assets/index.css";
-import HomeSlider from "../../slider/HomeHomeSlider";
+import HomeSlider from "../../slider/HomeSlider";
 import { Link } from "gatsby";
 //import Logo from "../Logo/Logo.jsx";
 import logo from "../../../img/logo.svg";
