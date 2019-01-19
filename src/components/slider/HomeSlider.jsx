@@ -8,6 +8,7 @@ import Img from "gatsby-image";
 import { Icon } from 'react-icons-kit'
 import {ic_navigate_next} from 'react-icons-kit/md/ic_navigate_next'
 import {ic_navigate_before} from 'react-icons-kit/md/ic_navigate_before'  
+ import Slider from "react-slick";
 
  
 

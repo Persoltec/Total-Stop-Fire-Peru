@@ -8,9 +8,6 @@ import Footer from "./layout/Footer/Footer";
 import Header from "./layout/Header/Header";
 import Sidebar from "./layout/Sidebar/Sidebar";
 import BackToTop from "./layout/BackToTop/BackToTop";
- 
-import Slider from "./slider/Slider";
- 
 
 import "typeface-roboto";
 import "typeface-oswald";
