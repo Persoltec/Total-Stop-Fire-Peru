@@ -1,7 +1,7 @@
 ---
 templateKey: default-service
 title: Recarga de Extintores
-portada: /img/slider-inicio-2.jpg
+portada: /img/recarga.jpg
 descripcion: >-
   En un incendio, un extintor vacía o usado es inútil. Recárgalo y recibe una
   garantía por 3 años.
