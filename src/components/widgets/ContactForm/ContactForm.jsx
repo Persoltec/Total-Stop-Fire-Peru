@@ -3,7 +3,7 @@ import { StaticQuery, graphql } from "gatsby";
 
 import MapInfo from "../../../img/MapInfo.png";
 import { Icon } from "react-icons-kit";
-
+import Helmet from 'react-helmet'
 import { ic_location_on } from "react-icons-kit/md/ic_location_on";
 import { ic_phone } from "react-icons-kit/md/ic_phone";
 import { ic_stay_current_portrait } from "react-icons-kit/md/ic_stay_current_portrait";
@@ -14,17 +14,31 @@ class ContactForm extends React.Component {
     super(props);
   }
 
-  componentDidMount() {
+  componentDidMount() {  }
 
+ SendMail(e) {
+    e.preventDefault();
+    const Email = window.Email;
 
-    
+Email.send({
+    Host : "smtp.elasticemail.com",
+    Username : "persoltec.com@gmail.com",
+    Password : "2796c46e-8893-4d08-bb51-b90e47eaee8b",
+    To : 'persoltec.com@gmail.com',
+    From : "ventas@totalstopfireperu.com",
+    Subject : "test",
+    Body : "<strong>Holaaaaaaaaaaaaa test</strong>"
+}).then(
+  message => alert(message)
+);
+
   }
 
   render() {
     const { ...props } = this.props;
     const { name } = props;
     delete props.name;
-
+    const Email = window.Email;
     return (
       <StaticQuery
         query={graphql`
@@ -49,18 +63,10 @@ class ContactForm extends React.Component {
         render={data => {
           return (
             <div className="widget-contact-form" id="widget-contact-form">
-              <form method="POST">
-                <label htmlFor="name">Name</label>
-                <input type="text" name="name" />
-
-                <label htmlFor="email">Email</label>
-                <input type="email" name="email" />
-
-                <label htmlFor="message">Message</label>
-                <textarea name="message" rows="3" />
-
-                <input type="submit" />
-              </form>
+<a href="#" onClick={this.SendMail}>
+    Enviar
+    </a>
+               
             </div>
           );
         }}

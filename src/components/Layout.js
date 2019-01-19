@@ -1,5 +1,5 @@
 import React from "react";
-// import Helmet from 'react-helmet'
+import Helmet from 'react-helmet'
 // import { StaticQuery, graphql } from "gatsby"
 
 import { enquireScreen } from "enquire-js";
@@ -29,6 +29,12 @@ class Layout extends React.PureComponent {
 
     return (
       <div id="pagina">
+                   <Helmet
+   
+    script={[
+            {"src": "https://smtpjs.com/v3/smtp.js", "type": "text/javascript"}
+    ]}
+/>
          <Header titulo={titulo}  />
 
 

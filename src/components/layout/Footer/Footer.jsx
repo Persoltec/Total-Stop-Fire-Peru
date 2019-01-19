@@ -70,7 +70,7 @@ class Footer extends React.Component {
               __html: `(function () {
         var options = {
             facebook: "1381071522167859", // Facebook page ID
-            whatsapp: "998157750", // WhatsApp number
+            whatsapp: "51998157750", // WhatsApp number
             call_to_action: "Escribenos", // Call to action
             button_color: "#E74339", // Color of button
             position: "left", // Position may be 'right' or 'left'
