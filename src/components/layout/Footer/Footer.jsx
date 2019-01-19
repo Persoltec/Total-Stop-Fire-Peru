@@ -73,7 +73,7 @@ class Footer extends React.Component {
             whatsapp: "987654321", // WhatsApp number
             call_to_action: "Escribenos", // Call to action
             button_color: "#E74339", // Color of button
-            position: "right", // Position may be 'right' or 'left'
+            position: "left", // Position may be 'right' or 'left'
             order: "facebook,whatsapp", // Order of buttons
         };
         var proto = document.location.protocol, host = "whatshelp.io", url = proto + "//static." + host;
@@ -87,7 +87,7 @@ class Footer extends React.Component {
 
 
 
-          
+
         </div>
         </React.Fragment>
     );
