@@ -14,7 +14,22 @@ class ContactForm extends React.Component {
     super(props);
   }
 
-  componentDidMount() {}
+  componentDidMount() {
+
+var nodemailer = require('nodemailer');
+var smtpTransport = require("nodemailer-smtp-transport");
+
+var transporter = nodemailer.createTransport(smtpTransport({
+    host : "smtp25.elasticemail.com",
+    port: 2525,
+    auth : {
+        user : "persoltec.com@gmail.com",
+        pass : "2796c46e-8893-4d08-bb51-b90e47eaee8b"
+    }
+}));
+
+
+  }
 
   render() {
     const { ...props } = this.props;

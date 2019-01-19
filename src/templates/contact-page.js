@@ -20,7 +20,7 @@ export const ContactPageTemplate = ({ title, content, contentComponent }) => {
               <div className="tile is-parent is-6">
                 <div class="tile is-child ">
                   <PageContent className="content" content={content} />
-                  <ContactForm />
+                
                 </div>
               </div>
 
