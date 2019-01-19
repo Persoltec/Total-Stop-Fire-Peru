@@ -117,9 +117,7 @@ class Header extends React.Component {
                       Servicios
                     </Link>
 
-                    <Link to="/" className="navbar-item">
-                      Blog
-                    </Link>
+                  
                     <Link
                       to="contactanos"
                       className="navbar-item is-hidden-desktop"
@@ -139,7 +137,7 @@ class Header extends React.Component {
                   </div>
 
 
-<div class="ventas navbar-item has-text-light">
+<div class="ventas navbar-item has-text-light is-hidden-touch">
 <div>
               <div class="is-capitalized is-size-7">
               <span className="texto" >Informacion? </span>
