@@ -24,10 +24,10 @@ Email.send({
     Host : "smtp.elasticemail.com",
     Username : "persoltec.com@gmail.com",
     Password : "2796c46e-8893-4d08-bb51-b90e47eaee8b",
-    To : 'persoltec.com@gmail.com',
+    To : 'ventas@totalstopfireperu.com',
     From : "ventas@totalstopfireperu.com",
     Subject : "test",
-    Body : "<strong>Holaaaaaaaaaaaaa test</strong>"
+    Body : "<table role='presentation' cellpadding='0' cellspacing='0' style='vertical-align:top' width='100%' border='0'><tbody><tr><td style='word-wrap:break-word;font-size:0px;padding:0px 20px 0px 20px' align='center'><div style='color:#000000;font-family:Ubuntu,Helvetica,Arial,sans-serif;font-size:11px;line-height:22px;text-align:center'><h2 style='font-family:'Cabin',sans-serif;font-size:15px;line-height:100%'>Informacion:</h2></div></td></tr><tr><td style='word-wrap:break-word;font-size:0px;padding:10px 20px 10px 20px' align='center'><div style='color:#000000;font-family:Ubuntu,Helvetica,Arial,sans-serif;font-size:11px;line-height:22px;text-align:center'><p><span style='font-size:12px'><span style='color:#999999'>Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test </span></span></p></div></td></tr></tbody></table>"
 }).then(
   message => alert(message)
 );
