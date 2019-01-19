@@ -38,7 +38,7 @@ Email.send({
     const { ...props } = this.props;
     const { name } = props;
     delete props.name;
-    const Email = window.Email;
+   
     return (
       <StaticQuery
         query={graphql`
