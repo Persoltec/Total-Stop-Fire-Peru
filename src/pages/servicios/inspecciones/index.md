@@ -1,7 +1,7 @@
 ---
 templateKey: default-service
 title: Inspecciones
-portada: /img/slider-inicio-2.jpg
+portada: /img/inspecciones.jpg
 descripcion: No todos entendemos la importancia de una correcta inspección periódica.
 ---
 Todos entendemos la importancia de la seguridad contra incendios en nuestras instalaciones. No todos nosotros entendemos la importancia de una correcta inspección periódica.
