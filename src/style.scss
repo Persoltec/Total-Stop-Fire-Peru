@@ -58,3 +58,24 @@ $weight-normal:400;
     display: flex;
   }
 }
+
+#wh-widget-send-button:after {
+    position: fixed;
+    bottom: 5px;
+    left: 8px;
+    width: 74px;
+    height: 13px;
+    background: #191d26;
+    color: white;
+    z-index: 999999999;
+    text-align: center;
+    font-size: 10px;
+    text-transform: uppercase;
+    line-height: 13px;
+    content: "Chat";
+    border-radius: 10px;
+}
+
+aside.scrollUp {
+    bottom: 16px !important;
+}
