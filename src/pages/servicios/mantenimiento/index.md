@@ -1,7 +1,7 @@
 ---
 templateKey: default-service
 title: Mantenimiento
-portada: /img/slider-inicio-2.jpg
+portada: /img/mantenimiento.jpg
 descripcion: 'En una situación de vida o muerte, equivocarse no es una opción.'
 ---
 ## CONTRATO DE MANTENIMIENTO ANUAL
