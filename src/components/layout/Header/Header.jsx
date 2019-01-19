@@ -217,10 +217,10 @@ class Header extends React.Component {
 <div class="ventas navbar-item has-text-light">
 <div>
               <div class="is-capitalized is-size-7">
-              <span className="texto" >For Support Call </span>
+              <span className="texto" >Informacion? </span>
               <Icon className="icono"  size={24}  icon={ic_phone_in_talk} />
               </div>
-              <div class="telefono has-text-weight-bold is-size-5">800-369-8527</div>
+              <div class="telefono has-text-weight-bold is-size-5"> 991 5690 066</div>
             </div>
             </div>
 
