@@ -1,10 +1,10 @@
 ---
 widgets: ContactInfo
 titulo: Contáctenos
-direccion: 'Lima - Perú - San Juan Lurigancho'
+direccion: 'Av. Próceres de la Independencia # 2330 Lima 36, Lima - Peru'
 coordenadas: '-11.9689301,-76.99398359999998'
-telefono: '01 9754545'
-movil: '99999999'
+telefono: '459 4575'
+movil: '991 569 066'
 correo: 'ventas@totalstopfireperu.com'
 ---
 
