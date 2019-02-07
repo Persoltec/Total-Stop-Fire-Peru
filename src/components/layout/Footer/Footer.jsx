@@ -28,9 +28,7 @@ class Footer extends React.Component {
                 <img src={logo} />
                 <br /><br />
                 <div class="text">
-                  Lorem ipsum dolor amet consectetur adipisicing elit sed eiusm
-                  tempor incidi dunt labore dolore magna aliqua enim ad minim
-                  veniam.
+                Con productos de calidad, innovación constante y excelente atención al cliente, Total Stop Fire es insuperable en sus esfuerzos pioneros para proporcionar una mejor seguridad contra incendios en todo el Perú.
                 </div>
                 <br />
                 <SocialLinks />
