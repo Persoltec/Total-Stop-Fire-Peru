@@ -5,7 +5,6 @@
   "author": "Austin Green",
   "dependencies": {
     "@fika/gatsby-source-cockpit": "^1.0.14",
-    "@mangoart/gatsby-source-cockpit": "^2.0.2",
     "autoprefixer": "^9.4.5",
     "bulma": "^0.7.2",
     "bulma-carousel": "^3.0.0",
