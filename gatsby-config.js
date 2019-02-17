@@ -64,6 +64,15 @@ module.exports = {
         name: "images"
       }
     },
+        {
+    resolve: '@fika/gatsby-source-cockpit',
+    options: {
+      token: 'c2048b68adbaa67daeabc9ea930b32',
+      baseUrl:
+        'http://totalstopfireperu.000webhostapp.com', // (1)
+      locales: ['any', 'es'], // (2)
+    },
+  },
     "gatsby-plugin-sharp",
     "gatsby-transformer-sharp",
     {
