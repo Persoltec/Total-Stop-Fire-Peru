@@ -3,9 +3,10 @@ import { StaticQuery, graphql } from "gatsby";
 import Img from "gatsby-image";
 import { Icon } from 'react-icons-kit'
 import {ic_navigate_next} from 'react-icons-kit/md/ic_navigate_next'
-import {ic_navigate_before} from 'react-icons-kit/md/ic_navigate_before'  
- 
+import {ic_navigate_before} from 'react-icons-kit/md/ic_navigate_before'
+
 import Slider from "react-slick";
+import { valor }  from "../../../tool/funciones"
 
  var settings = {
       dots: true,
@@ -25,7 +26,7 @@ import Slider from "react-slick";
         }
         ]
       }
- 
+
 
 class BrandProducts extends React.Component {
   constructor(props) {
@@ -43,33 +44,36 @@ class BrandProducts extends React.Component {
       <StaticQuery
         query={graphql`
           query {
-            allMarkdownRemark(
-              filter: { frontmatter: { templateKey: { eq: "brand-products" } } }
-            ) {
-              edges {
-                node {
-                  frontmatter {
-                    title
-                    imagen {
-                      childImageSharp {
-                        sizes(maxWidth: 400) {
-                          ...GatsbyImageSharpSizes_tracedSVG
-                        }
-                      }
-                    }
-                  }
-                }
+  allCockpitMarca(filter: {lang: {eq: "es"}}) {
+    edges {
+      node {
+        id
+        titulo {
+          value
+        }
+        portada {
+          value {
+            childImageSharp {
+              fluid(maxWidth: 400, quality: 50) {
+                base64
+                aspectRatio
+                src
+                srcSet
+                srcWebp
+                srcSetWebp
+                sizes
+                originalImg
+                originalName
               }
             }
           }
+        }
+      }
+    }
+  }
+}
         `}
         render={data => {
-
-
-
-
- 
-
 
           return (
             <section class="widget-brand-products section">
@@ -82,15 +86,16 @@ class BrandProducts extends React.Component {
                 </div>
 
 <Slider {...settings}>
-{data.allMarkdownRemark.edges.map((item, i) => {
+{data.allCockpitMarca.edges.map((item, i) => {
+
                     return (
                       <div key={i.toString()}>
                         <Img
                           style={{ width: "160px", margin: "0 auto" }}
                           sizes={
-                            item.node.frontmatter.imagen.childImageSharp.sizes
+                            valor(item.node,"portada").childImageSharp.fluid
                           }
-                          alt={item.node.frontmatter.title}
+                          alt={valor(item.node,"titulo")}
                         />
                       </div>
                     );
@@ -99,14 +104,14 @@ class BrandProducts extends React.Component {
 </Slider>
 
 
- 
 
 
- 
 
 
-   
-               
+
+
+
+
               </div>
             </section>
           );

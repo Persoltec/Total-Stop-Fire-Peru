@@ -7,7 +7,7 @@ import PreviewCompatibleImage from '../components/PreviewCompatibleImage'
 import Img from "gatsby-image";
 import { valor }  from "../tool/funciones"
 
-export const DefaultServiciosTemplate = ({
+export const DefaultProductosTemplate = ({
  title, content, contentComponent
 }) => {
   const PageContent = contentComponent || Content
@@ -28,13 +28,13 @@ export const DefaultServiciosTemplate = ({
 }
 
 
-DefaultServiciosTemplate.propTypes = {
+DefaultProductosTemplate.propTypes = {
   content: PropTypes.string,
   contentComponent: PropTypes.func,
   title: PropTypes.string.isRequired,
 }
 
-const DefaultServicios = ({ data }) => {
+const DefaultProductos = ({ data }) => {
   const { cockpitPaginas: post } = data
 
   return (
@@ -49,17 +49,17 @@ const DefaultServicios = ({ data }) => {
 }
 
 
-DefaultServicios.propTypes = {
+DefaultProductos.propTypes = {
   data: PropTypes.shape({
     markdownRemark: PropTypes.object,
   }),
 }
 
 
-export default DefaultServicios
+export default DefaultProductos
 
-export const DefaultServiciosQuery = graphql`
-  query DefaultServicios($id: String!) {
+export const DefaultProductosQuery = graphql`
+  query DefaultProductos($id: String!) {
     cockpitPaginas(id: { eq: $id }) {
       id
       titulo {

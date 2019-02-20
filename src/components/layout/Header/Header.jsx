@@ -9,7 +9,7 @@ import HomeSlider from "../../slider/HomeSlider";
 import { Link } from "gatsby";
 //import Logo from "../Logo/Logo.jsx";
 import logo from "../../../img/logo.svg";
- 
+
 
 import {ic_phone_in_talk} from 'react-icons-kit/md/ic_phone_in_talk'
 class Header extends React.Component {
@@ -67,7 +67,7 @@ class Header extends React.Component {
 
     return (
       <React.Fragment>
-      
+
 
         <section
           id="header"
@@ -117,9 +117,9 @@ class Header extends React.Component {
                       Servicios
                     </Link>
 
-                  
+
                     <Link
-                      to="contactanos"
+                      to="contactenos"
                       className="navbar-item is-hidden-desktop"
                     >
                       Contáctenos
@@ -130,7 +130,7 @@ class Header extends React.Component {
                 <div class="navbar-end is-hidden-touch">
                   <div class="navbar-item">
                     <div class="buttons">
-                      <Link to="contactanos" className="button is-primary">
+                      <Link to="contactenos" className="button is-primary">
                         <strong>Contáctenos</strong>
                       </Link>
                     </div>

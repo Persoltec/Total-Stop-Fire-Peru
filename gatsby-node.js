@@ -2,75 +2,98 @@ const _ = require("lodash");
 const path = require("path");
 const { createFilePath } = require("gatsby-source-filesystem");
 const { fmImagesToRelative } = require("gatsby-remark-relative-images");
- 
+
 exports.createPages = ({ actions, graphql }) => {
   const { createPage } = actions;
 
   return graphql(`
     {
-      allMarkdownRemark(limit: 1000) {
-        edges {
-          node {
-            id
-            fields {
-              slug
-            }
-            frontmatter {
-              tags
-              templateKey
-            }
-          }
-        }
-      }
-    }
+   allCockpitServicios (filter: { lang: { eq: "es" } }) {
+     edges {
+       node {
+         id
+         titulo {
+           value
+         }
+       }
+     }
+   }
+   allCockpitPaginas (filter: { lang: { eq: "es" } }) {
+     edges {
+       node {
+         id
+         titulo {
+           value
+         }
+         plantilla{
+           value
+         }
+       }
+     }
+   }
+
+ }
   `).then(result => {
     if (result.errors) {
       result.errors.forEach(e => console.error(e.toString()));
       return Promise.reject(result.errors);
     }
 
-    const posts = result.data.allMarkdownRemark.edges;
+    const servicios = result.data.allCockpitServicios.edges;
 
-    posts.forEach(edge => {
+    servicios.forEach(edge => {
       const id = edge.node.id;
-      if (String(edge.node.frontmatter.templateKey) != "null") {
+      console.log(edge.node.titulo);
+
         createPage({
-          path: edge.node.fields.slug,
-          tags: edge.node.frontmatter.tags,
+          path: 'servicios/' + slugify(edge.node.titulo.value),
           component: path.resolve(
-            `src/templates/${String(edge.node.frontmatter.templateKey)}.js`
+            `src/templates/default-service.js`
           ),
           // additional data can be passed via context
           context: {
             id
           }
         });
-      }
+
     });
 
-    // Tag pages:
-    let tags = [];
-    // Iterate through each post, putting all found tags into `tags`
-    posts.forEach(edge => {
-      if (_.get(edge, `node.frontmatter.tags`)) {
-        tags = tags.concat(edge.node.frontmatter.tags);
-      }
-    });
-    // Eliminate duplicate tags
-    tags = _.uniq(tags);
+const paginas = result.data.allCockpitPaginas.edges;
 
-    // Make tag pages
-    tags.forEach(tag => {
-      const tagPath = `/tags/${_.kebabCase(tag)}/`;
+    paginas.forEach(edge => {
+      const id = edge.node.id;
 
-      createPage({
-        path: tagPath,
-        component: path.resolve(`src/templates/tags.js`),
-        context: {
-          tag
-        }
-      });
+console.log(edge.node.titulo);
+
+if ( edge.node.plantilla==='null' ){
+  template="default-page";
+}else{
+  //template=String(edge.node.plantilla.value);
+
+}
+
+
+
+
+
+
+
+
+        createPage({
+          path:  slugify(edge.node.titulo.value),
+          component: path.resolve(
+            `src/templates/${ "default-page" }.js`
+          ),
+          // additional data can be passed via context
+          context: {
+            id
+          }
+        });
+
     });
+
+
+
   });
 };
 
@@ -100,17 +123,18 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
   if (node.internal.type === `MarkdownRemark`) {
     //const value = createFilePath({ node, getNode })
 
-    const filePath = createFilePath({ node, getNode });
-
-    if (~filePath.indexOf("paginas")) {
-      slug = `/${slugify(node.frontmatter.title)}`;
-      console.log(filePath)
-      console.log(slug)
-    } else if (~filePath.indexOf("blog")) {
-      slug = `/blog/${slugify(node.frontmatter.title)}`;
-    } else {
+     const filePath = createFilePath({ node, getNode });
       slug = slugify(filePath);
-    }
+    //
+    // if (~filePath.indexOf("Servicios")) {
+    //   slug = `/${slugify(node.frontmatter.title)}`;
+    //
+    //
+    // } else if (~filePath.indexOf("blog")) {
+    //   slug = `/blog/${slugify(node.frontmatter.title)}`;
+    // } else {
+    //   slug = slugify(filePath);
+    // }
 
     createNodeField({
       name: `slug`,

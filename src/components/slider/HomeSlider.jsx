@@ -1,18 +1,19 @@
 import React from "react";
 import { StaticQuery, graphql } from "gatsby";
 import PropTypes from "prop-types";
- 
+
 import Img from "gatsby-image";
 
- 
+
 import { Icon } from 'react-icons-kit'
 import {ic_navigate_next} from 'react-icons-kit/md/ic_navigate_next'
-import {ic_navigate_before} from 'react-icons-kit/md/ic_navigate_before'  
+import {ic_navigate_before} from 'react-icons-kit/md/ic_navigate_before'
  import Slider from "react-slick";
 
- 
+ import { valor }  from "../../tool/funciones"
 
- 
+
+
  const settings = {
       dots: true,
       fade: true,
@@ -23,12 +24,12 @@ import {ic_navigate_before} from 'react-icons-kit/md/ic_navigate_before'
     };
 
 
- 
+
 
 
 class HomeSlider extends React.PureComponent {
 
- 
+
 state = {
       isVisible: false
     }
@@ -41,7 +42,6 @@ state = {
   }
 
   onExitViewport = () => {
-    console.log("saliiiiiii")
     this.setState({
       isVisible: false,
     });
@@ -57,71 +57,82 @@ state = {
       <StaticQuery
         query={graphql`
           query {
-            allMarkdownRemark(
-              filter: { frontmatter: { slider: { eq: "SliderHome" } } }
-            ) {
-              edges {
-                node {
-                  frontmatter {
-                    pagina {
-                      titulo
-                      descripcion
-                      imagen {
-                        childImageSharp {
-                          fluid(maxWidth: 800, quality: 50, toFormat: JPG) {
-                            base64
-                            aspectRatio
-                            src
-                            srcSet
-                            srcWebp
-                            srcSetWebp
-                            sizes
-                            originalImg
-                            originalName
-                          }
-                        }
-                      }
-                    }
-                  }
-                }
+  allCockpitPortada(filter: {lang: {eq: "es"}}) {
+    edges {
+      node {
+        id
+        titulo {
+          value
+        }
+        descripcion{
+        value
+      }
+      direccion{
+  value{
+    titulo{
+      value
+    }
+    direccion{
+      value
+    }
+  }
+}
+        portada {
+          value {
+            childImageSharp {
+              fluid(maxWidth: 800, quality: 50, toFormat: JPG) {
+                src
+                srcSet
+                srcWebp
+                srcSetWebp
+                sizes
               }
             }
           }
+        }
+      }
+    }
+  }
+}
+
         `}
         render={data => (
           <React.Fragment>
-            {data.allMarkdownRemark.edges.map((items, i) => (
+             <Slider {...settings}>
+            {data.allCockpitPortada.edges.map((items, i) => (
               <React.Fragment>
-           
- 
 
-   <Slider {...settings}>
-                {items.node.frontmatter.pagina.map((item, i) => (
-                  <div className="itemslider" key={i.toString()}>
-                    <Img fluid={item.imagen.childImageSharp.fluid} />
+
+
+
+                  <div className="itemslider" key={items.toString()}>
+                    <Img fluid={valor(items.node,"portada").childImageSharp.fluid} />
 
                     <div class="hero-body is-overlay">
                       <div class="container has-text-centered">
-                        
+
                         <h1 class="title  is-size-1-desktop is-size-2-tablet is-size-3-mobile">
-                        
-        {item.titulo.toString().toUpperCase()}
-      
+
+        {valor(items.node,"titulo").toString().toUpperCase()}
+
 
 
                         </h1>
-                        
-                        <h2 class="subtitle">{item.descripcion}</h2>
-                        <a class="button is-primary">Solicitar cotización</a>
+
+                        <h2 class="subtitle">{valor(items.node,"descripcion")}</h2>
+                        <a href={valor(items.node.direccion.value,"direccion")}
+                        class="button is-primary">
+                        {valor(items.node.direccion.value,"titulo")}</a>
                       </div>
                     </div>
                   </div>
-                ))}
-              </Slider>
-            
- 
+
+
+
+
               </React.Fragment>
             ))}
+            </Slider>
           </React.Fragment>
         )}
       />
@@ -132,7 +143,7 @@ state = {
         <SliderAnimation />
       </React.Fragment>
     );
- 
+
   }
 }
 

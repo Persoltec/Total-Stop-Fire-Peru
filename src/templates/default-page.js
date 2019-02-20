@@ -3,51 +3,71 @@ import PropTypes from 'prop-types'
 import { graphql } from 'gatsby'
 import Layout from '../components/Layout'
 import Content, { HTMLContent } from '../components/Content'
+import PreviewCompatibleImage from '../components/PreviewCompatibleImage'
+import Img from "gatsby-image";
+import { valor }  from "../tool/funciones"
 
-export const DefaultPageTemplate = ({ title, content, contentComponent }) => {
+export const DefaultPaginaTemplate = ({
+ title, content, contentComponent
+}) => {
   const PageContent = contentComponent || Content
 
   return (
-        
-              <PageContent className="content" content={content} />
-          
-    
+    <React.Fragment>
+
+
+
+    <PageContent className="content " content={content} />
+
+
+
+
+    </React.Fragment>
   )
 }
 
-DefaultPageTemplate.propTypes = {
-  title: PropTypes.string.isRequired,
+
+DefaultPaginaTemplate.propTypes = {
   content: PropTypes.string,
   contentComponent: PropTypes.func,
+  title: PropTypes.string.isRequired,
 }
 
-const DefaultPage = ({ data }) => {
-  const { markdownRemark: post } = data
+const DefaultPagina = ({ data }) => {
+  const { cockpitPaginas: post } = data
 
   return (
-    <Layout titulo={post.frontmatter.title}>
-      <DefaultPageTemplate
+    <Layout titulo={valor(post,"titulo")}>
+
+      <DefaultPaginaTemplate
         contentComponent={HTMLContent}
-        title={post.frontmatter.title}
-        content={post.html}
+        title={valor(post,"titulo")}
+        content={valor(post,"contenido")}
       />
     </Layout>
   )
 }
 
-DefaultPage.propTypes = {
-  data: PropTypes.object.isRequired,
+DefaultPagina.propTypes = {
+  data: PropTypes.shape({
+    markdownRemark: PropTypes.object,
+  }),
 }
 
-export default DefaultPage
+export default DefaultPagina
 
-export const DefaultPageQuery = graphql`
-  query DefaultPage($id: String!) {
-    markdownRemark(id: { eq: $id }) {
-      html
-      frontmatter {
-        title
+export const DefaultPaginaQuery = graphql`
+  query DefaultPagina($id: String!) {
+    cockpitPaginas(id: { eq: $id }) {
+      id
+      titulo {
+        value
       }
-    }
+      contenido {
+         value
+       }
+
+
+  }
   }
 `

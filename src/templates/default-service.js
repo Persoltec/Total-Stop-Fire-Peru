@@ -5,25 +5,29 @@ import Layout from '../components/Layout'
 import Content, { HTMLContent } from '../components/Content'
 import PreviewCompatibleImage from '../components/PreviewCompatibleImage'
 import Img from "gatsby-image";
+import { valor }  from "../tool/funciones"
+
+
 export const DefaultServiceTemplate = ({
- portada,title, content, contentComponent 
+ portada,title, content, contentComponent
 }) => {
   const PageContent = contentComponent || Content
 
   return (
     <React.Fragment>
-      <Img
-                          style={{ maxHeight: "300px", margin: "0 auto" }}
-                          fluid={
-                            portada.childImageSharp.fluid
-                          }
-                          alt={title}
-                        />
-                        <br/>
-              <PageContent className="content " content={content} />
-           
 
- 
+    <Img
+                        style={{ maxHeight: "300px", margin: "0 auto" }}
+                        fluid={
+                          portada.childImageSharp.fluid
+                        }
+                        alt={title}
+                      />
+                      <br/>
+              <PageContent className="content " content={content} />
+
+
+
 
 
 
@@ -40,20 +44,21 @@ DefaultServiceTemplate.propTypes = {
   title: PropTypes.string.isRequired,
 }
 const DefaultService = ({ data }) => {
-  const { markdownRemark: post } = data
+  const { cockpitServicios: post } = data
 
   return (
-    <Layout titulo={post.frontmatter.title}>
+    <Layout titulo={valor(post,"titulo")}>
+
       <DefaultServiceTemplate
-       portada={post.frontmatter.portada}
+       portada={valor(post,"portada")}
         contentComponent={HTMLContent}
-        title={post.frontmatter.title}
-        content={post.html}
+        title={valor(post,"titulo")}
+        content={valor(post,"contenido")}
       />
     </Layout>
   )
 }
- 
+
 
 DefaultService.propTypes = {
   data: PropTypes.shape({
@@ -66,26 +71,32 @@ export default DefaultService
 
 export const DefaultServiceQuery = graphql`
   query DefaultService($id: String!) {
-    markdownRemark(id: { eq: $id }) {
-      html
-      frontmatter {
-        title
-        portada {
-                      childImageSharp {
-                        fluid(maxWidth: 800, quality: 50, toFormat: JPG) {
-                            base64
-                            aspectRatio
-                            src
-                            srcSet
-                            srcWebp
-                            srcSetWebp
-                            sizes
-                            originalImg
-                            originalName
-                          }
-                      }
-                    }
+    cockpitServicios(id: { eq: $id }) {
+      id
+      titulo {
+        value
+      }
+      contenido {
+         value
+       }
+
+       portada {
+  value {
+    childImageSharp {
+      fluid(maxWidth: 800, quality: 50, toFormat: JPG) {
+        base64
+        aspectRatio
+        src
+        srcSet
+        srcWebp
+        srcSetWebp
+        sizes
+        originalImg
+        originalName
       }
     }
+  }
+}
+  }
   }
 `

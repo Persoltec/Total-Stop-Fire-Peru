@@ -5,6 +5,9 @@ import Img from "gatsby-image";
 import { Icon } from "react-icons-kit";
 import { Link } from "gatsby";
 
+import { slugify }  from "../../../tool/funciones"
+
+
 class ServiceMenu extends React.Component {
   constructor(props) {
     super(props);
@@ -20,56 +23,57 @@ class ServiceMenu extends React.Component {
     return (
       <StaticQuery
         query={graphql`
-          query {
-            allMarkdownRemark(
-              filter: {
-                frontmatter: { templateKey: { eq: "default-service" } }
-              }
-            ) {
-              edges {
-                node {
-                  fields {
-                    slug
-                  }
-                  frontmatter {
-                    title
-                    descripcion
-                    portada {
-                      childImageSharp {
-                        fluid(maxWidth: 800, quality: 50, toFormat: JPG) {
-                            base64
-                            aspectRatio
-                            src
-                            srcSet
-                            srcWebp
-                            srcSetWebp
-                            sizes
-                            originalImg
-                            originalName
-                          }
-                      }
-                    }
-                  }
-                }
+          query  {
+        allCockpitServicios (filter: { lang: { eq: "es" } }) {
+        edges {
+        node {
+        id
+        titulo {
+          value
+        }
+        descripcion {
+          value
+        }
+        portada {
+          value {
+            childImageSharp {
+              fluid(maxWidth: 800, quality: 50, toFormat: JPG) {
+                base64
+                aspectRatio
+                src
+                srcSet
+                srcWebp
+                srcSetWebp
+                sizes
+                originalImg
+                originalName
               }
             }
           }
+        }
+        }
+        }
+        }
+        }
         `}
         render={data => {
+
           return (
             <div className="widget-service-menu">
-               
+
                 <h1  className="title is-size-4 is-uppercase">
                   Nuestros Servicios
                 </h1>
-               
+
 
               <div className="items">
-                {data.allMarkdownRemark.edges.map((item, i) => {
+                {data.allCockpitServicios.edges.map((item, i) => {
+                  let slug = 'servicios/' + slugify(item.node.titulo.value);
+
                   return (
-                     
-                 
-                    <Link key={i.toString()} className="has-text-dark"  to={item.node.fields.slug}>   
+
+
+                    <Link key={i.toString()} className="has-text-dark"  to={slug}>
                         <article class="media">
                           <div class="media-left">
                             <figure class="image is-48x48">
@@ -80,31 +84,31 @@ class ServiceMenu extends React.Component {
                                   margin: "0 auto"
                                 }}
                                 fluid={
-                                  item.node.frontmatter.portada.childImageSharp.fluid
+                                  item.node.portada.value.childImageSharp.fluid
                                 }
-                                alt={item.node.frontmatter.title}
+                                alt={item.node.titulo.value}
                               />
                             </figure>
                           </div>
                           <div class="media-content">
                             <div class="content">
                               <h4 class="title is-6 has-text-grey-darker is-uppercase">
-                                  
-                                    {item.node.frontmatter.title}
-                                 
+
+                                    {item.node.titulo.value}
+
                                 </h4>
-                               
+
                             </div>
                           </div>
                         </article>
                     </Link>
-                  
+
 
                   );
                 })}
               </div>
               </div>
-             
+
           );
         }}
       />

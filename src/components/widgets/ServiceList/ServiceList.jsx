@@ -1,9 +1,12 @@
 import React from "react";
 import { StaticQuery, graphql } from "gatsby";
 import Img from "gatsby-image";
- 
+
 import { Icon } from 'react-icons-kit'
  import { Link } from "gatsby";
+
+
+ import { slugify }  from "../../../tool/funciones"
 
 class ServiceList extends React.Component {
   constructor(props) {
@@ -21,38 +24,39 @@ class ServiceList extends React.Component {
     return (
       <StaticQuery
         query={graphql`
-          query {
-            allMarkdownRemark(
-              filter: { frontmatter: { templateKey: { eq: "default-service" } } }
-            ) {
-              edges {
-                node {
-                	   fields{
-          slug
+          query  {
+  allCockpitServicios (filter: { lang: { eq: "es" } }) {
+    edges {
+      node {
+        id
+        titulo {
+          value
         }
-                  frontmatter {
-                    title
-                    descripcion
-                    portada {
-                      childImageSharp {
-                       fluid(maxWidth: 800, quality: 50, toFormat: JPG) {
-                            base64
-                            aspectRatio
-                            src
-                            srcSet
-                            srcWebp
-                            srcSetWebp
-                            sizes
-                            originalImg
-                            originalName
-                          }
-                      }
-                    }
-                  }
-                }
+        descripcion {
+          value
+        }
+        portada {
+          value {
+            childImageSharp {
+              fluid(maxWidth: 800, quality: 50, toFormat: JPG) {
+                base64
+                aspectRatio
+                src
+                srcSet
+                srcWebp
+                srcSetWebp
+                sizes
+                originalImg
+                originalName
               }
             }
           }
+        }
+      }
+    }
+  }
+}
+
         `}
         render={data => {
 
@@ -60,16 +64,19 @@ class ServiceList extends React.Component {
 
           const Items=(
              <div className="columns is-multiline">
-                  {data.allMarkdownRemark.edges.map((item, i) => {
+                  {data.allCockpitServicios.edges.map((item, i) => {
+                    let slug = 'servicios/' + slugify(item.node.titulo.value);
+
                     return (
-                       
-                        
+
+
 
 
 
 
 
 <div className="column is-6">
+
 <div class="box" key={i.toString()}>
   <article class="media">
     <div class="media-left">
@@ -77,34 +84,34 @@ class ServiceList extends React.Component {
           <Img
                           style={{ width: "100%", height:"100%", margin: "0 auto" }}
                           fluid={
-                            item.node.frontmatter.portada.childImageSharp.fluid
+                            item.node.portada.value.childImageSharp.fluid
                           }
-                          alt={item.node.frontmatter.title}
+                          alt={item.node.titulo.value}
                         />
       </figure>
     </div>
     <div class="media-content">
       <div class="content">
         <p>
-          <strong> <Link to={item.node.fields.slug} >{item.node.frontmatter.title}</Link ></strong>
+          <strong> <Link to={slug} >{item.node.titulo.value}</Link ></strong>
           <br/>
-          {item.node.frontmatter.descripcion}
+          {item.node.descripcion.value}
         </p>
       </div>
-    
+
     </div>
   </article>
 </div>
 </div>
 
- 
+
                     );
                   })}
-                </div> 
-            
+                </div>
+
             )
-          
-            
+
+
           return (
 <React.Fragment>
 {mini ? (
@@ -116,18 +123,18 @@ class ServiceList extends React.Component {
               <div class="container">
                 <div className="titulo has-text-centered">
                   <h1 name="image" className="title">
- 
+
                     Nuestros Servicios
                   </h1>
-                  
+
                   <h2 className="subtitle">{Titulo}</h2>
                 </div>
  {Items}
-    
+
               </div>
             </section>
-       
-       
+
+
       )}
 
 
@@ -135,7 +142,7 @@ class ServiceList extends React.Component {
 
 
 
-        </React.Fragment>    
+        </React.Fragment>
           );
         }}
       />
