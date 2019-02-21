@@ -32,7 +32,7 @@ class EnterpriseFeature extends React.Component {
         }
         portada {
           value {
-            relativePath
+            publicURL
           }
         }
       }
