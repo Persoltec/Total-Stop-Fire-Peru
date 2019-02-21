@@ -7,8 +7,7 @@ import SVG from "react-inlinesvg";
 import { valor }  from "../../../tool/funciones"
 
 
-let color = ["rojo", "negro", "blanco"];
-let n = 0;
+
 
 class EnterpriseFeature extends React.Component {
   render() {
@@ -41,7 +40,10 @@ class EnterpriseFeature extends React.Component {
   }
 }
         `}
-        render={data => (
+        render={data =>{
+          let color = ["rojo", "negro", "blanco"];
+          let n = 0;
+          return (
           <div className="widget-enterprise-feature">
             <React.Fragment>
             <div class="tile   has-text-centered">
@@ -93,7 +95,7 @@ class EnterpriseFeature extends React.Component {
             </div>
             </React.Fragment>
           </div>
-        )}
+        )}}
       />
     );
   }
