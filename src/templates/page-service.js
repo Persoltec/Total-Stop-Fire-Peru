@@ -6,6 +6,8 @@ import Content, { HTMLContent } from '../components/Content'
 import PreviewCompatibleImage from '../components/PreviewCompatibleImage'
 import Img from "gatsby-image";
 import { valor }  from "../tool/funciones"
+import ServiceList from "../components/widgets/ServiceList/ServiceList";
+
 
 export const DefaultServiciosTemplate = ({
  title, content, contentComponent
@@ -18,10 +20,8 @@ export const DefaultServiciosTemplate = ({
 
               <PageContent className="content " content={content} />
 
-
-
-
-
+ <br/>
+ <ServiceList/>
 
     </React.Fragment>
   )
