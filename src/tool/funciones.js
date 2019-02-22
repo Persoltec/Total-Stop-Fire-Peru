@@ -1,7 +1,7 @@
 
 module.exports = {
 valor: function (datos,valor) {
-return (String(datos[valor])==='null')?"Vacio":datos[valor].value;
+return (String(datos[valor])==='null')?"":datos[valor].value;
 },
 slugify: function (string) {
   const a = "àáäâãåèéëêìíïîòóöôùúüûñçßÿœæŕśńṕẃǵǹḿǘẍźḧ·/_,:;";

@@ -1,6 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { graphql } from 'gatsby'
+import { StaticQuery, graphql } from "gatsby";
 import Layout from '../components/Layout'
 import Content, { HTMLContent } from '../components/Content'
 import PreviewCompatibleImage from '../components/PreviewCompatibleImage'
@@ -14,14 +14,60 @@ export const DefaultNosotrosTemplate = ({
 
   return (
     <React.Fragment>
-
-
               <PageContent className="content " content={content} />
 
+              <StaticQuery
+                query={graphql`
+                  query {
+allCockpitTotalstopfire(filter: {cockpitId: {eq: "5c6465253262630c69000101"}, lang: {eq: "es"}}) {
+  edges {
+    node {
+      contenido {
+        value {
+          parsed
+        }
+      }
+    }
+  }
+}
+}
+                `}
+                render={data => (
+                  <div className="widget-social-links">
+
+                    {data.allCockpitTotalstopfire.edges.map((items, i) => {
+                      return(
+                       <React.Fragment>
+                       <div className="title">{items.node.contenido.value.parsed[1]["name"]}</div>
+                       <div className="text" dangerouslySetInnerHTML={{ __html: items.node.contenido.value.parsed[1]["settings"]["html"] }} />
+<br/>
+                       <div className="title">{items.node.contenido.value.parsed[2]["name"]}</div>
+                       <div className="text" dangerouslySetInnerHTML={{ __html: items.node.contenido.value.parsed[2]["settings"]["html"] }} />
+<br/>
+<div className="title">{items.node.contenido.value.parsed[3]["name"]}</div>
+<div className="text" dangerouslySetInnerHTML={{ __html: items.node.contenido.value.parsed[3]["settings"]["html"] }} />
 
 
+<br/>
+<div className="title">{items.node.contenido.value.parsed[4]["name"]}</div>
 
 
+{items.node.contenido.value.parsed[4]["settings"]["contenido"].map((item, i) => {
+  return (
+    <React.Fragment>
+
+<br/>
+<div className="subtitle">{item["value"]["titulo"]}</div>
+<div className="text" dangerouslySetInnerHTML={{ __html: item["value"]["descripcion"] }} />
+</React.Fragment>
+  );
+})}
+                        </React.Fragment>
+                      );
+                    })}
+                  </div>
+                )}
+              />
 
     </React.Fragment>
   )
