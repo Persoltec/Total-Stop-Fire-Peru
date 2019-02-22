@@ -9,7 +9,7 @@ import HomeSlider from "../../slider/HomeSlider";
 import { Link } from "gatsby";
 //import Logo from "../Logo/Logo.jsx";
 import logo from "../../../img/logo.svg";
-
+import { StaticQuery, graphql } from "gatsby";
 
 import {ic_phone_in_talk} from 'react-icons-kit/md/ic_phone_in_talk'
 class Header extends React.Component {
@@ -143,7 +143,55 @@ class Header extends React.Component {
               <span className="texto" >Informacion? </span>
               <Icon className="icono"  size={24}  icon={ic_phone_in_talk} />
               </div>
-              <div class="telefono has-text-weight-bold is-size-5"> 991 5690 066</div>
+
+              <StaticQuery
+                query={graphql`
+                  query {
+allCockpitTotalstopfire(filter: {cockpitId: {eq: "5c64868e326263101b0000f8"}, lang: {eq: "es"}}) {
+  edges {
+    node {
+      contenido {
+        value {
+          parsed
+        }
+      }
+    }
+  }
+}
+}
+                `}
+                render={data =>
+
+                  (
+                  <div className="widget-social-links">
+
+                    {data.allCockpitTotalstopfire.edges.map((items, i) => {
+
+                      let fono="";
+
+                      items.node.contenido.value.parsed.forEach(function(entry) {
+  if (entry["name"]==="Móvil"){
+    fono=entry["settings"]["valor"]
+  }
+});
+                      return(
+                       <React.Fragment>
+                       <div className="telefono has-text-weight-bold is-size-5" >
+{fono}
+                       </div>
+
+
+                        </React.Fragment>
+                      );
+                    })}
+                  </div>
+                )}
+              />
+
+
+
+
+
             </div>
             </div>
 

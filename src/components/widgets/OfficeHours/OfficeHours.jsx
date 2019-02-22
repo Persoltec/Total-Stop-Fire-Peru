@@ -11,47 +11,45 @@ class OfficeHours extends React.Component {
       <StaticQuery
         query={graphql`
           query {
-            allMarkdownRemark(
-              filter: { frontmatter: { widgets: { eq: "OfficeHours" } } }
-            ) {
-              edges {
-                node {
-                  frontmatter {
-                    titulo
-                    lunes
-                    martes
-                    miercoles
-                    jueves
-                    viernes
-                    sabado
-                    domingo
-                  }
-                }
-              }
-            }
+  allCockpitTotalstopfire (filter: { cockpitId: { eq: "5c64355d32626302d90003e2" } , lang: { eq: "es" }}) {
+    edges {
+      node {
+        id
+        lang
+        titulo {
+          value
+        }
+        contenido{
+          value{
+           parsed
           }
+        }
+
+      }
+    }
+  }
+}
+
         `}
         render={data => (
           <div className="widget-office-hours">
-            {data.allMarkdownRemark.edges.map((items, i) => {
-              var dias = [
-                "Lunes",
-                "Martes",
-                "Miércoles",
-                "Jueves",
-                "Viernes",
-                "Sábado",
-                "Domingo"
-              ];
-              var horario = Object.values(items.node.frontmatter).splice(1, 7);
+              {data.allCockpitTotalstopfire.edges.map((items, i) => {
+
 
               return (
                 <React.Fragment>
-                  {dias.map((dia, i) => {
+
+              {items.node.contenido.value.parsed.map((item, i) => {
                     return (
                       <div className="level">
-                        <div className="level-left"> {dia}</div>
-                        <div className="level-right "> {horario[i]}</div>
+                        <div className="level-left"> {item["name"]}</div>
+                        {String(item["settings"]["estado"])==="Abierto" ? (
+                               <div className="level-right "> {item["settings"]["apertura"]}{'AM - '} {item["settings"]["cierre"]}PM </div>
+                              ) : (
+<div className="level-right has-text-primary">Cerrado</div>
+
+                              )}
+
                       </div>
                     );
                   })}

@@ -25,20 +25,20 @@ module.exports = {
         precision: 8
       }
     },
-    {
-      resolve: `gatsby-plugin-manifest`,
-      options: {
-        name: `Total Stop Fire Perú`,
-        short_name: `Total Stop`,
-        start_url: `/`,
-        background_color: `#f81d22`,
-        theme_color: `#ffffff`,
-        // Enables "Add to Homescreen" prompt and disables browser UI (including back button)
-        // see https://developers.google.com/web/fundamentals/web-app-manifest/#display
-        display: `standalone`,
-        icon: `src/img/icon.png` // This path is relative to the root of the site.
-      }
-    },
+    // {
+    //   resolve: `gatsby-plugin-manifest`,
+    //   options: {
+    //     name: `Total Stop Fire Perú`,
+    //     short_name: `Total Stop`,
+    //     start_url: `/`,
+    //     background_color: `#f81d22`,
+    //     theme_color: `#ffffff`,
+    //     // Enables "Add to Homescreen" prompt and disables browser UI (including back button)
+    //     // see https://developers.google.com/web/fundamentals/web-app-manifest/#display
+    //     display: `standalone`,
+    //     icon: `src/img/icon.png` // This path is relative to the root of the site.
+    //   }
+    // },
     //`gatsby-plugin-offline`,
     `gatsby-plugin-remove-serviceworker`,
     "gatsby-plugin-react-helmet",

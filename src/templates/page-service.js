@@ -17,11 +17,11 @@ export const DefaultServiciosTemplate = ({
   return (
     <React.Fragment>
 
- 
+
               <PageContent className="content " content={content} />
 
  <br/>
- <ServiceList/>
+    <ServiceList mini />
 
     </React.Fragment>
   )
@@ -39,7 +39,7 @@ const DefaultServicios = ({ data }) => {
 
   return (
     <Layout titulo={valor(post,"titulo")}>
-      <DefaultPaginaTemplate
+      <DefaultServiciosTemplate
         contentComponent={HTMLContent}
         title={valor(post,"titulo")}
         content={valor(post,"contenido")}

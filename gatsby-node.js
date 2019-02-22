@@ -43,9 +43,7 @@ exports.createPages = ({ actions, graphql }) => {
 
     servicios.forEach(edge => {
       const id = edge.node.id;
-      console.log(edge.node.titulo);
-
-        createPage({
+      createPage({
           path: 'servicios/' + slugify(edge.node.titulo.value),
           component: path.resolve(
             `src/templates/default-service.js`
@@ -62,27 +60,14 @@ const paginas = result.data.allCockpitPaginas.edges;
 
     paginas.forEach(edge => {
       const id = edge.node.id;
-
-console.log(edge.node.titulo);
-
-if ( edge.node.plantilla==='null' ){
-  template="default-page";
-}else{
-  //template=String(edge.node.plantilla.value);
-
+      let template="default-page";
+if (JSON.stringify(edge.node.plantilla) != "null") {
+  template =edge.node.plantilla.value;
 }
-
-
-
-
-
-
-
-
         createPage({
           path:  slugify(edge.node.titulo.value),
           component: path.resolve(
-            `src/templates/${ "default-page" }.js`
+            `src/templates/${ template}.js`
           ),
           // additional data can be passed via context
           context: {

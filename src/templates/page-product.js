@@ -39,7 +39,7 @@ const DefaultProductos = ({ data }) => {
 
   return (
     <Layout titulo={valor(post,"titulo")}>
-      <DefaultPaginaTemplate
+      <DefaultProductosTemplate
         contentComponent={HTMLContent}
         title={valor(post,"titulo")}
         content={valor(post,"contenido")}

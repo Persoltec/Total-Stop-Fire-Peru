@@ -39,7 +39,7 @@ const DefaultNosotros = ({ data }) => {
 
   return (
     <Layout titulo={valor(post,"titulo")}>
-      <DefaultPaginaTemplate
+      <DefaultNosotrosTemplate
         contentComponent={HTMLContent}
         title={valor(post,"titulo")}
         content={valor(post,"contenido")}

@@ -1,77 +1,78 @@
-import React from "react";
-import PropTypes from "prop-types";
-import { graphql } from "gatsby";
-import Layout from "../components/Layout";
-//import LocationCompany from "../components/widgets/LocationCompany/LocationCompany";
+import React from 'react'
+import PropTypes from 'prop-types'
+import { graphql } from 'gatsby'
+import Layout from '../components/Layout'
+import Content, { HTMLContent } from '../components/Content'
+import PreviewCompatibleImage from '../components/PreviewCompatibleImage'
+import Img from "gatsby-image";
+import { valor }  from "../tool/funciones"
+import ServiceList from "../components/widgets/ServiceList/ServiceList";
 import ContactForm from "../components/widgets/ContactForm/ContactForm";
 import EnterpriseFeature from "../components/widgets/EnterpriseFeature/EnterpriseFeature";
 
-import Content, { HTMLContent } from "../components/Content";
 
-export const ContactPageTemplate = ({ title, content, contentComponent }) => {
-  const PageContent = contentComponent || Content;
+
+export const DefaultContactenosTemplate = ({
+ title, content, contentComponent
+}) => {
+  const PageContent = contentComponent || Content
 
   return (
     <React.Fragment>
-      <section class="section">
-        <div class="container">
-          <div class="tile">
-            <div class="tile is-horizontal">
-              <div className="tile is-parent is-6">
-                <div class="tile is-child ">
-                  <PageContent className="content" content={content} />
-                  <ContactForm />
-                </div>
-              </div>
 
-              <div className="tile is-parent is-6 is-hidden-touch">
-                <div class="tile is-child ">
-                   
-                </div>
-              </div>
-            </div>
-          </div>
-          
-        </div>
-      </section>
-      <EnterpriseFeature/>
+
+              <PageContent className="content " content={content} />
+
+ <br/>
+ <ContactForm />
+ <EnterpriseFeature/>
     </React.Fragment>
-  );
-};
+  )
+}
 
-ContactPageTemplate.propTypes = {
-  title: PropTypes.string.isRequired,
+
+DefaultContactenosTemplate.propTypes = {
   content: PropTypes.string,
-  contentComponent: PropTypes.func
-};
+  contentComponent: PropTypes.func,
+  title: PropTypes.string.isRequired,
+}
 
-const ContactPage = ({ data }) => {
-  const { markdownRemark: post } = data;
+const DefaultContactenos = ({ data }) => {
+  const { cockpitPaginas: post } = data
 
   return (
-    <Layout full titulo={post.frontmatter.title}>
-      <ContactPageTemplate
+    <Layout titulo={valor(post,"titulo")}>
+      <DefaultContactenosTemplate
         contentComponent={HTMLContent}
-        title={post.frontmatter.title}
-        content={post.html}
+        title={valor(post,"titulo")}
+        content={valor(post,"contenido")}
       />
     </Layout>
-  );
-};
+  )
+}
 
-ContactPage.propTypes = {
-  data: PropTypes.object.isRequired
-};
 
-export default ContactPage;
+DefaultContactenos.propTypes = {
+  data: PropTypes.shape({
+    markdownRemark: PropTypes.object,
+  }),
+}
 
-export const ContactPageQuery = graphql`
-  query ContactPage($id: String!) {
-    markdownRemark(id: { eq: $id }) {
-      html
-      frontmatter {
-        title
+
+export default DefaultContactenos
+
+export const DefaultContactenosQuery = graphql`
+  query DefaultContactenos($id: String!) {
+    cockpitPaginas(id: { eq: $id }) {
+      id
+      titulo {
+        value
       }
-    }
+      contenido {
+         value
+       }
+
+
   }
-`;
+  }
+`
