@@ -6,7 +6,7 @@ import { Icon } from 'react-icons-kit'
  import { Link } from "gatsby";
 
 
- import { slugify }  from "../../../tool/funciones"
+import { slugify }  from "../../../tool/funciones"
 
 class ServiceList extends React.Component {
   constructor(props) {
