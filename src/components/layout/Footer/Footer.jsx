@@ -19,50 +19,55 @@ class Footer extends React.Component {
 
     return (
       <React.Fragment>
-      <footer class="footer has-text-light">
-        <div  class="container ">
-
+        <footer class="footer has-text-light">
+          <div class="container ">
             <div className="columns">
               <div className="column is-hidden-touch">
                 <img src={logo} />
-                <br /><br />
-
-
+                <br />
+                <br />
 
                 <StaticQuery
                   query={graphql`
                     query {
-  allCockpitTotalstopfire(filter: {cockpitId: {eq: "5c6465253262630c69000101"}, lang: {eq: "es"}}) {
-    edges {
-      node {
-        contenido {
-          value {
-            parsed
-          }
-        }
-      }
-    }
-  }
-}
+                      allCockpitTotalstopfire(
+                        filter: {
+                          cockpitId: { eq: "5c6465253262630c69000101" }
+                          lang: { eq: "es" }
+                        }
+                      ) {
+                        edges {
+                          node {
+                            contenido {
+                              value {
+                                parsed
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
                   `}
                   render={data => (
                     <div className="widget-social-links">
-
                       {data.allCockpitTotalstopfire.edges.map((items, i) => {
-                        return(
-                         <React.Fragment>
-                         <div className="text" dangerouslySetInnerHTML={{ __html: items.node.contenido.value.parsed[0]["settings"]["html"] }} />
-
-
+                        return (
+                          <React.Fragment>
+                            <div
+                              className="text"
+                              dangerouslySetInnerHTML={{
+                                __html:
+                                  items.node.contenido.value.parsed[0][
+                                    "settings"
+                                  ]["html"]
+                              }}
+                            />
                           </React.Fragment>
                         );
                       })}
                     </div>
                   )}
                 />
-
-
-
 
                 <br />
                 <SocialLinks />
@@ -76,28 +81,23 @@ class Footer extends React.Component {
                 <OfficeHours />
               </div>
             </div>
-
-        </div >
-
-
-      </footer>
-      <div className="copyright">
-
-            <div className="container">
-              <div className="level has-text-centered-touch">
-                <div class="level-left">
-                  Copyright © 2019 &nbsp; <Link to="/">Total Stop Fire S.A.C.</Link>
-                  &nbsp; Todos los derechos reservados.
-                </div>
-                <div class="level-rigth">
-                  <SocialLinks />
-                </div>
+          </div>
+        </footer>
+        <div className="copyright">
+          <div className="container">
+            <div className="level has-text-centered-touch">
+              <div class="level-left">
+                Copyright © 2019 &nbsp;{" "}
+                <Link to="/">Total Stop Fire S.A.C.</Link>
+                &nbsp; Todos los derechos reservados.
+              </div>
+              <div class="level-rigth">
+                <SocialLinks />
               </div>
             </div>
+          </div>
 
-
-
- <script
+          <script
             dangerouslySetInnerHTML={{
               __html: `(function () {
         var options = {
@@ -112,16 +112,11 @@ class Footer extends React.Component {
         var s = document.createElement('script'); s.type = 'text/javascript'; s.async = true; s.src = url + '/widget-send-button/js/init.js';
         s.onload = function () { WhWidgetSendButton.init(host, proto, options); };
         var x = document.getElementsByTagName('script')[0]; x.parentNode.insertBefore(s, x);
-    })();`,
+    })();`
             }}
           />
-
-
-
-
-
         </div>
-        </React.Fragment>
+      </React.Fragment>
     );
   }
 }

@@ -1,18 +1,14 @@
 @import "~slick-carousel/slick/slick.css";
 @import "~slick-carousel/slick/slick-theme.css";
 
-.widget-brand-products { 
+.widget-brand-products {
+  // .gatsby-image-wrapper {
+  //      position: absolute !important;
+  //     left: 50%;
+  //     transform: translate(-50%,-50%);
+  //     top: 50%;
+  // }
 
-
-
-// .gatsby-image-wrapper {
-//      position: absolute !important;
-//     left: 50%;
-//     transform: translate(-50%,-50%);
-//     top: 50%;
-// }
-
-  
   .flickity-slider {
     div {
       width: 25%;
@@ -25,7 +21,6 @@
   .slider {
     .slider-control-centerleft,
     .slider-control-centerright {
-     
     }
     .slider-control-bottomcenter {
       bottom: initial !important;

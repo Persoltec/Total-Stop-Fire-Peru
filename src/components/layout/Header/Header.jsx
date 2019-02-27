@@ -11,26 +11,20 @@ import { Link } from "gatsby";
 import logo from "../../../img/logo.svg";
 import { StaticQuery, graphql } from "gatsby";
 
-import {ic_phone_in_talk} from 'react-icons-kit/md/ic_phone_in_talk'
+import { ic_phone_in_talk } from "react-icons-kit/md/ic_phone_in_talk";
+
+import { slide as Menu } from "react-burger-menu";
+import SocialLinks from "../../widgets/SocialLinks/SocialLinks.jsx";
+
 class Header extends React.Component {
-  componentDidMount() {
-    // Get all "navbar-burger" elements
-    // const $navbarBurgers = Array.prototype.slice.call(document.querySelectorAll('.navbar-burger'), 0);
-    //  // Check if there are any navbar burgers
-    // if ($navbarBurgers.length > 0) {
-    //   // Add a click event on each of them
-    //   $navbarBurgers.forEach( el => {
-    //     el.addEventListener('click', () => {
-    //       // Get the target from the "data-target" attribute
-    //       const target = el.dataset.target;
-    //       const $target = document.getElementById(target);
-    //       // Toggle the "is-active" class on both the "navbar-burger" and the "navbar-menu"
-    //       el.classList.toggle('is-active');
-    //       $target.classList.toggle('is-active');
-    //     });
-    //   });
-    // }
+  constructor(props) {
+    super(props);
+    this.state = {
+      menuOpen: false
+    };
   }
+
+  componentDidMount() {}
 
   state = {
     fixed: false,
@@ -59,6 +53,24 @@ class Header extends React.Component {
     return `${fixed} ${homepage}`;
   };
 
+  // This keeps your state in sync with the opening/closing of the menu
+  // via the default means, e.g. clicking the X, pressing the ESC key etc.
+  handleStateChange(state) {
+    this.setState({ menuOpen: state.isOpen });
+  }
+
+  // This can be used to close the menu, e.g. when a user clicks a menu item
+  closeMenu() {
+    this.setState({ menuOpen: false });
+  }
+
+  // This can be used to toggle the menu, e.g. when using a custom icon
+  // Tip: You probably want to hide either/both default icons if using a custom icon
+  // See https://github.com/negomi/react-burger-menu#custom-icons
+  toggleMenu() {
+    this.setState({ menuOpen: !this.state.menuOpen });
+  }
+
   render() {
     const { ...props } = this.props;
     const { titulo } = props;
@@ -67,7 +79,72 @@ class Header extends React.Component {
 
     return (
       <React.Fragment>
+        <div>
+          <Menu
+            isOpen={this.state.menuOpen}
+            onStateChange={state => this.handleStateChange(state)}
+            right
+          >
+            <aside class="menu">
+              <ul class="menu-list">
+                <li>
+                  <Link className="menu-item" to="/">
+                    Inicio
+                  </Link>
+                </li>
+                <li>
+                  <Link className="menu-item" to="nosotros">
+                    Nosotros
+                  </Link>
+                </li>
+                <li>
+                  <Link className="menu-item" to="productos">
+                    Productos
+                  </Link>
+                </li>
+              </ul>
 
+              <ul class="menu-list">
+                <li>
+                  <Link className="is-active menu-list-title" to="servicios">
+                    Servicios
+                  </Link>
+                  <ul>
+                    <li>
+                      <Link
+                        className="menu-item"
+                        to="servicios/recarga-de-extintores"
+                      >
+                        Recarga de Extintores
+                      </Link>
+                    </li>
+                    <li>
+                      <Link className="menu-item" to="servicios/mantenimiento">
+                        Mantenimiento
+                      </Link>
+                    </li>
+                    <li>
+                      <Link className="menu-item" to="servicios/inspecciones">
+                        Inspecciones
+                      </Link>
+                    </li>
+                    <li>
+                      <Link className="menu-item" to="servicios/capacitacion">
+                        Capacitación
+                      </Link>
+                    </li>
+                  </ul>
+                </li>
+                <li>
+                  <Link className="menu-item" to="contactenos">
+                    Contáctenos
+                  </Link>
+                </li>
+              </ul>
+              <SocialLinks />
+            </aside>
+          </Menu>
+        </div>
 
         <section
           id="header"
@@ -93,7 +170,7 @@ class Header extends React.Component {
                     aria-label="menu"
                     aria-expanded="false"
                     data-target="header"
-                    onClick={this.OpenClose}
+                    onClick={() => this.toggleMenu()}
                   >
                     <span aria-hidden="true" />
                     <span aria-hidden="true" />
@@ -117,7 +194,6 @@ class Header extends React.Component {
                       Servicios
                     </Link>
 
-
                     <Link
                       to="contactenos"
                       className="navbar-item is-hidden-desktop"
@@ -136,67 +212,65 @@ class Header extends React.Component {
                     </div>
                   </div>
 
+                  <div class="ventas navbar-item has-text-light is-hidden-touch">
+                    <div>
+                      <div class="is-capitalized is-size-7">
+                        <span className="texto">Informacion? </span>
+                        <Icon
+                          className="icono"
+                          size={24}
+                          icon={ic_phone_in_talk}
+                        />
+                      </div>
 
-<div class="ventas navbar-item has-text-light is-hidden-touch">
-<div>
-              <div class="is-capitalized is-size-7">
-              <span className="texto" >Informacion? </span>
-              <Icon className="icono"  size={24}  icon={ic_phone_in_talk} />
-              </div>
+                      <StaticQuery
+                        query={graphql`
+                          query {
+                            allCockpitTotalstopfire(
+                              filter: {
+                                cockpitId: { eq: "5c64868e326263101b0000f8" }
+                                lang: { eq: "es" }
+                              }
+                            ) {
+                              edges {
+                                node {
+                                  contenido {
+                                    value {
+                                      parsed
+                                    }
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        `}
+                        render={data => (
+                          <div className="widget-social-links">
+                            {data.allCockpitTotalstopfire.edges.map(
+                              (items, i) => {
+                                let fono = "";
 
-              <StaticQuery
-                query={graphql`
-                  query {
-allCockpitTotalstopfire(filter: {cockpitId: {eq: "5c64868e326263101b0000f8"}, lang: {eq: "es"}}) {
-  edges {
-    node {
-      contenido {
-        value {
-          parsed
-        }
-      }
-    }
-  }
-}
-}
-                `}
-                render={data =>
-
-                  (
-                  <div className="widget-social-links">
-
-                    {data.allCockpitTotalstopfire.edges.map((items, i) => {
-
-                      let fono="";
-
-                      items.node.contenido.value.parsed.forEach(function(entry) {
-  if (entry["name"]==="Móvil"){
-    fono=entry["settings"]["valor"]
-  }
-});
-                      return(
-                       <React.Fragment>
-                       <div className="telefono has-text-weight-bold is-size-5" >
-{fono}
-                       </div>
-
-
-                        </React.Fragment>
-                      );
-                    })}
+                                items.node.contenido.value.parsed.forEach(
+                                  function(entry) {
+                                    if (entry["name"] === "Móvil") {
+                                      fono = entry["settings"]["valor"];
+                                    }
+                                  }
+                                );
+                                return (
+                                  <React.Fragment>
+                                    <div className="telefono has-text-weight-bold is-size-5">
+                                      {fono}
+                                    </div>
+                                  </React.Fragment>
+                                );
+                              }
+                            )}
+                          </div>
+                        )}
+                      />
+                    </div>
                   </div>
-                )}
-              />
-
-
-
-
-
-            </div>
-            </div>
-
-
-
                 </div>
               </div>
             </nav>

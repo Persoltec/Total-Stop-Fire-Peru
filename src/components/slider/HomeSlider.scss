@@ -1,5 +1,6 @@
 .slider.inicio {
-  .slider-control-centerleft a, .slider-control-centerright a {
+  .slider-control-centerleft a,
+  .slider-control-centerright a {
     background: #1f0f0f75;
     border: none;
     color: white;
@@ -13,15 +14,12 @@
   }
 }
 
-
 @media screen and (max-width: 767px) {
- .slider.inicio {
-    .slider-control-centerleft , .slider-control-centerright,.slider-control-bottomcenter{
-    display: none;
-}
+  .slider.inicio {
+    .slider-control-centerleft,
+    .slider-control-centerright,
+    .slider-control-bottomcenter {
+      display: none;
+    }
   }
 }
-
-
-
- 

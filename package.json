@@ -40,13 +40,14 @@
     "prop-types": "^15.6.0",
     "rc-drawer": "^1.7.7",
     "react": "^16.2.0",
-    "react-burger-menu": "^2.6.1",
+    "react-burger-menu": "^2.6.5",
     "react-dom": "^16.4.1",
     "react-hamburger-menu": "^1.1.1",
     "react-helmet": "^5.2.0",
     "react-icons-kit": "^1.2.1",
     "react-inlinesvg": "^0.8.4",
     "react-media": "^1.9.2",
+    "react-push-menu": "^1.0.2",
     "react-responsive": "^6.0.1",
     "react-scroll-up-button": "^1.6.4",
     "react-slick": "^0.23.2",
@@ -75,10 +76,11 @@
     "develop": "npm run clean && gatsby develop",
     "serve": "gatsby serve",
     "format": "prettier --trailing-comma es5 --no-semi --single-quote --write \"{gatsby-*.js,src/**/*.js}\"",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "formatear": "onchange 'src/**/*.{js,jsx,css,scss}' -- prettier --write {{changed}}"
   },
   "devDependencies": {
-    "prettier": "^1.15.3",
+    "prettier": "1.16.4",
     "rimraf": "^2.6.2"
   }
 }

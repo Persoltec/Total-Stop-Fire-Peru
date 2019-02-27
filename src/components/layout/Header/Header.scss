@@ -1,3 +1,53 @@
+/* Position and sizing of burger button */
+.bm-burger-button {
+  display: none !important;
+}
+
+/* Position and sizing of clickable cross button */
+.bm-cross-button {
+  height: 24px;
+  width: 24px;
+}
+
+/* Color/shape of close button cross */
+.bm-cross {
+  background: #bdc3c7;
+}
+
+/*
+Sidebar wrapper styles
+Note: Beware of modifying this element as it can break the animations - you should not need to touch it in most cases
+*/
+.bm-menu-wrap {
+  position: fixed;
+  height: 100%;
+  z-index: 9999999 !important;
+}
+
+/* General sidebar styles */
+.bm-menu {
+  background: #373a47;
+  padding: 2em 1em 0;
+  font-size: 1em;
+  //background-image: linear-gradient(45deg, #001529 0%,   rgba( $primary, .2 ) 0%, #001529 80%);
+  background-image: linear-gradient(141deg,#1f191a 0%, 71%,rgba( $primary, .2 ) 100%);
+  .menu-item {
+    color: $text-light;
+    padding: 0.8em 0.75em;
+  }
+}
+
+.bm-item:active,
+.bm-item:focus {
+  outline: none;
+}
+
+/* Styling of overlay */
+.bm-overlay {
+  background: rgba(0, 0, 0, 0.3);
+  z-index: 999999 !important;
+}
+
 .header {
   z-index: 99999;
   position: relative;
@@ -17,19 +67,18 @@
     bottom: -1px;
   }
 
-.hero-foot {
+  .hero-foot {
     position: absolute;
     width: 100%;
     bottom: 60px;
-}
-
+  }
 
   &.hero.is-medium {
     min-height: 300px;
     background-image: linear-gradient(
       141deg,
       #001529 0%,
-      #b9120840 60%,
+        rgba( $primary, .2 ) 60%,
       #001529 100%
     );
 
@@ -47,9 +96,7 @@
     }
 
     .hero-foot {
-     
-        bottom: 20px;
-      
+      bottom: 20px;
     }
   }
 
@@ -112,9 +159,9 @@
     .slick-dots {
       bottom: 50px;
     }
-.slick-arrow {
-    display: none !important;
-}
+    .slick-arrow {
+      display: none !important;
+    }
     .itemslider {
       height: 100vh !important;
       .gatsby-image-wrapper {

@@ -9848,7 +9848,12 @@ preserve@^0.2.0:
   version "0.2.0"
   resolved "https://registry.yarnpkg.com/preserve/-/preserve-0.2.0.tgz#815ed1f6ebc65926f865b310c0713bcb3315ce4b"
 
-prettier@^1.14.3, prettier@^1.15.3:
+prettier@1.16.4:
+  version "1.16.4"
+  resolved "https://registry.yarnpkg.com/prettier/-/prettier-1.16.4.tgz#73e37e73e018ad2db9c76742e2647e21790c9717"
+  integrity sha512-ZzWuos7TI5CKUeQAtFd6Zhm2s6EpAD/ZLApIhsF9pRvRtM1RFo61dM/4MSRUA0SuLugA/zgrZD8m0BaY46Og7g==
+
+prettier@^1.14.3:
   version "1.15.3"
   resolved "https://registry.yarnpkg.com/prettier/-/prettier-1.15.3.tgz#1feaac5bdd181237b54dbe65d874e02a1472786a"
 
@@ -10163,9 +10168,10 @@ react-autowhatever@^10.1.2:
     react-themeable "^1.1.0"
     section-iterator "^2.0.0"
 
-react-burger-menu@^2.6.1:
-  version "2.6.1"
-  resolved "https://registry.yarnpkg.com/react-burger-menu/-/react-burger-menu-2.6.1.tgz#bd23aa62baa084feb0506e7fda8397d62ae2268f"
+react-burger-menu@^2.6.5:
+  version "2.6.5"
+  resolved "https://registry.yarnpkg.com/react-burger-menu/-/react-burger-menu-2.6.5.tgz#efe567966ae95717be25c052745109e375915c37"
+  integrity sha512-76TA8twYnRKsetbb+3gsMWzL01CjDDZGdHKdufYTRL32W/MMKlBVhpQq34QBMurgVAabO+SuPBFr1LGvZcGIZg==
   dependencies:
     browserify-optional "^1.0.0"
     classnames "^2.2.6"
@@ -10344,6 +10350,11 @@ react-portal@^3.1.0:
   resolved "https://registry.yarnpkg.com/react-portal/-/react-portal-3.2.0.tgz#4224e19b2b05d5cbe730a7ba0e34ec7585de0043"
   dependencies:
     prop-types "^15.5.8"
+
+react-push-menu@^1.0.2:
+  version "1.0.2"
+  resolved "https://registry.yarnpkg.com/react-push-menu/-/react-push-menu-1.0.2.tgz#02f54a9b9e7021e571d2fc8aa088f6482d42e6ff"
+  integrity sha512-t5l6BD7W3bo9IXoSQXj+VBWH2nyC+zNHykZqKUb9wwK8+pppl3ovmExFK6uIT8r5qXdUErgm8HCccW1uGNVSoQ==
 
 react-redux@^4.0.0:
   version "4.4.9"

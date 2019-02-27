@@ -1,5 +1,5 @@
 import React from "react";
-import Helmet from 'react-helmet'
+import Helmet from "react-helmet";
 // import { StaticQuery, graphql } from "gatsby"
 
 import { enquireScreen } from "enquire-js";
@@ -25,56 +25,36 @@ class Layout extends React.PureComponent {
     const children = this.props.children;
     const full = this.props.full;
     const titulo = this.props.titulo;
-   
 
     return (
       <div id="pagina">
-                   <Helmet
-   
-    script={[
-            {"src": "https://smtpjs.com/v3/smtp.js", "type": "text/javascript"}
-    ]}
-/>
-         <Header titulo={titulo}  />
+        <Helmet
+          script={[
+            { src: "https://smtpjs.com/v3/smtp.js", type: "text/javascript" }
+          ]}
+        />
+        <Header titulo={titulo} />
 
-
- {full ? (
-         <div id="contenido">
-         {children}
-         </div>
-      ) : (
+        {full ? (
+          <div id="contenido">{children}</div>
+        ) : (
           <section class="section">
-    <div class="container">
-  <div className="columns is-variable bd-klmn-columns is-6 invert">
-  <div className="column is-3">
-        <Sidebar/>
-  </div>
-        <div className="column is-9">
-        {children}
-        </div>
-        </div> 
-         </div>
-        </section> 
-      )}
-
-
-  
-   
- 
-
-
- 
-        
-        
- 
- 
+            <div class="container">
+              <div className="columns is-variable bd-klmn-columns is-6 invert">
+                <div className="column is-3">
+                  <Sidebar />
+                </div>
+                <div className="column is-9">{children}</div>
+              </div>
+            </div>
+          </section>
+        )}
 
         <Footer />
 
         <BackToTop />
-         
       </div>
-    )
+    );
   }
 }
 

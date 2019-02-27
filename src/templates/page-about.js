@@ -1,61 +1,56 @@
-import React from 'react'
-import PropTypes from 'prop-types'
+import React from "react";
+import PropTypes from "prop-types";
 import { StaticQuery, graphql } from "gatsby";
-import Layout from '../components/Layout'
-import Content, { HTMLContent } from '../components/Content'
-import PreviewCompatibleImage from '../components/PreviewCompatibleImage'
+import Layout from "../components/Layout";
+import Content, { HTMLContent } from "../components/Content";
+import PreviewCompatibleImage from "../components/PreviewCompatibleImage";
 import Img from "gatsby-image";
-import { valor }  from "../tool/funciones"
+import { valor } from "../tool/funciones";
 import AboutUs from "../components/widgets/AboutUs/AboutUs";
 
- 
-
 export const DefaultNosotrosTemplate = ({
- title, content, contentComponent
+  title,
+  content,
+  contentComponent
 }) => {
-  const PageContent = contentComponent || Content
+  const PageContent = contentComponent || Content;
 
   return (
     <React.Fragment>
-              <PageContent className="content " content={content} />
+      <PageContent className="content " content={content} />
 
- <AboutUs/>
-
+      <AboutUs />
     </React.Fragment>
-  )
-}
-
+  );
+};
 
 DefaultNosotrosTemplate.propTypes = {
   content: PropTypes.string,
   contentComponent: PropTypes.func,
-  title: PropTypes.string.isRequired,
-}
-
+  title: PropTypes.string.isRequired
+};
 
 const DefaultNosotros = ({ data }) => {
-  const { cockpitPaginas: post } = data
+  const { cockpitPaginas: post } = data;
 
   return (
-    <Layout titulo={valor(post,"titulo")}>
+    <Layout titulo={valor(post, "titulo")}>
       <DefaultNosotrosTemplate
         contentComponent={HTMLContent}
-        title={valor(post,"titulo")}
-        content={valor(post,"contenido")}
-     />
+        title={valor(post, "titulo")}
+        content={valor(post, "contenido")}
+      />
     </Layout>
-  )
-}
-
+  );
+};
 
 DefaultNosotros.propTypes = {
   data: PropTypes.shape({
-    markdownRemark: PropTypes.object,
-  }),
-}
+    markdownRemark: PropTypes.object
+  })
+};
 
-
-export default DefaultNosotros
+export default DefaultNosotros;
 
 export const DefaultNosotrosQuery = graphql`
   query DefaultNosotros($id: String!) {
@@ -65,10 +60,8 @@ export const DefaultNosotrosQuery = graphql`
         value
       }
       contenido {
-         value
-       }
-     }
-
-
+        value
+      }
+    }
   }
-`
+`;

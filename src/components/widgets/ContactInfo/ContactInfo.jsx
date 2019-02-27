@@ -1,7 +1,6 @@
 import React from "react";
 import { StaticQuery, graphql } from "gatsby";
 
-
 import { Icon } from "react-icons-kit";
 
 import { ic_location_on } from "react-icons-kit/md/ic_location_on";
@@ -19,74 +18,69 @@ class ContactInfo extends React.Component {
       <StaticQuery
         query={graphql`
           query {
-  allCockpitTotalstopfire (filter: { cockpitId: { eq: "5c64868e326263101b0000f8" } , lang: { eq: "es" }}) {
-    edges {
-      node {
-        id
-        lang
-        titulo {
-          value
-        }
-        contenido{
-          value{
-           parsed
+            allCockpitTotalstopfire(
+              filter: {
+                cockpitId: { eq: "5c64868e326263101b0000f8" }
+                lang: { eq: "es" }
+              }
+            ) {
+              edges {
+                node {
+                  id
+                  lang
+                  titulo {
+                    value
+                  }
+                  contenido {
+                    value {
+                      parsed
+                    }
+                  }
+                }
+              }
+            }
           }
-        }
-
-      }
-    }
-  }
-}
-
         `}
         render={data => (
-
-            <div className={`${name ? name : " widget-contact-info"}`}>
+          <div className={`${name ? name : " widget-contact-info"}`}>
             {data.allCockpitTotalstopfire.edges.map((items, i) => {
-
               var icono = {
-                "Dirección":ic_location_on,
-                "Móvil":ic_phone,
-                "Teléfono":ic_stay_current_portrait,
-                "Correo":ic_mail
+                Dirección: ic_location_on,
+                Móvil: ic_phone,
+                Teléfono: ic_stay_current_portrait,
+                Correo: ic_mail
               };
 
               return (
                 <React.Fragment>
-
-                {items.node.contenido.value.parsed.map((item, i) => {
-                  return (
-
-
-                <article class="media">
-
-                  <figure class="media-left ">
-                    <Icon size={24} icon={icono[item["name"]]} />
-                  </figure>
-                  <div class="media-content">
-                    <div class="content">
-                      <p>
-                        <strong className="titulo has-text-primary">
-                          {item["name"]}
-                        </strong>
-                        <br />
-                        <span className="descripcion">{item["settings"]["valor"]}</span>
-                      </p>
-                    </div>
-                  </div>
-                </article>
-
-
-              );
-            })}
-</React.Fragment>
-
+                  {items.node.contenido.value.parsed.map((item, i) => {
+                    return (
+                      <article class="media">
+                        <figure class="media-left ">
+                          <Icon size={24} icon={icono[item["name"]]} />
+                        </figure>
+                        <div class="media-content">
+                          <div class="content">
+                            <p>
+                              <strong className="titulo has-text-primary">
+                                {item["name"]}
+                              </strong>
+                              <br />
+                              <span className="descripcion">
+                                {item["settings"]["valor"]}
+                              </span>
+                            </p>
+                          </div>
+                        </div>
+                      </article>
+                    );
+                  })}
+                </React.Fragment>
               );
             })}
           </div>
-
-       )}
-       />
+        )}
+      />
     );
   }
 }

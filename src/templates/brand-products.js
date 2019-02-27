@@ -25,11 +25,11 @@ export const BrandProductsTemplate = ({
           <div className="columns">
             <div className="column is-10 is-offset-1">
               <h1 className=" ">{titulo}</h1>
-               
+
               <p>{descripcion}</p>
               <PostContent content={content} />
             </div>
-          </div> 
+          </div>
         </div>
       </section>
     </Layout>
@@ -66,16 +66,14 @@ BrandProducts.propTypes = {
 };
 
 export default BrandProducts;
- 
+
 export const pageQuery = graphql`
   query BrandProductsByID($id: String!) {
     markdownRemark(id: { eq: $id }) {
       id
       html
-      frontmatter { 
+      frontmatter {
         titulo
-        
-         
       }
     }
   }
